@@ -1,0 +1,141 @@
+{
+  "protoboards",
+  {
+    "small",
+    "protoboard-small.bmp",
+    "medium",
+    "protoboard-medium.bmp",
+    "large",
+    "protoboard-large.bmp"
+  }
+}
+{
+  "components",
+  {
+    "electro-machanical",
+    {
+      "crystal",
+      "crystal.bmp",
+      "crystal side view",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\crystal-side.bmp",
+      "microphone",
+      "microphone-small.bmp",
+      "motor DC",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\motor.bmp",
+      "piezo speaker",
+      "piezo.bmp",
+      "push button",
+      "push-button.bmp",
+      "reed relay",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\reed relay.bmp",
+      "servo motor",
+      "servo.bmp",
+      "speaker",
+      "speaker.bmp",
+      "toggle switch SPST",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\BoardView\\resources\\toggle-spst.bmp"
+    }
+  },
+  {
+    "integrated circuit",
+    {
+      "DIL 14",
+      "DIL-14.BMP",
+      "DIL 16",
+      "DIL-16.BMP",
+      "DIL 18",
+      "DIL-18.BMP",
+      "DIL 20",
+      "DIL-20.BMP",
+      "DIL 22",
+      "DIL-22.BMP",
+      "DIL 24",
+      "DIL-24.BMP",
+      "DIL 28",
+      "DIL-28.BMP",
+      "DIL 40",
+      "DIL-40.BMP",
+      "DIL 8",
+      "DIL-8.BMP"
+    }
+  },
+  {
+    "opto",
+    {
+      "blue LED",
+      "led-blue.bmp",
+      "blue LED side view",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\led-blue-side.bmp",
+      "green LED",
+      "led-green.bmp",
+      "green LED side view",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\led-green-side.bmp",
+      "photocell",
+      "photocell.bmp",
+      "red LED",
+      "led-red.bmp",
+      "red LED side view",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\led-red-side.bmp",
+      "rgb LED",
+      "led-rgb.bmp",
+      "rgb LED side view",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\led-rgb-side.bmp",
+      "white LED",
+      "led-white.bmp",
+      "white LED side view",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\led-white-side.bmp",
+      "yellow LED",
+      "led-yellow.bmp",
+      "yellow LED side view",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\led-yellow-side.bmp"
+    }
+  },
+  {
+    "other",
+    {
+      "black box",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\black box.bmp"
+    }
+  },
+  {
+    "passive",
+    {
+      "ceramic cap",
+      "ceramic.bmp",
+      "ceramic cap side view",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\ceramic cap side view.bmp",
+      "ceramic cap small",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\ceramic cap small.bmp",
+      "electrolytic",
+      "electrolytic.bmp",
+      "electrolytic 3D",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\electrolytic 3D.bmp",
+      "resistor",
+      "resistor.bmp",
+      "transformer",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\transformer.bmp"
+    }
+  },
+  {
+    "semi-condutors",
+    {
+      "diode",
+      "diode.bmp",
+      "glass diode",
+      "glass-diode.bmp",
+      "rectifier bridge",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\rectifier bridge.bmp"
+    }
+  },
+  {
+    "transistor",
+    {
+      "TO-220",
+      "TO-220.bmp",
+      "TO-220 face view",
+      "C:\\euphoria-40\\work\\win32\\win32api_unicode\\proto-layout\\resources\\TO-220-side.bmp",
+      "TO-92",
+      "TO-92.bmp"
+    }
+  }
+}

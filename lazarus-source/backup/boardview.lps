@@ -4,12 +4,11 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="42">
+    <Units Count="37">
       <Unit0>
         <Filename Value="boardview.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="13"/>
         <CursorPos Y="44"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
@@ -21,9 +20,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unitmain"/>
-        <TopLine Value="238"/>
-        <CursorPos X="67" Y="260"/>
-        <ComponentState Value="1"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="951"/>
+        <CursorPos Y="963"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -60,9 +59,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitComponents"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="228"/>
         <CursorPos X="32" Y="253"/>
-        <ComponentState Value="1"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -71,8 +68,7 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="CompLib"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="84"/>
-        <CursorPos X="27" Y="101"/>
+        <CursorPos X="93" Y="25"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -98,7 +94,7 @@
         <UnitName Value="unitTag"/>
         <EditorIndex Value="3"/>
         <CursorPos Y="20"/>
-        <UsageCount Value="198"/>
+        <UsageCount Value="211"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -110,7 +106,7 @@
         <UnitName Value="unitSaveProject"/>
         <EditorIndex Value="2"/>
         <CursorPos Y="20"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="94"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit8>
@@ -123,7 +119,7 @@
         <UnitName Value="unitQuerySave"/>
         <EditorIndex Value="1"/>
         <CursorPos Y="19"/>
-        <UsageCount Value="76"/>
+        <UsageCount Value="89"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit9>
@@ -135,230 +131,195 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitLibrary"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="68"/>
-        <CursorPos X="39" Y="82"/>
-        <UsageCount Value="32"/>
+        <CursorPos Y="20"/>
+        <UsageCount Value="45"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit10>
       <Unit11>
-        <Filename Value="..\..\fpc\3.2.0\source\packages\fcl-image\src\fpimage.pp"/>
-        <UnitName Value="FPImage"/>
+        <Filename Value="readme.md"/>
+        <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="580"/>
-        <UsageCount Value="1"/>
+        <CursorPos Y="6"/>
+        <UsageCount Value="32"/>
+        <DefaultSyntaxHighlighter Value="None"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\..\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3166"/>
         <CursorPos Y="3184"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="40"/>
       </Unit12>
       <Unit13>
-        <Filename Value="..\..\fpc\3.2.0\source\rtl\objpas\sysutils\sysstrh.inc"/>
+        <Filename Value="components.ini"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="122"/>
-        <CursorPos X="10" Y="140"/>
-        <UsageCount Value="1"/>
+        <CursorPos X="52" Y="13"/>
+        <UsageCount Value="99"/>
+        <DefaultSyntaxHighlighter Value="Ini"/>
       </Unit13>
       <Unit14>
-        <Filename Value="components.ini"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="10"/>
-        <CursorPos X="66" Y="7"/>
-        <UsageCount Value="100"/>
-        <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Ini"/>
-      </Unit14>
-      <Unit15>
         <Filename Value="application.ini"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="22"/>
-        <UsageCount Value="94"/>
+        <UsageCount Value="93"/>
         <DefaultSyntaxHighlighter Value="Ini"/>
-      </Unit15>
-      <Unit16>
+      </Unit14>
+      <Unit15>
         <Filename Value="..\..\fpc\3.2.0\source\packages\fcl-base\src\inifiles.pp"/>
         <UnitName Value="IniFiles"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="68"/>
         <CursorPos X="60" Y="68"/>
-        <UsageCount Value="27"/>
-      </Unit16>
-      <Unit17>
+        <UsageCount Value="26"/>
+      </Unit15>
+      <Unit16>
         <Filename Value="..\..\lcl\include\application.inc"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="14"/>
-      </Unit17>
-      <Unit18>
+        <UsageCount Value="13"/>
+      </Unit16>
+      <Unit17>
         <Filename Value="..\..\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5047"/>
         <CursorPos Y="5064"/>
-        <UsageCount Value="19"/>
-      </Unit18>
-      <Unit19>
+        <UsageCount Value="18"/>
+      </Unit17>
+      <Unit18>
         <Filename Value="..\..\lcl\include\graphic.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="32"/>
         <CursorPos Y="50"/>
-        <UsageCount Value="2"/>
-      </Unit19>
-      <Unit20>
+        <UsageCount Value="1"/>
+      </Unit18>
+      <Unit19>
         <Filename Value="..\..\lcl\include\picture.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="850"/>
         <CursorPos Y="883"/>
-        <UsageCount Value="5"/>
-      </Unit20>
-      <Unit21>
+        <UsageCount Value="4"/>
+      </Unit19>
+      <Unit20>
         <Filename Value="..\..\lcl\lclclasses.pp"/>
         <UnitName Value="LCLClasses"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="94"/>
         <CursorPos Y="118"/>
-        <UsageCount Value="14"/>
-      </Unit21>
-      <Unit22>
+        <UsageCount Value="13"/>
+      </Unit20>
+      <Unit21>
         <Filename Value="..\..\lcl\include\rasterimage.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="730"/>
         <CursorPos Y="757"/>
-        <UsageCount Value="2"/>
-      </Unit22>
-      <Unit23>
+        <UsageCount Value="1"/>
+      </Unit21>
+      <Unit22>
         <Filename Value="..\..\lcl\graphics.pp"/>
         <UnitName Value="Graphics"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="389"/>
         <CursorPos X="3" Y="407"/>
-        <UsageCount Value="7"/>
-      </Unit23>
-      <Unit24>
+        <UsageCount Value="6"/>
+      </Unit22>
+      <Unit23>
         <Filename Value="..\..\lcl\include\canvas.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1343"/>
         <CursorPos Y="1361"/>
-        <UsageCount Value="5"/>
-      </Unit24>
-      <Unit25>
+        <UsageCount Value="4"/>
+      </Unit23>
+      <Unit24>
         <Filename Value="..\..\lcl\include\custombitmap.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="471"/>
         <CursorPos Y="498"/>
-        <UsageCount Value="2"/>
-      </Unit25>
-      <Unit26>
+        <UsageCount Value="1"/>
+      </Unit24>
+      <Unit25>
         <Filename Value="..\..\lcl\include\bitmap.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="142"/>
         <CursorPos Y="161"/>
-        <UsageCount Value="2"/>
-      </Unit26>
-      <Unit27>
-        <Filename Value="..\..\lcl\include\sharedcustombitmap.inc"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="17"/>
         <UsageCount Value="1"/>
-      </Unit27>
-      <Unit28>
-        <Filename Value="..\..\lcl\include\sharedrasterimage.inc"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="16"/>
-        <UsageCount Value="1"/>
-      </Unit28>
-      <Unit29>
-        <Filename Value="..\..\components\lazutils\graphtype.pp"/>
-        <UnitName Value="GraphType"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1304"/>
-        <CursorPos Y="1328"/>
-        <UsageCount Value="1"/>
-      </Unit29>
-      <Unit30>
-        <Filename Value="..\..\lcl\include\sharedimage.inc"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="16"/>
-        <UsageCount Value="1"/>
-      </Unit30>
-      <Unit31>
+      </Unit25>
+      <Unit26>
         <Filename Value="..\..\lcl\include\menuitem.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="505"/>
         <CursorPos Y="523"/>
-        <UsageCount Value="2"/>
-      </Unit31>
-      <Unit32>
+        <UsageCount Value="1"/>
+      </Unit26>
+      <Unit27>
         <Filename Value="unitmain.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="6"/>
         <CursorPos X="26" Y="6"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="13"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit32>
-      <Unit33>
+      </Unit27>
+      <Unit28>
         <Filename Value="..\..\lcl\interfaces\win32\win32wsforms.pp"/>
         <UnitName Value="Win32WSForms"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="469"/>
         <CursorPos Y="488"/>
-        <UsageCount Value="14"/>
-      </Unit33>
-      <Unit34>
+        <UsageCount Value="13"/>
+      </Unit28>
+      <Unit29>
         <Filename Value="..\..\lcl\include\customdesigncontrol.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="23"/>
-        <UsageCount Value="14"/>
-      </Unit34>
-      <Unit35>
+        <UsageCount Value="13"/>
+      </Unit29>
+      <Unit30>
         <Filename Value="..\..\lcl\include\scrollingwincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="280"/>
         <CursorPos Y="310"/>
-        <UsageCount Value="14"/>
-      </Unit35>
-      <Unit36>
+        <UsageCount Value="13"/>
+      </Unit30>
+      <Unit31>
         <Filename Value="..\..\lcl\include\customcontrol.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="28"/>
-        <UsageCount Value="14"/>
-      </Unit36>
-      <Unit37>
+        <UsageCount Value="13"/>
+      </Unit31>
+      <Unit32>
         <Filename Value="..\..\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="6539"/>
         <CursorPos Y="6569"/>
-        <UsageCount Value="14"/>
-      </Unit37>
-      <Unit38>
+        <UsageCount Value="13"/>
+      </Unit32>
+      <Unit33>
         <Filename Value="..\..\lcl\controls.pp"/>
         <UnitName Value="Controls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="38"/>
         <CursorPos X="47" Y="44"/>
-        <UsageCount Value="5"/>
-      </Unit38>
-      <Unit39>
+        <UsageCount Value="4"/>
+      </Unit33>
+      <Unit34>
         <Filename Value="..\..\components\lazutils\uitypes.pas"/>
         <UnitName Value="UITypes"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
-        <UsageCount Value="5"/>
-      </Unit39>
-      <Unit40>
+        <UsageCount Value="4"/>
+      </Unit34>
+      <Unit35>
         <Filename Value="..\..\components\printers\printersdlgs.pp"/>
         <UnitName Value="PrintersDlgs"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="7"/>
-      </Unit40>
-      <Unit41>
+        <UsageCount Value="6"/>
+      </Unit35>
+      <Unit36>
         <Filename Value="..\..\lcl\include\customlistbox.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="191"/>
         <CursorPos X="40" Y="203"/>
-        <UsageCount Value="10"/>
-      </Unit41>
+        <UsageCount Value="9"/>
+      </Unit36>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
@@ -399,87 +360,87 @@
       </Position9>
       <Position10>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="53" Column="2" TopLine="54"/>
+        <Caret Line="52" Column="2" TopLine="52"/>
       </Position10>
       <Position11>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="52" Column="2" TopLine="52"/>
+        <Caret Line="68" Column="74" TopLine="52"/>
       </Position11>
       <Position12>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="68" Column="74" TopLine="52"/>
+        <Caret Line="92" Column="63" TopLine="63"/>
       </Position12>
       <Position13>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="92" Column="63" TopLine="63"/>
+        <Caret Line="86" Column="64" TopLine="69"/>
       </Position13>
       <Position14>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="86" Column="64" TopLine="69"/>
+        <Caret Line="68" Column="26" TopLine="68"/>
       </Position14>
       <Position15>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="68" Column="26" TopLine="68"/>
+        <Caret Line="88" Column="44" TopLine="68"/>
       </Position15>
       <Position16>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="88" Column="44" TopLine="68"/>
+        <Caret Line="89" Column="21" TopLine="66"/>
       </Position16>
       <Position17>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="89" Column="21" TopLine="66"/>
+        <Caret Line="86" Column="25" TopLine="68"/>
       </Position17>
       <Position18>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="86" Column="25" TopLine="68"/>
+        <Caret Line="87" Column="25" TopLine="70"/>
       </Position18>
       <Position19>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="87" Column="25" TopLine="70"/>
+        <Caret Line="89" Column="29" TopLine="39"/>
       </Position19>
       <Position20>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="89" Column="29" TopLine="39"/>
+        <Caret Line="88" Column="4" TopLine="83"/>
       </Position20>
       <Position21>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="88" Column="4" TopLine="83"/>
+        <Caret Line="80" Column="31" TopLine="66"/>
       </Position21>
       <Position22>
-        <Filename Value="components.ini"/>
-        <Caret Line="68" Column="10"/>
+        <Filename Value="unitlibrary.pas"/>
+        <Caret Line="86" Column="18" TopLine="68"/>
       </Position22>
       <Position23>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="80" Column="31" TopLine="66"/>
+        <Caret Line="149" Column="26" TopLine="114"/>
       </Position23>
       <Position24>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="86" Column="18" TopLine="68"/>
+        <Caret Line="146" Column="14" TopLine="118"/>
       </Position24>
       <Position25>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="149" Column="26" TopLine="114"/>
+        <Caret Line="147" Column="9" TopLine="118"/>
       </Position25>
       <Position26>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="146" Column="14" TopLine="118"/>
+        <Caret Line="132" Column="57" TopLine="117"/>
       </Position26>
       <Position27>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="147" Column="9" TopLine="118"/>
+        <Caret Line="131" Column="28" TopLine="113"/>
       </Position27>
       <Position28>
         <Filename Value="unitlibrary.pas"/>
-        <Caret Line="132" Column="57" TopLine="117"/>
+        <Caret Line="79" Column="64" TopLine="65"/>
       </Position28>
       <Position29>
-        <Filename Value="unitlibrary.pas"/>
-        <Caret Line="131" Column="28" TopLine="113"/>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="260" Column="67"/>
       </Position29>
       <Position30>
-        <Filename Value="unitlibrary.pas"/>
-        <Caret Line="79" Column="64" TopLine="65"/>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="1248" Column="24" TopLine="1226"/>
       </Position30>
     </JumpHistory>
     <RunParams>
@@ -487,4 +448,15 @@
       <Modes Count="0" ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="unitmain.pas"/>
+        <Line Value="963"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>

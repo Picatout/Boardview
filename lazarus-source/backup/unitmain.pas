@@ -242,7 +242,7 @@ implementation
 
 {$R *.lfm}
 
-uses lazfileutils, unitSaveProject, UnitQuerySave,LCLintf;
+uses lazfileutils, unitSaveProject, UnitQuerySave,LCLintf,unitLibrary;
 
 const
   defaultBmpPath='bitmaps\';
@@ -952,6 +952,7 @@ begin
           CircuitList.add(node);
           ceDragging:=ceComponent;
           ceDragIdx:=CircuitList.count-1;
+          cursor:=crCross;
         end;
         ceTag:
         begin
@@ -971,6 +972,7 @@ begin
            ceDragging:=ceTag;
            CircuitList.add(node);
            ceDragIdx:=CircuitList.count-1;
+           cursor:=crCross;
         end;
 
     end;
@@ -1245,6 +1247,7 @@ begin
     begin
        ceDragIdx:=i;
        ceDragging:=node^.kind;
+       cursor:=crCross;
     end;
 
   end;

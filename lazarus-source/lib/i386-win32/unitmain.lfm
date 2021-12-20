@@ -4916,6 +4916,7 @@ object FormMain: TFormMain
     Left = 336
   end
   object FontDialog1: TFontDialog
+    Font.Height = -13
     MinFontSize = 0
     MaxFontSize = 0
     Left = 520

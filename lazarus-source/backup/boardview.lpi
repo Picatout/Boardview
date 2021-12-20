@@ -34,7 +34,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="11">
+    <Units Count="12">
       <Unit0>
         <Filename Value="boardview.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -116,6 +116,10 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitLibrary"/>
       </Unit10>
+      <Unit11>
+        <Filename Value="readme.md"/>
+        <IsPartOfProject Value="True"/>
+      </Unit11>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

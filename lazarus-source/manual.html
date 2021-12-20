@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>proto-layout user's manual</title>
+<meta name="description"  content="solderless prototyping board layout design." />
+<meta name="software name" content="proto-layout" />
+<meta name="author" content="Jacques Dechênes"/>
+<meta name="Copyright" content="2012, Jacques Dechênes" />
+<name name="keywords" content="prototyping,solderless,electronic circuit design" />
+</head>
+<body>
+<center><h1>Introduction</h1></center>
+<p>
+  Proto-layout is a software to draw solderless prototyping board layout. These layouts can be saved as <b>*.pro</b> which are editables or as as bitmap files.
+  The bitmap file can be used to communicate the design to orders.  For exemple a teacher can give those to his students to save time in laboratory as 
+  students won't have to figure out their own design. This is not a replacement for schematics design but a complement as students must learn to read 
+  electronic schematics as well as doing their own.
+</P>
+<p>
+  Proto-layout is so simple an obvious to use this manual is very brief.
+</P>
+<center><h2>Menus navigation</h2></center>
+<h4>File menu</h4>
+<ul>
+<li><b>Prototyping board...</b>  This let you select the prototyping board size.  Shortcut key: <b>p</b></li>
+<li><b>Open...</b>  This let you open a previously saved  proto-layout ".pro" file for further editing.  Shortcut key: <b>o</b></li>
+<li><b>Save...</b>  This let you save your proto-layout design as a ".pro" file that can be re-open for further editing.  Shortcut key: <b>s</b></li>
+<li><b>Save as...</b>  Let you save your design under a new name.</li>
+<li><b>Save to bitmap...</b> Let you save your design as a bitmap file. That file can be edited in proto-layout</li>
+<li><b>Quit</b>  Leave the application.
+</uL>
+<h4>Edit</h4>
+<ul>
+<li><b>Undo</b>  Undo the last change. Shortcut key: &lt;CTRL&gt;-z</li>
+<li><b>Redo</b>  Cancel the last undo. Shortcu key: &lt;CTRL&gt;-r</li>
+</ul>
+<h4>Jumper</h4>
+<p>
+  Items in this menu let you choose jumper (wire) color. There is 6 predefined colors but you can also customize your own set of colors. 
+  The shortcut key: <b>j</b> display the color chooser dialog box.
+</p>
+<h4>Add</h4>
+<ul>
+<li><b>component...</b>  open the electronic components selector dialog. Components are grouped in categories.  Components are represented as
+bitmap files, you can add component to database, this is explained below. Shortcut key: <b>c</b></li>
+<li><b>tag...</b> Shortcut key: <b>t</b>. open the <b>tag</b> dialog box.  This let you add text to identify component. After you have placed a tag over a component this tag
+follow the component, provided you drag the component by clicking over the tag. The font, size and color of tag are all selectable.</li>
+</ul>
+<h4>Help</h4>
+<ul>
+<li><b>manual...</b> Open this manual in default web browser. Shorcut key: <b>F1</b></li>
+<li><b>about...</b> display the about dialog box.</li>
+</ul>
+<center><h2>toolbar</h2></center>
+<p>
+  The toolbar present the most used menu items as icons. Placing the mouse over an icon will display the corresponding tip. Each element of toolbar 
+  as a shorcut key as presented in above paragraph.
+</p>
+<center><h2>Placing elements on the board</h2></center>
+<p>
+ When the mouse is moved over the board, its coordinates are displayed on the left of status bar. When the mouse is over a hole a small circle appear
+ around that hole. When this append you can press down the left mouse button and drag the mouse over another hole and release it. This will place a
+ jumper between the 2 holes. This jumper as the current selected color. You can change the color of an already placed jumper by right clicking on it
+  and selecting <b>color...</b> of the popup context menu.
+</p>
+<p>
+  To place an electronic component click the corresponding icon on the toolbar or press <b>c</b> key to open <b>component selection</b> dialog box. 
+  Select the category then the component and click <b>Ok</b> button. The component will appear just under the toolbar on the left side. Drag the component
+  on the board where you want to place it.   
+</p>  
+<p>
+  To add a tag click the <b>tag</b> icon on the toolbar or press <b>t</b> key to open the <b>tag</b> dialog box. 
+  The <b>font</b> button in the dialog open a font dialog.  Tag, like components, appears under the toolbar at left and must be dragged on
+  the prototyping board. 
+</p>
+<p>
+  Elements are drawned on the board in the order they are created. If you add a component and place it over a tag, this one will become 
+  invisible. But there is an item in the popup context menu place it on top. Right click on the component and select <b>place on top</b>.
+</p>
+<h4>Adding component to the library</h4>
+<p>
+  In the application directory there is a file named <b>proto-layout.cmp</b>. This is the component library file. This is a text file that can be open in any text editor. The file is 
+  formatted as an <a href="http://openeuphoria.org">euphoria language object</a>. It is a good idea to make a copy before editing it. If you don't understand,
+  the format don't edit it.  But if you understand it, you can add new board size, new component categories, and new components. 
+  The file is read a program startup. If you modify it while the program is running you must restart proto-layout for the update to take effect.
+</p>
+<h4>component bitmap</h4>
+<p>
+  When you create a component bitmap. Don't use pure <b>BLACK</b> (RGB value 0x000000) as a color. Proto-layout use pure black as target points for prototyping 
+  board hole center. This is how it knows where to place jumper terminations. To fake pure black create a custom color with RGB value 0x010101. If you draw a new prototyping board use pure black only where there should be jumper termination.  
+  <br/>Proto-layout expect bitmaps to be placed in <b>resources</b> sub-directory of the application directory.
+</p>
+</body>
+</html>
+

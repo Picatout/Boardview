@@ -1,0 +1,160 @@
+object FormLibrary: TFormLibrary
+  Left = 652
+  Height = 577
+  Top = 184
+  Width = 449
+  Caption = 'Library editor'
+  ClientHeight = 577
+  ClientWidth = 449
+  OnActivate = FormActivate
+  LCLVersion = '2.0.12.0'
+  object lbCategory: TListBox
+    Left = 24
+    Height = 200
+    Top = 30
+    Width = 188
+    ItemHeight = 0
+    OnClick = lbCategoryClick
+    TabOrder = 0
+  end
+  object lbComponent: TListBox
+    Left = 240
+    Height = 199
+    Top = 31
+    Width = 186
+    ItemHeight = 0
+    OnClick = lbComponentClick
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 24
+    Height = 21
+    Top = 8
+    Width = 74
+    Caption = 'Categories'
+    Font.Height = -16
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 240
+    Height = 21
+    Top = 8
+    Width = 89
+    Caption = 'Components'
+    Font.Height = -16
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Height = 21
+    Top = 232
+    Width = 93
+    Caption = 'new category'
+    Font.Height = -16
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditNewCat: TEdit
+    Left = 24
+    Height = 23
+    Top = 256
+    Width = 184
+    TabOrder = 2
+  end
+  object Label4: TLabel
+    Left = 248
+    Height = 21
+    Top = 236
+    Width = 112
+    Caption = 'new component'
+    Font.Height = -16
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditNewComp: TEdit
+    Left = 248
+    Height = 23
+    Top = 256
+    Width = 176
+    TabOrder = 3
+  end
+  object imgComponent: TImage
+    Left = 248
+    Height = 184
+    Top = 376
+    Width = 184
+  end
+  object Label5: TLabel
+    Left = 250
+    Height = 21
+    Top = 280
+    Width = 74
+    Caption = 'bitmap file'
+    Font.Height = -16
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditBmpFile: TEdit
+    Left = 248
+    Height = 23
+    Top = 307
+    Width = 140
+    TabOrder = 4
+  end
+  object bntFileSelect: TButton
+    Left = 396
+    Height = 25
+    Top = 305
+    Width = 24
+    Caption = '...'
+    OnClick = bntFileSelectClick
+    TabOrder = 5
+  end
+  object BtnAddCat: TButton
+    Left = 24
+    Height = 25
+    Top = 288
+    Width = 72
+    Caption = 'Add cat'
+    OnClick = BtnAddCatClick
+    TabOrder = 6
+  end
+  object BtnRemoveCat: TButton
+    Left = 133
+    Height = 25
+    Top = 288
+    Width = 75
+    Caption = 'Remove cat'
+    OnClick = BtnRemoveCatClick
+    TabOrder = 7
+  end
+  object BtnAddComp: TButton
+    Left = 248
+    Height = 25
+    Top = 336
+    Width = 67
+    Caption = 'Add comp'
+    OnClick = BtnAddCompClick
+    TabOrder = 8
+  end
+  object BtnRemoveComp: TButton
+    Left = 336
+    Height = 25
+    Top = 336
+    Width = 83
+    Caption = 'Remove comp'
+    OnClick = BtnRemoveCompClick
+    TabOrder = 9
+  end
+  object BtnClose: TButton
+    Left = 80
+    Height = 25
+    Top = 440
+    Width = 75
+    Caption = 'Close'
+    OnClick = BtnCloseClick
+    TabOrder = 10
+  end
+end

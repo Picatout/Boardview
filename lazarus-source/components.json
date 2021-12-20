@@ -1,0 +1,64 @@
+{
+    "electro mechanical":[
+      {"name":"crystal","file":"crystal.bmp"},
+      {"name":"crystal side view","file":"crystal-side.bmp"},
+      {"name":"microphone","file":"microphone-small.bmp"},
+      {"name":"motor DC","file":"motor.bmp"},
+      {"name":"piezo speaker","file":"piezo.bmp"},
+      {"name":"push button","file":"push-button.bmp"},
+      {"name":"reed relay","file":"reed relay.bmp"},
+      {"name":"servo motor","file":"servo.bmp"},
+      {"name":"speaker","file":"speaker.bmp"},
+      {"name":"toggle switch SPST","file":"toggle-spst.bmp"}
+      ]
+    ,
+    "integrated circuit":[
+      {"name":"DIL 14","file":"DIL-14.BMP"},
+      {"name":"DIL 16","file":"DIL-16.BMP"},
+      {"name":"DIL 18","file":"DIL-18.BMP"},
+      {"name":"DIL 20","file":"DIL-20.BMP"},
+      {"name":"DIL 22","file":"DIL-22.BMP"},
+      {"name":"DIL 24","file":"DIL-24.BMP"},
+      {"name":"DIL 28","file":"DIL-28.BMP"},
+      {"name":"DIL 40","file":"DIL-40.BMP"},
+      {"name":"DIL 8","file":"DIL-8.BMP"}
+    ],
+    "opto":[
+      {"name":"blue LED","file":"led-blue.bmp"},
+      {"name":"blue LED side view","file":"led-blue-side.bmp"},
+      {"name":"green LED","file":"led-green.bmp"},
+      {"name":"green LED side view","file":"led-green-side.bmp"},
+      {"name":"photocell","file":"photocell.bmp"},
+      {"name":"red LED","file":"led-red.bmp"},
+      {"name":"red LED side view","file":"led-red-side.bmp"},
+      {"name":"rgb LED","file":"led-rgb.bmp"},
+      {"name":"rgb LED side view","file":"led-rgb-side.bmp"},
+      {"name":"white LED","file":"led-white.bmp"},
+      {"name":"white LED side view","file":"led-white-side.bmp"},
+      {"name":"yellow LED","file":"led-yellow.bmp"},
+      {"name":"yellow LED side view","file":"led-yellow-side.bmp"}
+    ],
+    "other":[
+      {"name":"black box","file":"black box.bmp"}
+    ],
+    "passive":[
+      {"name":"ceramic cap","file":"ceramic.bmp"},
+      {"name":"ceramic cap side view","file":"ceramic cap side view.bmp"},
+      {"name":"ceramic cap small","file":"ceramic cap small.bmp"},
+      {"name":"electrolytic","file":"electrolytic.bmp"},
+      {"name":"electrolytic 3D","file":"electrolytic 3D.bmp"},
+      {"name":"resistor","file":"resistor.bmp"},
+      {"name":"transformer","file":"transformer.bmp"}
+    ],
+    "semi-conductors":[
+      {"name":"diode","file":"diode.bmp"},
+      {"name":"glass diode","file":"glass-diode.bmp"},
+      {"name":"rectifier bridge","file":"rectifier bridge.bmp"}
+    ],
+    "transistor":[
+      {"name":"TO-220","file":"TO-220.bmp"},
+      {"name":"TO-220 face view","file":"TO-220-side.bmp"},
+      {"name":"TO-92","file":"TO-92.bmp"}
+    ]
+}
+

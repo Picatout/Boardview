@@ -1,0 +1,52 @@
+object FormColor: TFormColor
+  Left = 585
+  Height = 322
+  Top = 275
+  Width = 215
+  BorderStyle = bsDialog
+  Caption = 'Jumper color'
+  ClientHeight = 322
+  ClientWidth = 215
+  OnCreate = FormCreate
+  LCLVersion = '2.0.12.0'
+  object rgColors: TRadioGroup
+    Left = 0
+    Height = 248
+    Top = 0
+    Width = 216
+    Anchors = [akTop, akLeft, akRight]
+    AutoFill = False
+    Caption = 'predefined colors'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 228
+    ClientWidth = 212
+    ItemIndex = 0
+    Items.Strings = (
+      'Black'
+      'Brown'
+      'Red'
+      'Orange'
+      'Yellow'
+      'Green'
+      'Blue'
+      'Purple'
+      'Gray'
+      'Fushia'
+    )
+    OnSelectionChanged = rgColorsSelectionChanged
+    TabOrder = 0
+  end
+  object BtnClose: TButton
+    Left = 64
+    Height = 25
+    Top = 264
+    Width = 75
+    Caption = 'Close'
+    OnClick = BtnCloseClick
+    TabOrder = 1
+  end
+end

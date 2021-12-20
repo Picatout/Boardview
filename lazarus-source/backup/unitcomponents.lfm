@@ -1,0 +1,182 @@
+object FormComponents: TFormComponents
+  Left = 770
+  Height = 545
+  Top = 117
+  Width = 465
+  Caption = 'Components'
+  ClientHeight = 545
+  ClientWidth = 465
+  OnActivate = ImgComponentClick
+  OnCreate = FormCreate
+  LCLVersion = '2.0.12.0'
+  object lbCategory: TListBox
+    Left = 8
+    Height = 240
+    Top = 40
+    Width = 216
+    ItemHeight = 0
+    OnClick = lbCategoryClick
+    TabOrder = 0
+  end
+  object lbComponent: TListBox
+    Left = 240
+    Height = 238
+    Top = 42
+    Width = 216
+    ItemHeight = 0
+    OnClick = lbComponentClick
+    TabOrder = 1
+  end
+  object ImgComponent: TImage
+    Left = 240
+    Height = 184
+    Top = 336
+    Width = 216
+    OnClick = ImgComponentClick
+    OnDragOver = ImgComponentDragOver
+    OnEndDrag = ImgComponentEndDrag
+  end
+  object BtnOK: TButton
+    Left = 16
+    Height = 25
+    Top = 408
+    Width = 75
+    Caption = 'OK'
+    OnClick = BtnOKClick
+    TabOrder = 2
+  end
+  object BtnCancel: TButton
+    Left = 16
+    Height = 25
+    Top = 448
+    Width = 75
+    Caption = 'Cancel'
+    OnClick = BtnCancelClick
+    TabOrder = 3
+  end
+  object StaticText1: TStaticText
+    Left = 12
+    Height = 17
+    Top = 18
+    Width = 65
+    Caption = 'Category'
+    TabOrder = 4
+  end
+  object StaticText2: TStaticText
+    Left = 240
+    Height = 17
+    Top = 16
+    Width = 65
+    Caption = 'Component'
+    TabOrder = 5
+  end
+  object lblTag: TLabel
+    Left = 14
+    Height = 21
+    Top = 303
+    Width = 22
+    Caption = 'tag'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit1: TEdit
+    Left = 40
+    Height = 23
+    Top = 303
+    Width = 168
+    OnChange = Edit1Change
+    TabOrder = 6
+  end
+  object BtnTagFont: TButton
+    Left = 216
+    Height = 25
+    Top = 302
+    Width = 75
+    Caption = 'tag Font...'
+    OnClick = BtnTagFontClick
+    TabOrder = 7
+  end
+  object BtnRot90: TButton
+    Left = 136
+    Height = 25
+    Top = 368
+    Width = 75
+    Caption = 'rot +90'
+    OnClick = BtnRot90Click
+    TabOrder = 8
+  end
+  object BtnRot180: TButton
+    Left = 136
+    Height = 25
+    Top = 408
+    Width = 75
+    Caption = 'rot 180'
+    OnClick = BtnRot180Click
+    TabOrder = 9
+  end
+  object BtnRotMinus90: TButton
+    Left = 136
+    Height = 25
+    Top = 448
+    Width = 75
+    Anchors = []
+    Caption = 'rot -90'
+    OnClick = BtnRotMinus90Click
+    TabOrder = 10
+  end
+  object stTag: TStaticText
+    Left = 245
+    Height = 1
+    Top = 348
+    Width = 88
+    Anchors = []
+    AutoSize = True
+    BorderSpacing.CellAlignHorizontal = ccaLeftTop
+    DragMode = dmAutomatic
+    OnDragOver = stTagDragOver
+    OnEndDrag = stTagEndDrag
+    TabOrder = 11
+    Visible = False
+  end
+  object BtnFreeze: TButton
+    Left = 304
+    Height = 25
+    Top = 302
+    Width = 75
+    Caption = 'Freeze Tag'
+    OnClick = BtnFreezeClick
+    TabOrder = 12
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=004080'
+      'ColorC=0000C0'
+      'ColorD=1087FF'
+      'ColorE=00EAEA'
+      'ColorF=00C800'
+      'ColorG=E0360B'
+      'ColorH=CE1E99'
+      'ColorI=C0C0C0'
+      'ColorJ=FFFFFF'
+      'ColorK=DADBDC'
+      'ColorL=37C0C8'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    Left = 128
+  end
+end

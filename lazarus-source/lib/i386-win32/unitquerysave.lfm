@@ -1,0 +1,47 @@
+object FormQuerySave: TFormQuerySave
+  Left = 654
+  Height = 160
+  Top = 247
+  Width = 317
+  Caption = 'Save Modification'
+  ClientHeight = 0
+  ClientWidth = 0
+  LCLVersion = '2.0.12.0'
+  object StaticText1: TStaticText
+    Left = 16
+    Height = 28
+    Top = 36
+    Width = 284
+    Caption = 'Do you want to save modified project?'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 0
+  end
+  object BtnYes: TButton
+    Left = 35
+    Height = 25
+    Top = 108
+    Width = 75
+    Caption = 'Yes'
+    OnClick = BtnYesClick
+    TabOrder = 1
+  end
+  object BtnNo: TButton
+    Left = 128
+    Height = 25
+    Top = 108
+    Width = 75
+    Caption = 'No'
+    OnClick = BtnNoClick
+    TabOrder = 2
+  end
+  object BtnCancel: TButton
+    Left = 216
+    Height = 25
+    Top = 108
+    Width = 75
+    Caption = 'Cancel'
+    OnClick = BtnCancelClick
+    TabOrder = 3
+  end
+end

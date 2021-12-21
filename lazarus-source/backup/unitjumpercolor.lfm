@@ -37,6 +37,7 @@ object FormColor: TFormColor
       'Gray'
       'Fushia'
     )
+    OnSelectionChanged = rgColorsSelectionChanged
     TabOrder = 0
   end
   object BtnClose: TButton

@@ -193,6 +193,7 @@ type
     function OverComponent(cursorPos:TPoint;compIdx:integer):boolean; // check for 1 Circuit element
     function MouseOverElement(CursorPos:Tpoint):integer; // scans CircuitList
     procedure UpdateCaption;
+    procedure UpdateStatusBar(p1text:string);
     procedure SaveProject(DirName,ProjectName:string);
     function QuerySaveModified:boolean;
     procedure NewProject;
@@ -292,6 +293,14 @@ begin
   caption := 'Boardview - '+ formSaveProject.ProjectName;
   if modified then caption := caption + '*';
 end;
+
+procedure TFormMain.UpdateStatusbar(p1text:string);
+begin
+    statusbar1.Panels[0].text:='Circuit elements count:'+CircuitList.count.ToString;
+    statusbar1.Panels[1].text:=p1text;
+    statusbar1.refresh;
+end;
+
 
 function TFormMain.BoardIndexFromName(BoardName:string):integer;
 var i:integer;
@@ -451,6 +460,7 @@ begin
   cedragging:=ceJumper;
   ceDragIdx:=CircuitList.Count-1;
   modified:=true;
+  UpdateStatusBar('Adding '+ FormColor.rgColors.Items[FormColor.rgColors.ItemIndex]+' wire');
   UpdateCaption;
 end;
 
@@ -478,6 +488,7 @@ begin
    ceDragIdx:=CircuitList.count-1;
    modified:=true;
    UpdateCaption;
+   UpdateStatusBar('Adding component');
    formMain.cursor:=crCross;
 end;
 
@@ -503,6 +514,7 @@ begin
   ceDragIdx:=CircuitList.count-1;
   modified:=true;
   UpdateCaption;
+  UpdateStatusBar('Adding tag');
   formMain.cursor:=crCross;
 end;
 
@@ -531,7 +543,9 @@ begin
      if CircuitList.count>0 then
      begin
          FreeCircuitItem(CircuitList.count-1);
+         Statusbar1.Panels[0].text:='Circuit elements'+CircuitList.count.toString;
          formMain.refresh;
+         UpdateStatusBar('');
      end;
 end;
 
@@ -574,12 +588,13 @@ begin
       i:=i-1;
     end; // while
   end; // if
+  UpdateStatusBar('');
 end; // procedure
 
 procedure TFormMain.MousePosition(X,Y:integer);
 begin
-  StatusBar1.SimpleText:=format('Jumper Color: %S, mouse: %0.D, %0.D',
-       [FormColor.rgColors.items[FormColor.rgColors.Itemindex],X,Y]);
+  UpdateStatusBar(format('Jumper Color: %S, mouse: %0.D, %0.D',
+       [FormColor.rgColors.items[FormColor.rgColors.Itemindex],X,Y]));
   StatusBar1.Refresh;
 end;
 
@@ -662,6 +677,7 @@ begin
      FormSaveProject.directory:=filePath;
      formSaveProject.projectName:=ExtractFileNameOnly(ProjectName);
      UpdateCaption;
+     UpdateStatusBar('Project loaded');
      formMain.formResize(self);
      formMain.refresh;
 end;
@@ -716,6 +732,17 @@ begin
    PopupMenu1.PopUp(Mouse.CursorPos.x,Mouse.CursorPos.Y);
 end;
 
+procedure EndOperation;
+begin
+  ceDragging:=ceNone;
+  ceDragIdx:=-1;
+  formMain.Cursor:=crDefault;
+  Modified:=true;
+  UpdateCaption;
+  UpdateStatusBar('');
+  formMain.refresh;
+end;
+
 begin
    mousePos:=ScreenToClient(Mouse.CursorPos);
    mousePos.x:=MousePos.x-board.left;
@@ -732,7 +759,7 @@ begin
            startPt:=MousePos;
            showPopupMenu;
          end
-         else // begin new jumper dragging
+         else // begin new wire dragging
          begin
             startPt:=MousePos;
             endPt:=MousePos;
@@ -740,37 +767,24 @@ begin
             formMain.Cursor:=crCross;
          end
       end;
-      ceJumper:  //install a new wire
+      ceJumper:  //ending new wire installation
       begin
          node:=CircuitList.items[CircuitList.Count-1];
          node^.wire^.EndPt:=mousePos;
          node^.wire^.EndPt:=mousePos;
-         ceDragging:=ceNone;
-         ceDragIdx:=-1;
-         formMain.Cursor:=crDefault;
-         formMain.refresh;
+         EndOperation;
       end;
-      ceComponent: // install a new component
+      ceComponent: // ending new component installation
       begin
          node^.component^.left:=MousePos.X;
          node^.component^.top:=MousePos.Y;
-         ceDragging:=ceNone;
-         ceDragIdx:=-1;
-         formMain.Cursor:=crDefault;
-         Modified:=true;
-         UpdateCaption;
-         formMain.refresh;
+         EndOperation;
       end;
-      ceTag: // install a new tag.
+      ceTag: // ending  new tag installation
       begin
-          ceDragging:=ceNone;
-          ceDragIdx:=-1;
-          formMain.Cursor:=crDefault;
           node^.tag^.left:=MousePos.X;
           node^.tag^.top:=MousePos.Y;
-          Modified:=true;
-          UpdateCaption;
-          formMain.refresh;
+          EndOperation;
       end;
    end;
 end;
@@ -816,7 +830,15 @@ var
   Comp:PTComponent;
 
 begin
-  if button<>mbLeft then exit;
+  if (button=mbRight) and (ceDragging=ceJumper) then
+  begin
+       ceDragging:=ceNone;
+       ceDragIdx:=-1;
+       freeCircuitItem(CircuitList.count-1);
+       UpdateStatusbar('');
+       refresh;
+       exit;
+  end;
   MousePos.X:=X-Board.left;
   MousePos.Y:=Y-Board.top;
   i:=MouseOverElement(MousePos);
@@ -831,14 +853,13 @@ procedure TFormMain.FormMouseMove(Sender: TObject; Shift: TShiftState; X,
 var
   node:PTCircuitElement;
 begin
-  MousePosition(X,Y);
   X:=X-self.board.left;
   Y:=Y-self.board.top;
   if (CircuitList.count>0) and (ceDragIdx>-1) then node:=CircuitList.items[ceDragIdx];
   case ceDragging of
     ceNone:
     begin
-
+         MousePosition(X,Y);
     end;
     ceComponent:
     begin
@@ -933,6 +954,7 @@ begin
     case node^.kind of
         ceComponent:
         begin
+          UpdateStatusbar('Cloning component');
           newComp:=new(PTComponent);
           newPic:=TPicture.create;
           with node^.Component^ do
@@ -956,6 +978,7 @@ begin
         end;
         ceTag:
         begin
+           UpdateStatusbar('Cloning tag');
            newTag:=new(PTTag);
            with node^.tag^ do
            begin
@@ -974,7 +997,6 @@ begin
            ceDragIdx:=CircuitList.count-1;
            cursor:=crCross;
         end;
-
     end;
   end;
 end;
@@ -990,8 +1012,10 @@ begin
      node:=CircuitList.Items[i];
      if node^.kind=ceJumper then
      begin
+        UpdateStatusbar('Changing wire color');
         FormColor.showmodal;
         node^.wire^.color:=self.JumperColor;
+        UpdateStatusBar('');
         formMain.refresh;
      end;
    end;
@@ -1008,6 +1032,7 @@ begin
       if OverComponent(StartPt,i) then
       begin
          FreeCircuitItem(i);
+         UpdateStatusBar('Component deleted');
       end
       else
       begin
@@ -1025,7 +1050,7 @@ end;
 
 procedure TFormMain.MenuItemManualClick(Sender: TObject);
 begin
-  OpenDocument('manual-english.pdf');
+  OpenDocument('./DOCS/en/manual-en.html');
 end;
 
 procedure TFormMain.MenuLibraryClick(Sender: TObject);
@@ -1079,6 +1104,7 @@ begin
   i:=MouseOverElement(StartPt);
   if i>-1 then
   begin
+     UpdateStatusbar('Editing tag');
      ctag:=PTCircuitElement(CircuitList.items[i])^.tag;
      if FontDialog1.execute then
      begin
@@ -1088,6 +1114,7 @@ begin
           ctag^.FontStyle:=FontDialog1.font.Style;
           self.refresh;
      end;
+     UpdateStatusbar('');
   end;
 end;
 
@@ -1242,14 +1269,15 @@ begin
   i:=MouseOverElement(StartPt);
   if i>-1 then
   begin
+    UpdateStatusbar('Moving component');
     node:=PTCircuitElement(CircuitList.items[i]);
     if  (node^.kind=ceComponent) or (node^.kind=ceTag) then
     begin
        ceDragIdx:=i;
        ceDragging:=node^.kind;
+       if ceDragging=ceTag then UpdateStatusbar('Moving tag');
        cursor:=crCross;
     end;
-
   end;
 end;
 

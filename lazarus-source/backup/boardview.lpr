@@ -20,6 +20,7 @@
 program boardview;
 
 {$mode objfpc}{$H+}
+{$R boardview.rc -vd}
 
 uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
@@ -40,9 +41,9 @@ begin
   Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TFormAbout, FormAbout);
   Application.CreateForm(TFormColor, FormColor);
+  CompLibrary:=TCompLib.create(defaultLibFile);
   Application.CreateForm(TFormComponents, FormComponents);
   Application.CreateForm(TFrmBoards, FrmBoards);
-  CompLibrary:=TCompLib.create(defaultLibFile);
   Application.CreateForm(TFormTag, FormTag);
   Application.CreateForm(TFormSaveProject, FormSaveProject);
   Application.CreateForm(TFormQuerySave, FormQuerySave);

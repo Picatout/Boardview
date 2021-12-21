@@ -20,6 +20,7 @@
 program boardview;
 
 {$mode objfpc}{$H+}
+// {$R boardview.rc -vd}
 
 uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}

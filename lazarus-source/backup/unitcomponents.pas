@@ -218,32 +218,39 @@ end;
 procedure TFormComponents.lbCategoryClick(Sender: TObject);
 begin
   CompLibrary.getComponents(lbCategory.Items[lbCategory.ItemIndex],lbComponent.Items);
-  lbComponent.ItemIndex:=0;
+  if lbComponent.count>0 then lbComponent.ItemIndex:=0;
   lbComponentClick(self);
 end;
 
 procedure TFormComponents.lbComponentClick(Sender: TObject);
 
 begin
-  selectedBMP:=CompLibrary.getValue(lbCategory.Items[lbCategory.ItemIndex],lbComponent.Items[lbComponent.ItemIndex]);
-  imgComponent.Picture.LoadFromFile('bitmaps\'+SelectedBMP);
-  Edit1.Caption:='';
-  StTag.left:=imgComponent.left;
-  stTag.Top:=imgComponent.top;
-  with formMain.FontDialog1.font do
+  if lbComponent.itemIndex>-1 then
   begin
-    imgComponent.canvas.font.Size:=size;
-    Edit1.font.size:=size;
-    stTag.font.size:=size;
-    imgComponent.canvas.font.style:=Style;
-    Edit1.Font.Style:=style ;
-    stTag.font.Style:=style;
-    imgComponent.canvas.font.Name:=name;
-    Edit1.font.name:=name;
-    stTag.font.name:=name;
-    imgComponent.canvas.font.color:=color;
-    Edit1.font.color:=color;
-    stTag.font.color:=color;
+      selectedBMP:=CompLibrary.getValue(lbCategory.Items[lbCategory.ItemIndex],lbComponent.Items[lbComponent.ItemIndex]);
+      imgComponent.Picture.LoadFromFile('bitmaps\'+SelectedBMP);
+      Edit1.Caption:='';
+      StTag.left:=imgComponent.left;
+      stTag.Top:=imgComponent.top;
+      with formMain.FontDialog1.font do
+      begin
+        imgComponent.canvas.font.Size:=size;
+        Edit1.font.size:=size;
+        stTag.font.size:=size;
+        imgComponent.canvas.font.style:=Style;
+        Edit1.Font.Style:=style ;
+        stTag.font.Style:=style;
+        imgComponent.canvas.font.Name:=name;
+        Edit1.font.name:=name;
+        stTag.font.name:=name;
+        imgComponent.canvas.font.color:=color;
+        Edit1.font.color:=color;
+        stTag.font.color:=color;
+      end;
+  end
+  else
+  begin
+      imgComponent.Canvas.clear;
   end;
 end;
 

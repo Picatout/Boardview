@@ -12,246 +12,192 @@
 <body>
 <center><h1>Introduction</h1></center>
 <p>
-  BoardView is a software to draw solderless prototyping board layout. These layouts can be saved as <b>*.bvp</b> files which are editables or as bitmap files.
+  BoardView is a software to draw solderless prototyping board layout. These layouts can be saved as editable <b>*.bvp</b> files or as bitmap files.
   The bitmap file can be used to communicate the design to others.
 </P>
 <p>
-  <div><image src="file:resources/docs/en/boardview.en.png"/></div>
+  <div><image src="file:../resources/boardview-main-window.png"/></div>
   BoardView is so simple and obvious to use this manual is very brief.
 </P>
 <center><h2>Menus navigation</h2></center>
 <h3>File menu</h3>
-<div><image src="file:resources/docs/en/menu-file.png"/></div>
+<div><image src="file:../resources/menu-file.png"/></div>
 
 <ul>
-<li><b>Prototyping board...</b>  Let you select the prototyping board size.  Shortcut key: <b>p</b><div><image src="file:resources/docs/en/boardsize.png"/></div></li>
+<li><b>Protoboard...</b>  Let you select the prototyping board size.  Shortcut key: <b>&lt;CTRL+B&gt;</b><div><image src="file:../resources/boardsize.png"/></div></li>
 <hr width="10%" align="left"/>
 <li><b>New</b>  Begin a new project.</li>
 <hr width="10%" align="left"/>
-<li><b>Open...</b>  Open a previously saved  BoardView "*.bvp" file for further editing.  Shortcut key: <b>o</b></li>
+<li><b>Open...</b>  Open a previously saved  BoardView "*.bvp" file for further editing.  Shortcut key: <b>&lt;CTRL+O&gt;</b></li>
 <hr width="10%" align="left"/>
-<li><b>Save...</b>  Save your BoardView design as a "*.bvp" file that can be re-open for further editing.  Shortcut key: <b>s</b></li>
+<li><b>Save...</b>  Save your BoardView design as a "*.bvp" file that can be re-open for further editing.  Shortcut key: <b>&lt;CTRL+S&gt;</b></li>
 <hr width="10%" align="left"/>
 <li><b>Save as...</b>  Save your design under a new name.</li>
 <hr width="10%" align="left"/>
 <li><b>Save to bitmap...</b> Save your design as a bitmap file. That file can't be edited in BoardView.</li>
 <hr width="10%" align="left"/>
-<li><b>Print...</b>  Print prototyping board design. Printing is done in landscape orientation.</li>
+<li><b>Print...</b>  Print prototyping board design. Printing is done in landscape orientation. Shortcut key: <b>&lt;CTRL+P&gt;</b></li>
 <hr width="10%" align="left"/>
 <hr width="10%" align="left"/>
-<li><b>Quit</b>  Leave the application.
+<li><b>Quit</b>  Leave the application. Shortcut key: <b>&lt;CTRL+Q&gt;</b></li>
 </uL>
 <h3>Edit menu</h3>
-<div><image src="file:resources/docs/en/menu-edit.png"/></div>
+<div><image src="file:../resources/menu-edit.png"/></div>
 <ul>
 <hr width="10%" align="left"/>
-<li><b>Undo</b>  Undo the last change. Shortcut key: &lt;CTRL&gt;-z</li>
+<li><b>Undo</b>  Delete the last added component,tag or jumper. Shortcut key: <b>&lt;CTRL+U&gt;</b></li>
 <hr width="10%" align="left"/>
-<li><b>Project notes</b> Let you save notes with the project. 
-<div><image src="file:resources/docs/en/project-notes.png"/></div>
+<li><b>Component library</b> Let you modify the components library. Component can be added to a category. New categories can be created. Existing component or category can be deleted. 
+<div><image src="file:../resources/library-dialog.png"/></div>
 </li>
 </ul>
 <h3>Jumpers menu</h3>
-<div><image src="file:resources/docs/en/menu-jumpers.png"/></div>
+<div><image src="file:../resources/menu-jumper.png"/></div>
 <p>
-  Items in this menu let you choose jumper (wire) color. There is 10 pre-defined colors but you can also customize your own set of colors. 
-  The shortcut key: <b>j</b> display the color chooser dialog box.
+  This menu contain only one item <b>color...</b> which open the wire color dialog. Shorcut key is <b>&lt;CTRL+J&gt;</b>.
+  <div><image src="file:../resources/jumper-color-dialog.png"/></div> This dialog let you select the color of wire installed on the board.
+  There is 10 pre-defined colors which are the resistors standard colors except for the last which should be white but white wire on white board 
+  would not be invisible.
 </p>
 <h3>Add menu</h3>
-<div><image src="file:resources/docs/en/menu-add.png"/></div>
+<div><image src="file:../resources/menu-add.png"/></div>
 <ul>
 <hr width="10%" align="left"/>
-<li><b>component...</b>  Shortcut key: <b>c</b>  Open the electronic components selector dialog. Components are grouped in categories.  Components are represented as
+<li><b>component...</b>  Shortcut key: <b>CTRL+ALT+C</b>  Open the electronic components selector dialog. Components are grouped in categories.  Components are represented as
 bitmap files. You can add component to database, this is explained below.
-<div><image src="file:resources/docs/en/component-selection.png"/></div>
+<div><image src="file:../resources/component-dialog.png"/></div>
+
 </li> 
 <hr width="10%" align="left"/>
-<li><b>tag...</b> Shortcut key: <b>t</b>. Open the <b>tag</b> dialog box.  This let you add text to identify component. You tag the component by right clicking over it.
+<li><b>tag...</b> Shortcut key: <b>CTRL+T</b>. Open the <b>tag</b> dialog box.  This let you add text to identify component. You tag the component by right clicking over it.
 The font, size and color of tag are all selectable.
-<div><image src="file:resources/docs/en/tag-dialog.png"/></div>
+<div><image src="file:../resources/tag-dialog.png"/></div>
 </li>
-<hr width="10%" align="left"/>
-<li><b>components library...</b>  Open components libary dialog box. See details below.
-<div><image src="file:resources/docs/en/library-dialog.png"/></div>
-</li>
-</ul>
+
 <h3>Help menu</h3>
-<div><image src="file:resources/docs/en/menu-help.png"/></div>
+<div><image src="file:../resources/menu-help.png"/></div>
 <ul>
 <hr width="10%" align="left"/>
-<li><b>manual...</b> Shorcut key: <b>F1</b> Open this manual in default web browser. </li>
+<li><b>manual</b> Shorcut key: <b>F1</b> Open this manual in default web browser. </li>
 <hr width="10%" align="left"/>
 <li><b>about...</b> display the about dialog box.
-<div><image src="file:resources/docs/en/about.png"/></div>
+<div><image src="file:../resources/about-dialog.png"/></div>
 </li>
 </ul>
 <center><h2>toolbar</h2></center>
 <p>
   The toolbar present the most used menu items as icons. Placing the mouse over an icon will display the corresponding tip in a balloon. Each element of toolbar 
   as a shorcut key as presented above.
-<div><image src="file:resources/docs/en/toolbar.png"/></div>  
+<div><image src="file:../resources/toolbar.png"/></div>  
 </p>
 <center><h2>statusbar</h2></center>
-<div><image src="file:resources/docs/en/statusbar.png"/></div>
+<div><image src="file:../resources/statusbar.png"/></div>
 <p>
-  The statusbar at lower windows  is divided in 2 sections. Left section display information about elements placed on the board.
+  The statusbar at bottom of main window  is divided in 2 sections. Left section display the number of elements placed on the board.
+  
   <h4>elements types</h4>
 <ul>
 <li><b>Components</b> are electronic component making the circuit.</li>
 <li><b>Jumpers</b> are wires that connect components togethers to form the circuit.</li>
-<li><b>Tags</b> are short texts used to identify components or give others indications.</li>
-<li><b>Links</b> are wires like jumpers but used to connect out of board components to the board tie points. A Link is embedded in the 
-component object it is connected to.</li>
+<li><b>Tags</b> are short text used to identify components or give other indication.</li>
 </ul>
 </p>
 <p>
-  The right section of status bar display information about current operation or tie point hit.
+  The right section of status bar display information about current operation. If there is no operaction active then it display current jumper color and 
+  mouse position relative to left-top corner of prototyping board.
 </p>
 <center><h2>Placing elements on the board</h2></center>
-<h4>Context menu</h4>
-<div><image src="file:resources/docs/en/context-menu.png"/></div>
+
+<ul>
+<li>To Add a jumper click on the first end for the wire position. The cursor change for a cross. Click on the second position of the wire. 
+While moving the mouse a line follow the mouse cursor. Clicking with the right mouse button cancel the operation.</li>
+<li>To add a component click the component icon on the toolbar to open the component dialog to select the component. When the dialog is closed the component follow the mouse until the 
+mouse left button is clicked. The compononent is then set at this position.
+<div><image src="file:../resources/component-dialog.png"</div><br/>
+If a tag is added to the selected component in the dialog the <b>freeze</b> button must be clicked before the <b>OK</b> button to fix this tag to the component.
+The tag added this way is not modifiable and follow the component. It become part of it. If the component is cloned the clone will have the save tag. The tag must
+fit inside the surface of component bitmap otherwise it will be truncated when frozen.<br/>
+The component bitmap may also be rotated by <b>+90&deg;,180&deg; or -90&deg;</b>.
+</li>
+<li>To add a tag click the tag icon on the toolbar to open the tag dialog. When the dialog is closed the tag follow the mouse cursor until the left mouse button 
+is clicked. The tag is then set to that position.
+<div><image src="file:../resources/tag-dialog.png"</div><br/>
+</li>
+</ul>
+
+<h3>Popup menu</h3>
+<div><image src="file:../resources/popup-menu.png"/></div>
 <p>
-   The contextual menu pop up when right clicking on the board or around it. It comprise the following items.
+   When clicking on a jumper, component or tag a popup menu appear. Only the items concerning the chosen element are activated in the menu.
+   
   <ul>
   <hr width="10%" align="left"/>
-  <li><b>Add component...</b>  Select a component and place it where you clicked to popup the menu.</li>
+  <li><b>Delete</b>  Apply to all 3 types of elements. Delete the selected element from the board.</li>
   <hr width="10%" align="left"/>
-  <li><b>Add tag...</b> Define ne new tag and place it where you clicked to popup the menu.  if you click over a component the tag will be 
-  centered on that component and embedded in it.</li>
+  <li><b>Jumper color...</b> Applay to jumpers only. Open the jumper color selection dialog. The color of the selected jumper is changed to this new 
+  color and new jumpers will be this color too.</li>
   <hr width="10%" align="left"/>
-  <li><b>Modify...</b> This item let you modify a tag properties.</li>
+  <li><b>tag font...</b> Apply to tag only. This item let you modify a tag font properties.</li>
   <hr width="10%" align="left"/>
-  <li><b>Color...</b> This item let you change a jumper or link color.</li>
+  <li><b>Move</b> Apply only to components and tags. Let you move the selected element around.</li>
   <hr width="10%" align="left"/>
-  <li><b>Delete</b>  This item let you delete the clicked element.</li>
-  <hr width="10%" align="left"/>
-  <li><b>Color fill...</b> This item is active when the mouse cursor is right clicked over a fill zone an let you colorize that zone.</li>
-  <hr width="10%" align="left"/>
-  <li><b>Resistor Value...</b> this item is active when the mouse cursor is right clicked over a resistor component. It Open the resistor value dialog.
-  <div><image src="file:resources/docs/en/resistor-dialog.png"/></div> 
-  </li>  
-  <hr width="10%" align="left"/>
-  <li><b>Rotate 90d</b>  This item and the following 2 let you rotate the component.This is 90 degrees clockwise rotation.</li>  
-  <hr width="10%" align="left"/>
-  <li><b>Rotate 180d</b>  Rotate 180 degrees.</li>
-  <hr width="10%" align="left"/>
-  <li><b>Rotate -90d</b>  Rotate 90 degrees counter-clockwise.</li>
+  <li><b>Clone</b> Apply only to components and tags. Clone the selected element then move the clone at chosen position.</li>
   </ul>
 </p>
 <p>
- When the mouse is over a tie point a small circle appear around it and the right section of statusbar indicate if it is a board tie point 
- or component tie point.  At that position you can press down the left mouse button and drag the mouse over
- another tie point and release it. This will place a  jumper between the 2 tie points. This jumper has the current selected color. You can change the 
- color of an already placed jumper by right clicking on it and selecting <b>color...</b> item in the popup context menu.  
- You can grab any end of a jumper to drag it at another tie point. You can also grab it in the 
-  middle to stretch it like a rubber band. The stretch will stay when you release the mouse button.</br>
-  Links does not work like jumpers. They must be placed by starting at component tie point toward the board tie point. The opposite result in a jumper placing.
-  Jumpers and links have differents properties. Links can't be stretched. Links follow the component when it is moved around, not so for jumpers. 
-  To delete a link you must rigth click at its tie point on component. Same to change its color.
-  </p>
+  Elements are drawned on the board in the order they are created. If you drag a more recently added element over another one it mask the older one.
+</p>
+<h2>Library dialog</h2>
+<div><image src="file:../resources/library-dialog.png"/></div>
 <p>
-  You can place a component on the prototyping board 4 ways:
-  <ol>
-  <li>Selecting <b>component...</b> from <b>Add</b> menu.</li>
-  <li>using the shortcut key: <b>c</b></li>
-  <li>clicking component icon on the toolbar</li>
-  <li>right-clicking and choosing <b>Add component...</b> from the popup menu.</li>
-  </ol>
-  Either way this open <b>component selection</b> dialog box.
-  <div><image src="file:resources/docs/en/component-selection.png"/></div>  
-  Select the category then the component and click <b>Ok</b> button. For the first 3 ways, the component will appear just under the toolbar on the left side.
-  Drag the component on the board where you want to place it.  But if you choose the fourth way, the component will be placed where you right-clicked on 
-  the board, This do for faster component placement.
-</p> 
-<p>
-  Components that are not designed to be plugged in a solderless prototyping board can be placed outside of it. Increase windows size to make place around the 
-  board then place such a component aside the board. Then link it to board with wires. Start links at the component tie point and terminate them at board
-  tie point. A circle appear when the mouse cursor is over a component connexion point to indicate that the mouse button can be released. Tracing a jumper from 
-  the board toward the component result in a jumper instead of a  link.
-</p> 
-<p>
-  <b>Tags</b> can be added 4 ways too with the same result as component placement. 
-  <div><image src="file:resources/docs/en/tag-dialog.png"/></div>
-  In tag dialog box, the <b>font</b> button open a font dialog.  Tags, like components, appears under the toolbar at left and must be dragged on
-  the prototyping board. You can also place them by right-clicking on the board.  If you right click on a component to add a tag to it the text will be centered 
-on component area and become part of it. Erasing the component erase the tag.  This is different from dragging a tag over a component, in that case the 
-tag stay independant of the component and will not move with it nor be erased with the component.  
+  Controls on the left side of dialog are for categories and those on the right side are for components. The selected category can be delete by clicking 
+  <b>remove cat</b> button. All components of that category will be lost.
 </p>
 <p>
-  Elements are drawned on the board in the order they are created. If you drag a more recently added element over an other one it mask the older one.
+  Adding a category is as simple as typing its name in the <b>new category</b> field and clicking <b>add</b> button. The new category will appear at the 
+  end of the list and be selected.
 </p>
 <p>
-  The board can be dragged around in the application windows. All installed elements move with the board.
-</p>
-<h4>Cloning component and tag</h4>
-<p>
-  A component or a tag can be cloned by holding down &lt;CTRL&gt; key before pressing left mouse button on the component or tag, then dragging the clone at
-  desired place. This is a fast way to place many identicals components on the prototyping board.
-</p>
-<h4>Adding components to the library</h4>
-<div><image src="file:resources/docs/en/library-dialog.png"/></div>
-<p>
-  from the <b>Add</b> menu click on <b>components library...</b> to open the dialog box. From this dialog you can manage categories and components. Selecting a
-  category and clicking the <b>delete</b> button under the category listbox will delete that category and all its components. A warning message is displayed before
-  proceeding.
-</p>
-<p>
-  Adding a category is as simple as typing its name in the <b>new category</b> field and clicking <b>accept</b> button. The new category will appear at the 
-  end of the list.
+ To delete a component from a category click <b>remove comp</b> button. The selected component will be delete from library. 
 </p>
 <p>
   To add a component to a category, first select the category, then type the component name in <b>new component</b> field.  Components are displayed as bitmaps,
-  so you must specify the bitmap file for that component before clicking <b>accept</b> button. The new component will be added at end of list.
-</p>
-<p>
-  When the library dialog is closed categories and components names are alphabetically sorted.
+  so you must specify the bitmap file for that component before clicking <b>add comp</b> button. The new component will be added at end of list and selected. 
+  All bitmaps must be saved in the bitmaps subdirectory of the application executable.
 </p>
 <h4>component bitmap</h4>
 <p>
-  When you create a component bitmap. Don't use <a href="#special_colors">special color</a> <b>BLACK 1</b>  (RGB value 0x010101) as a color except at connexion points. 
-  BoardView use that color as target point for prototyping board tie point center. This is how it knows where to place jumper termination.  
-  <b>WHITE</b> (RGB 0xFFFFFF) may also cause a problem as it is the transparent color. This color should appear only as bitmap background. 
-  If other parts of the bitmap have WHITE, use the special color <b>WHITE -2</b> RGB 0xFEFEFE.<br/> 
-  Other point to consider is that the prototyping boards distributed with BoardView
-  have a tie point grid of 10 pixels. When you draw components with visible tie points, to fit nicely on the board those must be spaced a multiple of 10 pixels. 
-  Look at DIL-*.BMP for exemples.  
+  Components are standard Windows bitmaps. They can be drawn in any application that can save in that format.
+  <b>All bitmaps must be saved in the bitmaps subdirectory of the application executable.</b>
+</p>
 
-  </p>
-<h4>fill zone</h4>
-<p>
- There is another <a href="#special_colors">special color</a> <b>BLACK 2</b> which is used for fill zones. If you create a bitmap with zones filled with that 
- color the user will be able to colorize those zones right clicking on it and using the <i>color fill</i> item of context menu.
-</p>
-<p>
-<a name="#special_colors"></a>
-<table border="single">
- <th colspan="3">special colors</th>
- <tr><td><b>color</b></td><td><b>R,G,B</br>composition</b></td><td><b>use</b></td></tr>
- <tr><td>BLACK 1</td><td>01,01,01</td><td>tie point</td></tr>
- <tr><td>BLACK 2</td><td>02,02,02</td><td>fill zone</td></tr>
- <tr><td>WHITE</td><td>255,255,255</td><td>transparent color</td></tr>
- <tr><td>WHITE -2</td><td>254,254,254</td><td>visible white</td></tr>
- </table>
-</p>
 <h4>Resistor component</h4>
 <p>
-  The 4 bands resistor bitmap distributed with BoardView is designed with special information embedded in 4 corners pixels. These pixels contain the coordinates
-  of the center of each fill zone for the color code bands. BoardView use this information to colorize the resistor according with the value selected in the
-  <i>resistor value</i> dialog.<div><image src="file:resources/docs/en/resistor-dialog.png"/></div></br>
-  To enter the value in the dialog choose the color in the 4 lists. When the 4 lists have an item selected the resulting values are displayed in the edits 
-  fields below the lists.  Click <b>Ok</b> to accept the values.  
+  The resistors components with black bands are specialy designed for the bands to be filled with value color code. This black is not BGR=0 but BGR=0x020202. This 
+  is define in the source code as a constant clBLACK2. When one of banded resistor is selected, i.e. resistor 1%, resistor 5% or resistor 10% clicking with 
+  the left button on one clBLACK2 band open a color selection dialog with the predefined colors for standard resistors. The standard color code for resistor is
+  <ul>
+  <li>BLACK = 0</li>
+  <li>BROWN = 1</li>
+  <li>RED = 2</li>
+  <li>ORANGE = 3</li>
+  <li>YELLOW = 4</li>
+  <li>GREEN = 5</li>
+  <li>BLUE = 6</li>
+  <li>PURPLE = 7</li>
+  <li>GRAY = 8</li>
+  <li>WHIRE = 9</li>
+  <li>SILVER = 10% precision resistor</li>
+  <li>GOLD = 5% precision resistor</li>
+  </ul> 
+  5% and 10% resistors have 3 black bands and 1% have 4 black bands. The last band before the precision band is a logarithm indicator. This means a number of zero's 
+  that must be added after the first 2 digits for 5% and 10% resistors or first 3 digits for 1% resistors.
 </p>
 <p>
-  To conclude ont that subject, BoardView expect bitmaps to be placed in <b>resources</b> sub-directory of the application directory.  If you add a component which bitmap is not in
-   that directory, it will be asked if the bitmap file should be copied there.
-   </p>
-<h4>Advanced library editing</h4>
-<p>
-  The library information is stored in application directory as <i>BoardView.cmp</i>. This file can  be opened in text editor and modified by hand.
-  One should be carefull before doing it. It is safer to make a backup of the file.  This file is an <a href="http://openeuphoria.org">euphoria object</a>.
-  If after hand editing it no more respect euphoria object syntax il will become unusable and break the functionnality of BoardView.
-  It is at your own risk.
+ In the example below a 5% resistor have been selected then rotated by +90&deg; and colored to 12Kohm value.<br/>
+<div><image src="file:../resources/resistor-component.png"/></div>
 </p>
+
 </body>
 </html>
 

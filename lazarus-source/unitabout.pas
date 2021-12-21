@@ -7,6 +7,9 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
+Const
+  MAJOR=1;
+  MINOR=0;
 type
 
   { TFormAbout }
@@ -16,6 +19,7 @@ type
     Memo1: TMemo;
     Panel1: TPanel;
     procedure BtnAboutCloseClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
 
   public
@@ -36,6 +40,13 @@ begin
   FormAbout.close();
 
 end;
+
+procedure TFormAbout.FormActivate(Sender: TObject);
+begin
+   Memo1.lines[5]:='version '+MAJOR.ToString+'.'+MINOR.ToString;
+end;
+
+
 
 end.
 

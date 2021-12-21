@@ -859,7 +859,7 @@ begin
   case ceDragging of
     ceNone:
     begin
-
+         MousePosition(X,Y);
     end;
     ceComponent:
     begin

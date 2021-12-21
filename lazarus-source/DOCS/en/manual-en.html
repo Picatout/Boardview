@@ -30,7 +30,9 @@
 <hr width="10%" align="left"/>
 <li><b>Open...</b>  Open a previously saved  BoardView "*.bvp" file for further editing.  Shortcut key: <b>&lt;CTRL+O&gt;</b></li>
 <hr width="10%" align="left"/>
-<li><b>Save...</b>  Save your BoardView design as a "*.bvp" file that can be re-open for further editing.  Shortcut key: <b>&lt;CTRL+S&gt;</b></li>
+<li><b>Save...</b>  Save your BoardView design as a "*.bvp" file that can be re-open for further editing.  Shortcut key: <b>&lt;CTRL+S&gt;</b>
+<div><img src="file:../resources/project-save-dialog.png"</div>
+</li>
 <hr width="10%" align="left"/>
 <li><b>Save as...</b>  Save your design under a new name.</li>
 <hr width="10%" align="left"/>
@@ -57,13 +59,13 @@
   This menu contain only one item <b>color...</b> which open the wire color dialog. Shorcut key is <b>&lt;CTRL+J&gt;</b>.
   <div><image src="file:../resources/jumper-color-dialog.png"/></div> This dialog let you select the color of wire installed on the board.
   There is 10 pre-defined colors which are the resistors standard colors except for the last which should be white but white wire on white board 
-  would not be invisible.
+  would be invisible.
 </p>
 <h3>Add menu</h3>
 <div><image src="file:../resources/menu-add.png"/></div>
 <ul>
 <hr width="10%" align="left"/>
-<li><b>component...</b>  Shortcut key: <b>CTRL+ALT+C</b>  Open the electronic components selector dialog. Components are grouped in categories.  Components are represented as
+<li><b>component...</b>  Shortcut key: <b>CTRL+E</b>  Open the electronic components selector dialog. Components are grouped in categories.  Components are represented as
 bitmap files. You can add component to database, this is explained below.
 <div><image src="file:../resources/component-dialog.png"/></div>
 
@@ -93,32 +95,36 @@ The font, size and color of tag are all selectable.
 <center><h2>statusbar</h2></center>
 <div><image src="file:../resources/statusbar.png"/></div>
 <p>
-  The statusbar at bottom of main window  is divided in 2 sections. Left section display the number of elements placed on the board.
+  The statusbar at bottom of main window  is divided in 2 panels. Left panel display the number of elements placed on the board.
   
   <h4>elements types</h4>
 <ul>
 <li><b>Components</b> are electronic component making the circuit.</li>
+<hr width="10%" align="left"/>
 <li><b>Jumpers</b> are wires that connect components togethers to form the circuit.</li>
+<hr width="10%" align="left"/>
 <li><b>Tags</b> are short text used to identify components or give other indication.</li>
 </ul>
 </p>
 <p>
-  The right section of status bar display information about current operation. If there is no operaction active then it display current jumper color and 
-  mouse position relative to left-top corner of prototyping board.
+  The right panel of status bar display information about current operation. If there is no operaction active then it display current jumper color and 
+  mouse position relative to left-top corner of prototyping board. Hence the coordinates can be negatives.
 </p>
 <center><h2>Placing elements on the board</h2></center>
 
 <ul>
-<li>To Add a jumper click on the first end for the wire position. The cursor change for a cross. Click on the second position of the wire. 
+<li>To Add a jumper click on the first end of wire position. The cursor change for a cross. Click on the second position of the wire. 
 While moving the mouse a line follow the mouse cursor. Clicking with the right mouse button cancel the operation.</li>
+<hr width="10%" align="left"/>
 <li>To add a component click the component icon on the toolbar to open the component dialog to select the component. When the dialog is closed the component follow the mouse until the 
 mouse left button is clicked. The compononent is then set at this position.
 <div><image src="file:../resources/component-dialog.png"</div><br/>
-If a tag is added to the selected component in the dialog the <b>freeze</b> button must be clicked before the <b>OK</b> button to fix this tag to the component.
+A tag can overlaid on the bitmap of the selected component. The procedure is the same as placing a tag on the prototyping board. The <b>freeze</b> button must be clicked before the <b>OK</b> button to fix this tag to the component.
 The tag added this way is not modifiable and follow the component. It become part of it. If the component is cloned the clone will have the save tag. The tag must
 fit inside the surface of component bitmap otherwise it will be truncated when frozen.<br/>
 The component bitmap may also be rotated by <b>+90&deg;,180&deg; or -90&deg;</b>.
 </li>
+<hr width="10%" align="left"/>
 <li>To add a tag click the tag icon on the toolbar to open the tag dialog. When the dialog is closed the tag follow the mouse cursor until the left mouse button 
 is clicked. The tag is then set to that position.
 <div><image src="file:../resources/tag-dialog.png"</div><br/>
@@ -135,7 +141,7 @@ is clicked. The tag is then set to that position.
   <li><b>Delete</b>  Apply to all 3 types of elements. Delete the selected element from the board.</li>
   <hr width="10%" align="left"/>
   <li><b>Jumper color...</b> Applay to jumpers only. Open the jumper color selection dialog. The color of the selected jumper is changed to this new 
-  color and new jumpers will be this color too.</li>
+  color and new jumpers will be this color too until the color is changed again.</li>
   <hr width="10%" align="left"/>
   <li><b>tag font...</b> Apply to tag only. This item let you modify a tag font properties.</li>
   <hr width="10%" align="left"/>
@@ -165,17 +171,21 @@ is clicked. The tag is then set to that position.
   so you must specify the bitmap file for that component before clicking <b>add comp</b> button. The new component will be added at end of list and selected. 
   All bitmaps must be saved in the bitmaps subdirectory of the application executable.
 </p>
+<p>
+ The components library file is a Windows <b>*.ini</b> file named <b>components.ini</b> in the same directory as the executable. If its structure is well understood 
+ it can be modified in a text editor.
+</p>
 <h4>component bitmap</h4>
 <p>
   Components are standard Windows bitmaps. They can be drawn in any application that can save in that format.
-  <b>All bitmaps must be saved in the bitmaps subdirectory of the application executable.</b>
+  All bitmaps used by the component library must be saved in the <b>bitmaps</b> subdirectory of the application executable.
 </p>
 
 <h4>Resistor component</h4>
 <p>
   The resistors components with black bands are specialy designed for the bands to be filled with value color code. This black is not BGR=0 but BGR=0x020202. This 
-  is define in the source code as a constant clBLACK2. When one of banded resistor is selected, i.e. resistor 1%, resistor 5% or resistor 10% clicking with 
-  the left button on one clBLACK2 band open a color selection dialog with the predefined colors for standard resistors. The standard color code for resistor is
+  is defined in the source code as constant <b>clBLACK2</b>. When one of banded resistor is selected, i.e. <b>resistor 1%, resistor 5% or resistor 10%</b> clicking with 
+  the left button on one <b>clBLACK2 band</b> open a color selection dialog with the predefined colors for standard resistors. The standard color code for resistor is
   <ul>
   <li>BLACK = 0</li>
   <li>BROWN = 1</li>
@@ -190,6 +200,7 @@ is clicked. The tag is then set to that position.
   <li>SILVER = 10% precision resistor</li>
   <li>GOLD = 5% precision resistor</li>
   </ul> 
+</P><p>  
   5% and 10% resistors have 3 black bands and 1% have 4 black bands. The last band before the precision band is a logarithm indicator. This means a number of zero's 
   that must be added after the first 2 digits for 5% and 10% resistors or first 3 digits for 1% resistors.
 </p>
@@ -197,7 +208,13 @@ is clicked. The tag is then set to that position.
  In the example below a 5% resistor have been selected then rotated by +90&deg; and colored to 12Kohm value.<br/>
 <div><image src="file:../resources/resistor-component.png"/></div>
 </p>
-
+<h2>Saving a project</h2>
+<p>
+ When saving a project a subdirectory with same name as project is created. This directory contain the <b>project.bvp</b> file as well as all components bitmaps used
+ by the project. The components bitmaps are named <b>component-n.bmp</b> where <b>n</b> is the item index of the position of component in the <b>CircuitList:TFPList</b>
+ field of application <b>formMain</b> object.
+ Project file is a Windows <b>*.ini</b> file. Hence it can read an modified in the text editor.
+</p>
 </body>
 </html>
 

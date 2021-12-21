@@ -1050,7 +1050,7 @@ end;
 
 procedure TFormMain.MenuItemManualClick(Sender: TObject);
 begin
-  OpenDocument('./DOCS/en/manual-en.html');
+  OpenDocument('.\DOCS\en\manual-en.html');
 end;
 
 procedure TFormMain.MenuLibraryClick(Sender: TObject);

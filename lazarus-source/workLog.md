@@ -7,6 +7,10 @@
 * Revised lazarus-source/DOCS/en/manual.en.html
 
 * Changed the shortcut key for **Add-Component** menu item. Now it is **&lt;CTRL+E&gt;**.
+
+* Written french user manual.
+
+* printed both manual in pdf files.
 	
 ### 2021-12-20 
 	

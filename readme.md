@@ -17,6 +17,8 @@ in the application directory for **boardview.ini** and **component.ini** and if 
   
 ### français
 
+J'ai préparé un paquet d'installation Windows pour la nouvelle version de boardview créée avec [Lazarus/free pascal IDE](https://www.lazarus-ide.org/).
+
 Lorsque le programme d'installation démarre choississez l'option **installer seulement pour moi**. Avec cette option l'application est installée dans
   **%homepath%\AppData\Local\Programs\boardview-laz**.  Autrement l'application sera installée dans le dossier 
-  **C:\Program Files (x86)**. Le problème est qu'il faut des droits d'administrateur pour écrire dans ce dossier.
+  **C:\Program Files (x86)\boarview-laz**. Le problème est qu'il faut des droits d'administrateur pour écrire dans ce dossier.

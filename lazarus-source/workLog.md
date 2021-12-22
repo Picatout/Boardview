@@ -2,6 +2,8 @@
 
 * Added menu item **Help-preferences** and dialog box **help preferences**.
 
+* Created **dist** subdirectory and installation package for windows.
+
 ### 2021-12-21
 
 * Replaced lazarus-source/DOCS/resources/Boardview-main-window.png

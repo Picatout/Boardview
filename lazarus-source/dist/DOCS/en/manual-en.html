@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BoardView user's manual</title>
+<meta name="description"  content="solderless prototyping board layout design." />
+<meta name="software name" content="BoardView" />
+<meta name="author" content="Jacques Dechênes"/>
+<meta name="Copyright" content="2021, Jacques Dechênes" />
+<meta name="keywords" content="prototyping,solderless,electronic circuit design" />
+<meta name="last revision" content="2021-12-21" />
+</head>
+<body>
+<center><h1>Introduction</h1></center>
+<p>
+  BoardView is a software to draw solderless prototyping board layout. These layouts can be saved as editable <b>*.bvp</b> files or as bitmap files.
+  The bitmap file can be used to communicate the design to others.
+</P>
+<p>
+  <div><image src="file:../resources/boardview-main-window.png"/></div>
+  BoardView is so simple and obvious to use this manual is very brief.
+</P>
+<center><h2>Menus description</h2></center>
+<h3>File menu</h3>
+<div><image src="file:../resources/menu-file.png"/></div>
+
+<ul>
+<li><b>Protoboard...</b>  Let you select the prototyping board size.<br/>
+Shortcut key: <b>&lt;CTRL+B&gt;</b>
+<br/>dialog box
+<div><image src="file:../resources/boardsize.png"/></div></li>
+<hr width="10%" align="left"/>
+<li><b>New</b>  Begin a new project.</li>
+<hr width="10%" align="left"/>
+<li><b>Open...</b>  Open a previously saved  BoardView <b>*.bvp</b> file for further editing.
+<br/>Shortcut key: <b>&lt;CTRL+O&gt;</b></li>
+<br>Toolbar icon:<div><img src="file:../resources/tool-open.png"></div>
+<hr width="10%" align="left"/>
+<li><b>Save...</b>  Save your Boardview design as a <b>*.bvp</b> file that can be re-open for further editing.
+<br/>Shortcut key: <b>&lt;CTRL+S&gt;</b>
+<br>Toolbar icon:<div><img src="file:../resources/tool-save.png"></div>
+<br/>dialog box
+<div><img src="file:../resources/project-save-dialog.png"</div>
+</li>
+<hr width="10%" align="left"/>
+<li><b>Save as...</b>  Save your design under a new name.</li>
+<hr width="10%" align="left"/>
+<li><b>Save to bitmap...</b> Save your design as a bitmap file. That file can't be edited in BoardView.</li>
+<hr width="10%" align="left"/>
+<li><b>Print...</b>  Print prototyping board design. Printing is done in landscape orientation.
+<br/>Shortcut key: <b>&lt;CTRL+P&gt;</b></li>
+<hr width="10%" align="left"/>
+<li><b>Quit</b>  Leave the application.
+<br/>Shortcut key: <b>&lt;CTRL+Q&gt;</b></li>
+</uL>
+<h3>Edit menu</h3>
+<div><image src="file:../resources/menu-edit.png"/></div>
+<ul>
+<hr width="10%" align="left"/>
+<li><b>Undo</b>  Delete the last added component,tag or jumper.<br/>
+<br/>Shortcut key: <b>&lt;CTRL+U&gt;</b>
+<br/><br>Toolbar icon:<div><img src="file:../resources/tool-undo.png"></div>
+</li>
+<hr width="10%" align="left"/>
+<li><b>Component library</b> Let you modify the components library. Component can be added to a category. New categories can be created. Existing component or category can be deleted. 
+<div><image src="file:../resources/library-dialog.png"/></div>
+</li>
+</ul>
+<h3>Jumpers menu</h3>
+<div><image src="file:../resources/menu-jumper.png"/></div>
+<p>
+  This menu contain only one item <b>color...</b> which open the wire color dialog.
+  <br/>Shorcut key: <b>&lt;CTRL+J&gt;</b>.
+  <br>Toolbar icon:<div><img src="file:../resources/tool-jumper-color.png"></div>
+  <br/>dialog box:
+  <div><image src="file:../resources/jumper-color-dialog.png"/></div> This dialog let you select the color of wire installed on the board.
+  There is 10 defined colors.
+</p>
+<h3>Add menu</h3>
+<div><image src="file:../resources/menu-add.png"/></div>
+<ul>
+<hr width="10%" align="left"/>
+<li><b>component...</b>  Open the electronic components selector dialog. Components are grouped in categories.  Components are represented as
+bitmap files. You can add component to database, this is explained below.
+<br/>Shortcut key: <b>CTRL+E</b>
+<br>Toolbar icon:<div><img src="file:../resources/tool-component.png"></div>
+<br/>dialog box:
+<div><image src="file:../resources/component-dialog.png"/></div>
+</li> 
+<hr width="10%" align="left"/>
+<li><b>tag...</b> Open the <b>add tag</b> dialog box.  This let you add text to identify component. 
+<br/>Shortcut key: <b>CTRL+T</b>.
+<br/>toolbar icon:<div><image src="file:../resources/tool-tag.png"/></div>
+<br/>dialog box:
+<div><image src="file:../resources/tag-dialog.png"/></div>
+</li>
+
+<h3>Help menu</h3>
+<div><image src="file:../resources/menu-help.png"/></div>
+<ul>
+<hr width="10%" align="left"/>
+<li><b>manual</b> Open the user's manual in default web browser.
+<br/>Shorcut key: <b>F1</b> </li>
+<hr width="10%" align="left"/>
+<li><b>preferences...</b> Open the help  prefrences dialog. User can choose betwen <b>english manual</b> or <b>french manual</b> and 2 formats,
+<b>html format</b> or <b>pdf format</b>. These choices are peresistants and recorded in <b>boardview.ini</b> file.<br/>
+dialog box:
+<div><img src="file:../resources/help-pref-dlg.png"</div>
+</li>
+<hr width="10%" align="left"/>
+<li><b>about...</b> display the about dialog box.<br/>
+<div><image src="file:../resources/about-dialog.png"/></div>
+</li>
+</ul>
+<center><h2>toolbar</h2></center>
+<p>
+  The toolbar present the most used menu items as icons. Placing the mouse over an icon will display the corresponding tip in a balloon. Each element of toolbar 
+  as a shorcut key associated with its corresponding menu item.
+<div><image src="file:../resources/toolbar.png"/></div>  
+</p>
+<center><h2>statusbar</h2></center>
+<div><image src="file:../resources/statusbar.png"/></div>
+<p>
+  The statusbar at bottom of main window  is divided in 2 panels. Left panel display the number of elements placed on the board.
+  
+  <h4>elements types</h4>
+<ul>
+<li><b>Components</b> are electronic components making the circuit.</li>
+<hr width="10%" align="left"/>
+<li><b>Jumpers</b> are wires that connect components togethers to form the circuit.</li>
+<hr width="10%" align="left"/>
+<li><b>Tags</b> are short text used to identify components or give other information.</li>
+</ul>
+</p>
+<p>
+  The right panel of status bar display information about current operation. If there is no operation active then it display current jumper color and 
+  mouse position relative to left-top corner of prototyping board. Hence the coordinates can be negatives.
+</p>
+<center><h2>Placing elements on the board</h2></center>
+
+<ul>
+<li>To Add a jumper first click on the starting point of wire. The cursor change for a cross. Click a second time when the mouse cursor is over the 
+position of the other end of wire. While moving the mouse a line follow the mouse cursor. Clicking with the right mouse button cancel the operation.</li>
+<hr width="10%" align="left"/>
+<li>To add a component click the component icon on the toolbar to open the component dialog to select the component. When the dialog is closed the 
+component follow the mouse until the mouse left button is clicked. The compononent is then set at this position.
+<div><image src="file:../resources/component-dialog.png"</div><br/>
+A tag can be overlaid on the bitmap of the selected component. Fill the <b>tag</b> field with the desired text, select the font then with the mouse 
+drag the tag over the component. The <b>freeze</b> button must be clicked before the <b>OK</b> button to fix this tag to the component. Once frozen it is 
+no more modifyable. The tag added this way follow the component. It part of its bitmap representation. hence if this component is cloned the clone carry 
+the same tag. The tag must fit inside the surface of component bitmap otherwise it will be truncated when frozen.<br/>
+The component bitmap may also be rotated by <b>+90&deg;,180&deg; or -90&deg;</b>.
+</li>
+<hr width="10%" align="left"/>
+<li>To add a tag click the tag icon on the toolbar to open the tag dialog. When the dialog is closed the tag follow the mouse cursor until the left mouse button 
+is clicked. The tag is then set to that position.
+<div><image src="file:../resources/tag-dialog.png"</div><br/>
+</li>
+</ul>
+
+<h3>Popup menu</h3>
+<div><image src="file:../resources/popup-menu.png"/></div>
+<p>
+   When clicking on a jumper, component or tag a popup menu appear. Only the items concerning the chosen element are activated in the menu.
+   
+  <ul>
+  <hr width="10%" align="left"/>
+  <li><b>Delete</b>  Apply to all 3 types of elements. Delete the selected element from the board.</li>
+  <hr width="10%" align="left"/>
+  <li><b>Jumper color...</b> Applay to jumpers only. Open the jumper color selection dialog. The color of the selected jumper is changed to this new 
+  color and next added jumpers will be this color until the color is changed again.</li>
+  <hr width="10%" align="left"/>
+  <li><b>tag font...</b> Apply to tag only. This item let you modify a tag font properties.</li>
+  <hr width="10%" align="left"/>
+  <li><b>Move</b> Apply only to components and tags. Let you move the selected element around. The element follow mouse cursor until
+   Left click fix it at that position.</li>
+  <hr width="10%" align="left"/>
+  <li><b>Clone</b> Apply only to components and tags. Clone the selected element then move the clone at chosen position. Left click at the desired position.</li>
+  </ul>
+</p>
+<p>
+  Elements are drawn on the board in the order they are created. If you move a more recently added element over another one it mask the older one.
+</p>
+<h2>Library dialog</h2>
+<div><image src="file:../resources/library-dialog.png"/></div>
+<p>
+  Controls on the left side of dialog are for categories and those on the right side are for components. The selected category can be delete by clicking 
+  <b>remove cat</b> button. All components of that category will be lost.
+</p>
+<p>
+  Adding a category is as simple as typing its name in the <b>new category</b> field and clicking <b>add cat</b> button. The new category will appear at the 
+  end of the list and be selected.
+</p>
+<p>
+ To delete a component from a category click <b>remove comp</b> button. The selected component will be deleted from library. 
+</p>
+<p>
+  To add a component to a category, first select the category, then type the component name in <b>new component</b> field.  Components are displayed as bitmaps,
+  so you must specify the bitmap file for that component before clicking <b>add comp</b> button. The new component will be added at end of list and selected. 
+  All bitmaps must be saved in the bitmaps subdirectory of the application executable. The <b>...</b> button at right of <b>bitmap file</b> field is to open the file browser 
+  dialog.
+</p>
+<p>
+ The components library file is a Windows <b>*.ini</b> file named <b>components.ini</b> in the same directory as the executable. If its structure is well understood 
+ it can be modified in a text editor.
+</p>
+<h4>component bitmap</h4>
+<p>
+  Components are standard Windows bitmaps. They can be drawn in any application that can save in that format.
+  All bitmaps used by the component library must be saved in the <b>bitmaps</b> subdirectory of the application executable.
+</p>
+
+<h4>Resistor component</h4>
+<p>
+  The resistors components with black bands are specialy designed for the bands to be filled with value color code. This band black is defined in the source code
+  as constant <b>clBLACK2=0x020202</b> so the applicaton can see it a fillable region. When one of banded resistor is selected, i.e. <b>resistor 1%, resistor 5% 
+  or resistor 10%</b> clicking with the left button on one <b>clBLACK2 band</b> color selection dialog is shown with the predefined colors for standard resistors. 
+  The standard color code for resistor are
+  <ul>
+  <li>BLACK = 0</li>
+  <li>BROWN = 1</li>
+  <li>RED = 2</li>
+  <li>ORANGE = 3</li>
+  <li>YELLOW = 4</li>
+  <li>GREEN = 5</li>
+  <li>BLUE = 6</li>
+  <li>PURPLE = 7</li>
+  <li>GRAY = 8</li>
+  <li>WHIRE = 9</li>
+  <li>SILVER = 10% precision resistor</li>
+  <li>GOLD = 5% precision resistor</li>
+  </ul> 
+</P><p>  
+  5% and 10% resistors have 3 black bands and 1% have 4 black bands. The precision band is already colored.
+</p>
+<p>
+ In the example below a 5% resistor have been selected then rotated by +90&deg; and colored to 12Kohm value.<br/>
+<div><image src="file:../resources/resistor-component.png"/></div>
+</p>
+<h2>Saving a project</h2>
+<p>
+ When saving a project a subdirectory with same name as project is created. This directory contain the <b>project.bvp</b> file as well as all components bitmaps used
+ by the project. The components bitmaps are named <b>component-<i>n</i>.bmp</b> where <b><i>n</i></b> correspond to the section <b>[node<i>n</i>]</b> in 
+ the  project file. Project files are Windows <b>*.ini</b> files. Hence they can read an modified in a text editor.
+</p>
+</body>
+</html>
+

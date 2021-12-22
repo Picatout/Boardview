@@ -306,7 +306,7 @@ object FormMain: TFormMain
         Caption = '-'
       end
       object MenuItemHelpPref: TMenuItem
-        Caption = 'preferences'
+        Caption = 'preferences...'
         OnClick = MenuItemHelpPrefClick
       end
       object MenuItem3: TMenuItem

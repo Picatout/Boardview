@@ -8,7 +8,8 @@ uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
 const
-    UserMan: array[0..1] of array[0..1] of string=(('DOCS\en\manual-en.html','DOCS\en\manual-en.pdf'),
+    UserMan: array[0..1] of array[0..1] of string=(
+    ('DOCS\en\manual-en.html','DOCS\en\manual-en.pdf'),
     ('DOCS\fr\manual-fr.html','DOCS\fr\manual-fr.pdf'));
 
 type

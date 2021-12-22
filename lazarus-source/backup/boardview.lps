@@ -8,7 +8,7 @@
       <Unit0>
         <Filename Value="boardview.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="17"/>
         <CursorPos X="48" Y="21"/>
         <UsageCount Value="201"/>
@@ -21,8 +21,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unitmain"/>
-        <TopLine Value="1050"/>
-        <CursorPos Y="1062"/>
+        <CursorPos Y="19"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -34,7 +33,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitAbout"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="16"/>
         <CursorPos X="42" Y="30"/>
         <UsageCount Value="200"/>
@@ -48,7 +47,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitJumperColor"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="7"/>
         <CursorPos Y="20"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
@@ -61,7 +60,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitComponents"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="10"/>
         <CursorPos X="32" Y="253"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
@@ -71,7 +70,7 @@
         <Filename Value="complib.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="CompLib"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="11"/>
         <CursorPos X="93" Y="25"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
@@ -83,7 +82,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitProtoBoards"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="6"/>
         <CursorPos X="84" Y="21"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -95,7 +94,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitTag"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="5"/>
         <CursorPos X="3" Y="49"/>
         <UsageCount Value="211"/>
         <Loaded Value="True"/>
@@ -107,9 +106,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitSaveProject"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="4"/>
         <CursorPos Y="20"/>
-        <UsageCount Value="120"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -119,9 +118,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitQuerySave"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="3"/>
         <CursorPos Y="19"/>
-        <UsageCount Value="115"/>
+        <UsageCount Value="116"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -131,9 +130,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitLibrary"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="9"/>
         <CursorPos Y="20"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
@@ -141,7 +140,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="6"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="59"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit11>
       <Unit12>
@@ -333,18 +332,17 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitHelpPref"/>
-        <EditorIndex Value="2"/>
-        <CursorPos X="5" Y="12"/>
-        <UsageCount Value="23"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos Y="20"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
       </Unit38>
       <Unit39>
         <Filename Value="boardview.ini"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <CursorPos X="11" Y="10"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="24" Y="12"/>
         <UsageCount Value="11"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Ini"/>
       </Unit39>
     </Units>

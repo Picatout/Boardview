@@ -28,7 +28,8 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, printer4lazarus, unitMain, unitAbout, UnitJumperColor, unitComponents,
-  CompLib, unitProtoBoards, unitTag, unitSaveProject, unitQuerySave, unitLibrary
+  CompLib, unitProtoBoards, unitTag, unitSaveProject, unitQuerySave,
+  unitLibrary, unitHelpPref
   { you can add units after this };
 
 {$R *.res}
@@ -48,6 +49,7 @@ begin
   Application.CreateForm(TFormSaveProject, FormSaveProject);
   Application.CreateForm(TFormQuerySave, FormQuerySave);
   Application.CreateForm(TFormLibrary, FormLibrary);
+  Application.CreateForm(TFormHelpPref, FormHelpPref);
   Application.Run;
 end.
 

@@ -286,7 +286,7 @@ object FormMain: TFormMain
       Caption = 'Add'
       object MenuItemComponent: TMenuItem
         Caption = 'Component...'
-        ShortCut = 49219
+        ShortCut = 16453
         OnClick = MenuItemComponentClick
       end
       object MenuItemTag: TMenuItem
@@ -302,8 +302,16 @@ object FormMain: TFormMain
         ShortCut = 112
         OnClick = MenuItemManualClick
       end
-      object MenuItem9: TMenuItem
+      object MenuItem1: TMenuItem
         Caption = '-'
+      end
+      object MenuItemHelpPref: TMenuItem
+        Caption = 'preferences'
+        OnClick = MenuItemHelpPrefClick
+      end
+      object MenuItem3: TMenuItem
+        Caption = '-'
+        Enabled = False
       end
       object MenuItemAbout: TMenuItem
         Caption = 'About...'

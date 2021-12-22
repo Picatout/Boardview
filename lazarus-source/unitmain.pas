@@ -94,6 +94,8 @@ type
     MainMenu1: TMainMenu;
     mDelete: TMenuItem;
     mColor: TMenuItem;
+    MenuItem1: TMenuItem;
+    MenuItemHelpPref: TMenuItem;
     mTagFont: TMenuItem;
     N1: TMenuItem;
     mMove: TMenuItem;
@@ -121,7 +123,7 @@ type
     MenuItemBoardSelect: TMenuItem;
     MenuItemManual: TMenuItem;
     MenuItemAbout: TMenuItem;
-    MenuItem9: TMenuItem;
+    MenuItem3: TMenuItem;
     OpenDialog1: TOpenDialog;
     PopupMenu1: TPopupMenu;
     PrintDialog1: TPrintDialog;
@@ -149,6 +151,8 @@ type
     procedure mDeleteClick(Sender: TObject);
     procedure MenuItemLibraryClick(Sender: TObject);
     procedure MenuItemManualClick(Sender: TObject);
+    procedure MenuItem3Click(Sender: TObject);
+    procedure MenuItemHelpPrefClick(Sender: TObject);
     procedure MenuLibraryClick(Sender: TObject);
     procedure MenuItemPrintClick(Sender: TObject);
     procedure mTagFontClick(Sender: TObject);
@@ -243,7 +247,8 @@ implementation
 
 {$R *.lfm}
 
-uses lazfileutils, unitSaveProject, UnitQuerySave,LCLintf,unitLibrary;
+uses lazfileutils, unitSaveProject, UnitQuerySave,LCLintf,unitLibrary,
+  unitHelpPref;
 
 const
   defaultBmpPath='bitmaps\';
@@ -1049,8 +1054,25 @@ begin
 end;
 
 procedure TFormMain.MenuItemManualClick(Sender: TObject);
+var
+    language,format:integer;
 begin
-  OpenDocument('.\DOCS\en\manual-en.html');
+  with formHelpPref do
+  begin
+       language:=rgLanguage.itemIndex;
+       format:=rgFileType.itemIndex;
+       openDocument(UserMan[language,format]);
+  end;
+end;
+
+procedure TFormMain.MenuItem3Click(Sender: TObject);
+begin
+end;
+
+procedure TFormMain.MenuItemHelpPrefClick(Sender: TObject);
+
+begin
+    FormHelpPref.ShowModal;
 end;
 
 procedure TFormMain.MenuLibraryClick(Sender: TObject);

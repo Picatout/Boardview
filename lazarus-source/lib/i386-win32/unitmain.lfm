@@ -302,8 +302,16 @@ object FormMain: TFormMain
         ShortCut = 112
         OnClick = MenuItemManualClick
       end
-      object MenuItem9: TMenuItem
+      object MenuItem1: TMenuItem
         Caption = '-'
+      end
+      object MenuItemHelpPref: TMenuItem
+        Caption = 'preferences...'
+        OnClick = MenuItemHelpPrefClick
+      end
+      object MenuItem3: TMenuItem
+        Caption = '-'
+        Enabled = False
       end
       object MenuItemAbout: TMenuItem
         Caption = 'About...'

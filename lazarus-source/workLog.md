@@ -1,3 +1,7 @@
+### 2021-12-22
+
+* Added menu item **Help-preferences** and dialog box **help preferences**.
+
 ### 2021-12-21
 
 * Replaced lazarus-source/DOCS/resources/Boardview-main-window.png

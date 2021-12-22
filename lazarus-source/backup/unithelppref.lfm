@@ -1,0 +1,76 @@
+object FormHelpPref: TFormHelpPref
+  Left = 686
+  Height = 189
+  Top = 293
+  Width = 304
+  BorderStyle = bsDialog
+  Caption = 'help preferences'
+  ClientHeight = 189
+  ClientWidth = 304
+  OnCreate = FormCreate
+  LCLVersion = '2.0.12.0'
+  object rgLanguage: TRadioGroup
+    Left = 20
+    Height = 105
+    Top = 17
+    Width = 124
+    AutoFill = True
+    Caption = 'language'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 85
+    ClientWidth = 120
+    ItemIndex = 0
+    Items.Strings = (
+      'english'
+      'français'
+    )
+    TabOrder = 0
+  end
+  object rgFileType: TRadioGroup
+    Left = 168
+    Height = 105
+    Top = 17
+    Width = 113
+    AutoFill = True
+    Caption = 'file format'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 85
+    ClientWidth = 109
+    ItemIndex = 0
+    Items.Strings = (
+      'html manual'
+      'pdf manual'
+    )
+    TabOrder = 1
+  end
+  object btnOK: TButton
+    Left = 40
+    Height = 25
+    Top = 128
+    Width = 75
+    Caption = 'OK'
+    OnClick = btnOKClick
+    TabOrder = 2
+  end
+  object BtnCancel: TButton
+    Left = 184
+    Height = 25
+    Top = 128
+    Width = 75
+    Caption = 'Cancel'
+    OnClick = BtnCancelClick
+    TabOrder = 3
+  end
+end

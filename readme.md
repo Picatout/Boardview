@@ -9,7 +9,7 @@ a [new version](lazarus-source)  written using [Lazarus/free pascal IDE](https:/
 
 ## 2021-12-22
 
-I prepared a Windows setup package for the new [lazarus/free pascal version v1.0](lazarus-source/boardview-setup.exe). 
+I prepared a Windows  for the new [lazarus/free pascal version v1.0](lazarus-source/boardview-setup.exe). 
 
 At first dialog of installation choose the option **install only for me** so the application will be installed in 
 **%homepath\AppData\Local\Programs\Boardview-laz**.  Otherwise it will be install in **C:\program (x86) files\boardview-laz**  and write access will be denied. The application require write access 
@@ -17,7 +17,7 @@ in the application directory for **boardview.ini** and **component.ini** and if 
   
 ### français
 
-J'ai préparé un paquet d'installation Windows pour la nouvelle version de boardview créée avec [Lazarus/free pascal IDE](https://www.lazarus-ide.org/).
+J'ai préparé un paquet d'installation Windows pour la nouvelle version de [boardview-laz v1.0](lazarus-source/boardview-setup.exe) créée avec [Lazarus/free pascal IDE](https://www.lazarus-ide.org/).
 
 Lorsque le programme d'installation démarre choississez l'option **installer seulement pour moi**. Avec cette option l'application est installée dans
   **%homepath%\AppData\Local\Programs\boardview-laz**.  Autrement l'application sera installée dans le dossier 

@@ -9,7 +9,7 @@ a [new version](lazarus-source)  written using [Lazarus/free pascal IDE](https:/
 
 ## 2021-12-22
 
-I prepared a Windows  for the new [lazarus/free pascal version v1.0](lazarus-source/boardview-setup.exe). 
+I prepared a Windows  for the new [boardview-laz version v1.0](lazarus-source/boardview-setup.exe). 
 
 At first dialog of installation choose the option **install only for me** so the application will be installed in 
 **%homepath\AppData\Local\Programs\Boardview-laz**.  Otherwise it will be install in **C:\program (x86) files\boardview-laz**  and write access will be denied. The application require write access 

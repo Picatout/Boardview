@@ -1055,12 +1055,13 @@ end;
 
 procedure TFormMain.MenuItemManualClick(Sender: TObject);
 var
-    language,format:integer;
+    language:enumLang;
+    format:enumFileType;
 begin
   with formHelpPref do
   begin
-       language:=rgLanguage.itemIndex;
-       format:=rgFileType.itemIndex;
+       language:=enumLang(rgLanguage.itemIndex);
+       format:=enumFileType(rgFileType.itemIndex);
        openDocument(UserMan[language,format]);
   end;
 end;

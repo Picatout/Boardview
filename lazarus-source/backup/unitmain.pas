@@ -1055,7 +1055,8 @@ end;
 
 procedure TFormMain.MenuItemManualClick(Sender: TObject);
 var
-    language,format:integer;
+    language:enumLang;
+    format:enumFileType;
 begin
   with formHelpPref do
   begin

@@ -1,5 +1,7 @@
 ### 2021-12-22
 
+* Mofidief unitHelpPref to create 2 enumerated types, enumLang and enumFileType.
+
 * Added menu item **Help-preferences** and dialog box **help preferences**.
 
 * Created **dist** subdirectory and installation package for windows.

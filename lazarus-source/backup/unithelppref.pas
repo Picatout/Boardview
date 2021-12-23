@@ -26,8 +26,11 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
+type
+    enumLang=(English,French);
+    enumFileType=(HTML,PDF);
 const
-    UserMan: array[0..1] of array[0..1] of string=(
+    UserMan: array[enumLang,enumFileType] of string=(
     ('DOCS\en\manual-en.html','DOCS\en\manual-en.pdf'),
     ('DOCS\fr\manual-fr.html','DOCS\fr\manual-fr.pdf'));
 
@@ -58,11 +61,6 @@ implementation
 uses
    iniFiles;
 
-const
-    cLangEnglish=0;
-    cLangFrench=1;
-    cFileTypeHTML=0;
-    cFileTypePDF=1;
 
 { TFormHelpPref }
 
@@ -88,8 +86,8 @@ var
   AppIni:TIniFile;
 begin
     AppIni:=TIniFile.Create('Boardview.ini');
-    rgLanguage.ItemIndex:=AppIni.ReadInteger('help preferences','language',cLangEnglish);
-    rgFileType.ItemIndex:=AppIni.ReadInteger('help preferences','format',CFileTypeHTML);
+    rgLanguage.ItemIndex:=AppIni.ReadInteger('help preferences','language',English);
+    rgFileType.ItemIndex:=AppIni.ReadInteger('help preferences','format',HTML);
     AppIni.Destroy;
 end;
 

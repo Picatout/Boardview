@@ -21,7 +21,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unitmain"/>
-        <IsVisibleTab Value="True"/>
         <CursorPos Y="19"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
@@ -145,198 +144,200 @@
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit11>
       <Unit12>
-        <Filename Value="..\..\lcl\include\customform.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="3166"/>
-        <CursorPos Y="3184"/>
-        <UsageCount Value="36"/>
-      </Unit12>
-      <Unit13>
-        <Filename Value="components.ini"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="52" Y="13"/>
-        <UsageCount Value="95"/>
-        <DefaultSyntaxHighlighter Value="Ini"/>
-      </Unit13>
-      <Unit14>
-        <Filename Value="application.ini"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="22"/>
-        <UsageCount Value="89"/>
-        <DefaultSyntaxHighlighter Value="Ini"/>
-      </Unit14>
-      <Unit15>
-        <Filename Value="..\..\fpc\3.2.0\source\packages\fcl-base\src\inifiles.pp"/>
-        <UnitName Value="IniFiles"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="68"/>
-        <CursorPos X="60" Y="68"/>
-        <UsageCount Value="22"/>
-      </Unit15>
-      <Unit16>
-        <Filename Value="..\..\lcl\include\application.inc"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
-      </Unit16>
-      <Unit17>
-        <Filename Value="..\..\lcl\include\control.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="5047"/>
-        <CursorPos Y="5064"/>
-        <UsageCount Value="14"/>
-      </Unit17>
-      <Unit18>
-        <Filename Value="..\..\lcl\include\graphic.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="32"/>
-        <CursorPos Y="50"/>
-        <UsageCount Value="7"/>
-      </Unit18>
-      <Unit19>
-        <Filename Value="..\..\lcl\include\picture.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="850"/>
-        <CursorPos Y="883"/>
-        <UsageCount Value="0"/>
-      </Unit19>
-      <Unit20>
-        <Filename Value="..\..\lcl\lclclasses.pp"/>
-        <UnitName Value="LCLClasses"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="94"/>
-        <CursorPos Y="118"/>
-        <UsageCount Value="9"/>
-      </Unit20>
-      <Unit21>
-        <Filename Value="..\..\lcl\include\rasterimage.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="730"/>
-        <CursorPos Y="757"/>
-        <UsageCount Value="7"/>
-      </Unit21>
-      <Unit22>
-        <Filename Value="..\..\lcl\graphics.pp"/>
-        <UnitName Value="Graphics"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="389"/>
-        <CursorPos X="3" Y="407"/>
-        <UsageCount Value="2"/>
-      </Unit22>
-      <Unit23>
-        <Filename Value="..\..\lcl\include\canvas.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1343"/>
-        <CursorPos Y="1361"/>
-        <UsageCount Value="0"/>
-      </Unit23>
-      <Unit24>
-        <Filename Value="..\..\lcl\include\custombitmap.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="471"/>
-        <CursorPos Y="498"/>
-        <UsageCount Value="7"/>
-      </Unit24>
-      <Unit25>
-        <Filename Value="..\..\lcl\include\bitmap.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="142"/>
-        <CursorPos Y="161"/>
-        <UsageCount Value="7"/>
-      </Unit25>
-      <Unit26>
-        <Filename Value="..\..\lcl\include\menuitem.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="505"/>
-        <CursorPos Y="523"/>
-        <UsageCount Value="7"/>
-      </Unit26>
-      <Unit27>
-        <Filename Value="unitmain.lfm"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="6"/>
-        <CursorPos X="26" Y="6"/>
-        <UsageCount Value="9"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit27>
-      <Unit28>
-        <Filename Value="..\..\lcl\interfaces\win32\win32wsforms.pp"/>
-        <UnitName Value="Win32WSForms"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="469"/>
-        <CursorPos Y="488"/>
-        <UsageCount Value="9"/>
-      </Unit28>
-      <Unit29>
-        <Filename Value="..\..\lcl\include\customdesigncontrol.inc"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="23"/>
-        <UsageCount Value="9"/>
-      </Unit29>
-      <Unit30>
-        <Filename Value="..\..\lcl\include\scrollingwincontrol.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="280"/>
-        <CursorPos Y="310"/>
-        <UsageCount Value="9"/>
-      </Unit30>
-      <Unit31>
-        <Filename Value="..\..\lcl\include\customcontrol.inc"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="28"/>
-        <UsageCount Value="9"/>
-      </Unit31>
-      <Unit32>
-        <Filename Value="..\..\lcl\include\wincontrol.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="6539"/>
-        <CursorPos Y="6569"/>
-        <UsageCount Value="9"/>
-      </Unit32>
-      <Unit33>
-        <Filename Value="..\..\lcl\controls.pp"/>
-        <UnitName Value="Controls"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="38"/>
-        <CursorPos X="47" Y="44"/>
-        <UsageCount Value="0"/>
-      </Unit33>
-      <Unit34>
-        <Filename Value="..\..\components\lazutils\uitypes.pas"/>
-        <UnitName Value="UITypes"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="13"/>
-        <UsageCount Value="0"/>
-      </Unit34>
-      <Unit35>
-        <Filename Value="..\..\components\printers\printersdlgs.pp"/>
-        <UnitName Value="PrintersDlgs"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="2"/>
-      </Unit35>
-      <Unit36>
-        <Filename Value="..\..\lcl\include\customlistbox.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="191"/>
-        <CursorPos X="40" Y="203"/>
-        <UsageCount Value="5"/>
-      </Unit36>
-      <Unit37>
-        <Filename Value="boardview.rc"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="None"/>
-      </Unit37>
-      <Unit38>
         <Filename Value="unithelppref.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormHelpPref"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitHelpPref"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos Y="20"/>
+        <TopLine Value="16"/>
+        <CursorPos X="31" Y="30"/>
         <UsageCount Value="28"/>
         <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\..\lcl\include\customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3166"/>
+        <CursorPos Y="3184"/>
+        <UsageCount Value="36"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="components.ini"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="52" Y="13"/>
+        <UsageCount Value="95"/>
+        <DefaultSyntaxHighlighter Value="Ini"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="application.ini"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="22"/>
+        <UsageCount Value="89"/>
+        <DefaultSyntaxHighlighter Value="Ini"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="..\..\fpc\3.2.0\source\packages\fcl-base\src\inifiles.pp"/>
+        <UnitName Value="IniFiles"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="68"/>
+        <CursorPos X="60" Y="68"/>
+        <UsageCount Value="22"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="..\..\lcl\include\application.inc"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="..\..\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5047"/>
+        <CursorPos Y="5064"/>
+        <UsageCount Value="14"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="..\..\lcl\include\graphic.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="32"/>
+        <CursorPos Y="50"/>
+        <UsageCount Value="7"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="..\..\lcl\include\picture.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="850"/>
+        <CursorPos Y="883"/>
+        <UsageCount Value="10"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="..\..\lcl\lclclasses.pp"/>
+        <UnitName Value="LCLClasses"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="94"/>
+        <CursorPos Y="118"/>
+        <UsageCount Value="9"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="..\..\lcl\include\rasterimage.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="730"/>
+        <CursorPos Y="757"/>
+        <UsageCount Value="7"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="..\..\lcl\graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="389"/>
+        <CursorPos X="3" Y="407"/>
+        <UsageCount Value="2"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="..\..\lcl\include\canvas.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1343"/>
+        <CursorPos Y="1361"/>
+        <UsageCount Value="10"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="..\..\lcl\include\custombitmap.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="471"/>
+        <CursorPos Y="498"/>
+        <UsageCount Value="7"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="..\..\lcl\include\bitmap.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="142"/>
+        <CursorPos Y="161"/>
+        <UsageCount Value="7"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="..\..\lcl\include\menuitem.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="505"/>
+        <CursorPos Y="523"/>
+        <UsageCount Value="7"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="unitmain.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6"/>
+        <CursorPos X="26" Y="6"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="..\..\lcl\interfaces\win32\win32wsforms.pp"/>
+        <UnitName Value="Win32WSForms"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="469"/>
+        <CursorPos Y="488"/>
+        <UsageCount Value="9"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="..\..\lcl\include\customdesigncontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="23"/>
+        <UsageCount Value="9"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="..\..\lcl\include\scrollingwincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="280"/>
+        <CursorPos Y="310"/>
+        <UsageCount Value="9"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="..\..\lcl\include\customcontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="28"/>
+        <UsageCount Value="9"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="..\..\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6539"/>
+        <CursorPos Y="6569"/>
+        <UsageCount Value="9"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="..\..\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="38"/>
+        <CursorPos X="47" Y="44"/>
+        <UsageCount Value="10"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="..\..\components\lazutils\uitypes.pas"/>
+        <UnitName Value="UITypes"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="13"/>
+        <UsageCount Value="10"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="..\..\components\printers\printersdlgs.pp"/>
+        <UnitName Value="PrintersDlgs"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="2"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="..\..\lcl\include\customlistbox.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="191"/>
+        <CursorPos X="40" Y="203"/>
+        <UsageCount Value="5"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="boardview.rc"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="None"/>
       </Unit38>
       <Unit39>
         <Filename Value="boardview.ini"/>

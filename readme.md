@@ -7,6 +7,11 @@ a [new version](lazarus-source)  written using [Lazarus/free pascal IDE](https:/
 
 ![Boardview main window](lazarus-source/DOCS/resources/Boardview-main-window.png)
 
+### 2021-12-27
+
+Version 1.1 released.  No new functionnalities, only behavior change. See [lazarus-source/wordlog](lazarus-source/wordlog.md) and user manual update.
+Windows installation package [lazarus-source\boardview-laz-1.1](lazarus-source\boardview-laz-1.1.exe).
+
 ## 2021-12-22
 
 I prepared a Windows setup package for the new [boardview-laz version v1.0](lazarus-source/boardview-setup.exe). 

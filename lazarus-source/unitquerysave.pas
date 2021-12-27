@@ -51,7 +51,6 @@ implementation
 
 {$R *.lfm}
 
-Uses UnitMain;
 
 { TFormQuerySave }
 

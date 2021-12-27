@@ -52,8 +52,7 @@ var
   CompLibrary: TCompLib;
 
 implementation
-uses  dialogs,
-      unitComponents;
+uses  dialogs;
 
       constructor TCompLib.create(FileName:string);
       begin
@@ -73,7 +72,6 @@ uses  dialogs,
       end;
 
       procedure TCompLib.getCatList(CatList:TStrings);
-      var i:integer;
       begin
           CatList.AddStrings(categories,true);
       end;
@@ -86,7 +84,6 @@ uses  dialogs,
       end;
 
       procedure TCompLib.LoadCategories;
-      var i:integer;
       begin
          if Categories <> nil then Categories.free;
          Categories:=TStringList.create;

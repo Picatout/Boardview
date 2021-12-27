@@ -25,9 +25,8 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
-  Menus, ComCtrls, Buttons, UnitAbout, LCLType, Grids, PrintersDlgs,printers,
-  osPrinters,FPImage,iniFiles,
-  CompLib,unitComponents, UnitJumperColor, unitProtoboards,unitTag
+  Menus, ComCtrls, Buttons, LCLType, PrintersDlgs,printers,
+  osPrinters,FPImage
   ;
 
 type
@@ -85,6 +84,8 @@ type
 
    PTCircuitElement = ^TCircuitElement;
 
+  eOperation=(opNone,opJumper,opComponent,opTag,opClone,opMove);
+
   { TFormMain }
 
   TFormMain = class(TForm)
@@ -95,6 +96,8 @@ type
     mDelete: TMenuItem;
     mColor: TMenuItem;
     MenuItem1: TMenuItem;
+    mCancel: TMenuItem;
+    MenuItem2: TMenuItem;
     MenuItemHelpPref: TMenuItem;
     mTagFont: TMenuItem;
     N1: TMenuItem;
@@ -108,7 +111,7 @@ type
     MenuItemJumperColor: TMenuItem;
     MenuItemUndo: TMenuItem;
     MenuLibrary: TMenuItem;
-    MenuItemLibrary: TMenuItem;
+    MenuItemSep1: TMenuItem;
     MenuItemNew: TMenuItem;
     MenuItemJumpers: TMenuItem;
     MenuItemOpen: TMenuItem;
@@ -144,14 +147,15 @@ type
     procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
+    procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
     procedure FormPaint(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure mCancelClick(Sender: TObject);
     procedure mCloneClick(Sender: TObject);
     procedure mColorClick(Sender: TObject);
     procedure mDeleteClick(Sender: TObject);
-    procedure MenuItemLibraryClick(Sender: TObject);
     procedure MenuItemManualClick(Sender: TObject);
-    procedure MenuItem3Click(Sender: TObject);
     procedure MenuItemHelpPrefClick(Sender: TObject);
     procedure MenuLibraryClick(Sender: TObject);
     procedure MenuItemPrintClick(Sender: TObject);
@@ -169,7 +173,6 @@ type
     procedure MenuItemSaveClick(Sender: TObject);
     procedure MenuItemSmallBoardClick(Sender: TObject);
     procedure mMoveClick(Sender: TObject);
-    procedure ToolButtonCmpntClick(Sender: TObject);
     procedure SetJumperColor(index:integer);
     procedure ToolButtonJumperClick(Sender: TObject);
     procedure ToolButtonOpenClick(Sender: TObject);
@@ -183,19 +186,17 @@ type
     ceDragidx:integer; // index of component being drag
     CircuitList:TFPList;   // list of jumper and components on board.
     modified:boolean; // design modified
+    currentOp:eOperation; // current operation
+    cursorOver:integer; // element over which mouse cursor is when button down
+    showPopup:boolean; // set true when right button down over circuit element.
     procedure AddJumper; // add a jumper to the board
     procedure undo; // cancel last operation
     procedure MousePosition(X,Y:integer); // get mouse position in client area.
-    procedure SaveDesign; // save actual design
-    procedure SaveAsDesign; // save actual desing under specified name.
-    procedure OpenDesign; // open an existing Design
-    procedure SaveBitmap; // save actual design as bitmap.
-    procedure PrintDesign; // print acctual design.
     procedure FreeCircuitItem(i:integer); // delete item from list
     procedure FreeCircuitList; // free Items in CircuitList
     procedure MoveComponent(comp:PTComponent;X,Y:integer); // dragging component on board
-    function OverComponent(cursorPos:TPoint;compIdx:integer):boolean; // check for 1 Circuit element
-    function MouseOverElement(CursorPos:Tpoint):integer; // scans CircuitList
+    function OverComponent(cursorPt:TPoint;compIdx:integer):boolean; // check for 1 Circuit element
+    function MouseOverElement(CursorPt:Tpoint):integer; // scans CircuitList
     procedure UpdateCaption;
     procedure UpdateStatusBar(p1text:string);
     procedure SaveProject(DirName,ProjectName:string);
@@ -208,6 +209,7 @@ type
     procedure InstallProtoBoard(index:integer);
     procedure AddComponent(cPic:TPicture); // add a component to board.
     procedure AddcTag(ctext:string);
+    procedure EndOperation;
   end;
 
 
@@ -247,15 +249,10 @@ implementation
 
 {$R *.lfm}
 
-uses lazfileutils, unitSaveProject, UnitQuerySave,LCLintf,unitLibrary,
-  unitHelpPref;
+uses lazfileutils, unitSaveProject, UnitQuerySave,LCLintf,unitLibrary,iniFiles,
+  unitHelpPref, UnitAbout, unitComponents, UnitJumperColor,
+  unitProtoboards,unitTag;
 
-const
-  defaultBmpPath='bitmaps\';
-
-var
-   bmpPath:string; // bitmaps files path.
-   LibraryIni:string; // components file.
 
 { TFormMain }
 
@@ -349,7 +346,7 @@ end;
 {
   check if the mouse cursor is over circuit element.
 }
-function TFormMain.OverComponent(cursorPos:TPoint;compIdx:integer):boolean;
+function TFormMain.OverComponent(cursorPt:TPoint;compIdx:integer):boolean;
 var
    node:PTCircuitElement;
    comp:PTComponent;
@@ -367,8 +364,8 @@ begin // return CircuitList itemIndex if mouse cursor over a circuit element
              y1:=PTJumper(node^.wire)^.StartPt.y;
              x2:=PTJumper(node^.wire)^.EndPt.x;
              y2:=PTJumper(node^.wire)^.EndPt.y;
-             xc:=CursorPos.x;
-             yc:=cursorPos.y;
+             xc:=CursorPt.x;
+             yc:=cursorPt.y;
              dx:=abs(x2-x1);
              dy:=abs(y2-y1);
              h1:=sqrt(dx*dx+dy*dy);
@@ -390,7 +387,7 @@ begin // return CircuitList itemIndex if mouse cursor over a circuit element
              rect.top:=comp^.top;
              rect.width:=comp^.image.Width;
              rect.height:= comp^.image.Height;
-             if rect.contains(CursorPos) then
+             if rect.contains(CursorPt) then
             begin
                  result:=true;
             end;
@@ -407,7 +404,7 @@ begin // return CircuitList itemIndex if mouse cursor over a circuit element
             rect.top:=ctag^.top;
             rect.width:=x1;
             rect.height:=y1;
-            if  rect.contains(cursorPos) then
+            if  rect.contains(cursorPt) then
             begin
                  result:=true;
             end;
@@ -415,7 +412,7 @@ begin // return CircuitList itemIndex if mouse cursor over a circuit element
         end;
 end;
 
-function TFormMain.MouseOverElement(CursorPos:Tpoint):integer; // scans CircuitList
+function TFormMain.MouseOverElement(CursorPt:Tpoint):integer; // scan CircuitList
 var
    i:integer;
 begin
@@ -423,7 +420,7 @@ begin
      if CircuitList.count=0 then exit;
      for i:=0 to CircuitList.count-1 do
      begin
-       if OverComponent(CursorPos,i) then
+       if OverComponent(cursorPt,i) then
        begin
             result:=i;
             exit;
@@ -461,9 +458,9 @@ begin
   circuit^.kind:=ceJumper; // jumper
   circuit^.wire:=jumper;
   CircuitList.Add(circuit);
-  FormMain.Refresh;
   cedragging:=ceJumper;
   ceDragIdx:=CircuitList.Count-1;
+  FormMain.Refresh;
   modified:=true;
   UpdateStatusBar('Adding '+ FormColor.rgColors.Items[FormColor.rgColors.ItemIndex]+' wire');
   UpdateCaption;
@@ -505,7 +502,7 @@ begin
   new(ctag);
   ctag^.text:=ctext;
   ctag^.left:=0;
-  ctag^.top:=toolbar1.height;
+  ctag^.top:=0;
   ctag^.Color:=FontDialog1.Font.color;
   ctag^.FontName:=FontDialog1.font.name;
   ctag^.FontStyle:=FontDialog1.font.Style;
@@ -523,25 +520,6 @@ begin
   formMain.cursor:=crCross;
 end;
 
-procedure TFormMain.SaveDesign; // save actual design
-begin
-end;
-
-procedure TFormMain.SaveAsDesign; // save actual desing under specified name.
-begin
-end;
-
-procedure TFormMain.OpenDesign; // open an existing Design
-begin
-end;
-
-procedure TFormMain.SaveBitmap; // save actual design as bitmap.
-begin
-end;
-
-procedure TFormMain.PrintDesign; // print acctual design.
-begin
-end;
 
 procedure TFormMain.Undo; // remove last item from list
 begin
@@ -703,100 +681,11 @@ end;
 
 
 
-procedure TFormMain.FormClick(Sender: TObject);
-var
-  mousePos:TPoint;
-  node:PTCircuitElement;
-  CompIdx:integer;
-procedure ShowPopupMenu;
-var
-  i:integer;
-begin
-  startPt:=mousePos;
-  for i:=0 to PopupMenu1.Items.Count-1 do PopupMenu1.Items[i].Enabled:=false;
-  case node^.kind of
-     ceJumper:
-     begin
-       PopupMenu1.Items[0].Enabled:=true;
-       PopupMenu1.Items[1].Enabled:=true;
-     end;
-     ceComponent:
-     begin
-        PopupMenu1.Items[0].Enabled:=true;
-        PopupMenu1.Items[5].Enabled:=true;
-        PopupMenu1.Items[6].Enabled:=true;
-       end;
-     ceTag:
-     begin
-        PopupMenu1.Items[0].Enabled:=true;
-        PopupMenu1.Items[3].Enabled:=true;
-        PopupMenu1.Items[5].Enabled:=true;
-        PopupMenu1.Items[6].Enabled:=true;
-     end;
-   end;
-   PopupMenu1.PopUp(Mouse.CursorPos.x,Mouse.CursorPos.Y);
-end;
-
-procedure EndOperation;
-begin
-  ceDragging:=ceNone;
-  ceDragIdx:=-1;
-  formMain.Cursor:=crDefault;
-  Modified:=true;
-  UpdateCaption;
-  UpdateStatusBar('');
-  formMain.refresh;
-end;
-
-begin
-   mousePos:=ScreenToClient(Mouse.CursorPos);
-   mousePos.x:=MousePos.x-board.left;
-   mousePos.y:=MousePos.y-board.top;
-   if (CircuitList.count>0) and (ceDragIdx>-1) then
-           node:=CircuitList.items[ceDragIdx];
-   case cedragging of
-      ceNone:
-      begin
-        Compidx:= MouseOverElement(mousePos);
-         if CompIdx >-1 then
-         begin  // component edition
-           node:=CircuitList.items[compIdx];
-           startPt:=MousePos;
-           showPopupMenu;
-         end
-         else // begin new wire dragging
-         begin
-            startPt:=MousePos;
-            endPt:=MousePos;
-            AddJumper;
-            formMain.Cursor:=crCross;
-         end
-      end;
-      ceJumper:  //ending new wire installation
-      begin
-         node:=CircuitList.items[CircuitList.Count-1];
-         node^.wire^.EndPt:=mousePos;
-         node^.wire^.EndPt:=mousePos;
-         EndOperation;
-      end;
-      ceComponent: // ending new component installation
-      begin
-         node^.component^.left:=MousePos.X;
-         node^.component^.top:=MousePos.Y;
-         EndOperation;
-      end;
-      ceTag: // ending  new tag installation
-      begin
-          node^.tag^.left:=MousePos.X;
-          node^.tag^.top:=MousePos.Y;
-          EndOperation;
-      end;
-   end;
-end;
 
 
 procedure TFormMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
+  QuerySaveModified;
   FreeCircuitList;
 end;
 
@@ -808,10 +697,6 @@ end;
 
 
 procedure TFormMain.FormCreate(Sender: TObject);
-
-var
-  iniFile: TiniFile;
-
 begin
   CircuitList:=TFPList.Create;
   StartPt.X:=0;
@@ -830,26 +715,34 @@ procedure TFormMain.FormMouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 var
   MousePos:TPoint;
-  i:integer;
-  ce:PTCircuitElement;
-  Comp:PTComponent;
-
+  node:PTCircuitElement;
 begin
-  if (button=mbRight) and (ceDragging=ceJumper) then
-  begin
-       ceDragging:=ceNone;
-       ceDragIdx:=-1;
-       freeCircuitItem(CircuitList.count-1);
-       UpdateStatusbar('');
-       refresh;
-       exit;
-  end;
   MousePos.X:=X-Board.left;
   MousePos.Y:=Y-Board.top;
-  i:=MouseOverElement(MousePos);
-  if (i=-1) or (PTCircuitElement(CircuitList[i])^.kind<>ceComponent) then exit;
-  StartPt:=MousePos;
-
+  cursorOver:=MouseOverElement(MousePos);
+  startPt:=MousePos;
+  case button of
+     mbRight:
+     begin
+       if (cursorOver>-1) then showPopup:=true;
+     end;
+     mbLeft:
+     begin
+       if (cursorOver=-1) then
+       begin
+          endPt:=MousePos;
+          AddJumper;
+          formMain.Cursor:=crCross;
+       end
+       else
+       begin // move component
+          node:=CircuitList.items[cursorOver];
+          ceDragIdx:=cursorOver;
+          ceDragging:=node^.kind;
+          cursor:=crCross;
+       end;
+     end;
+  end;
 end;
 
 
@@ -887,11 +780,102 @@ begin
     end;
 end;
 
+procedure TFormMain.FormMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+
+procedure ShowPopupMenu;
+var
+  i:integer;
+  node:PTCircuitElement;
+begin
+  showPopup:=false;
+  node:=circuitList.items[cursorOver];
+  for i:=3 to PopupMenu1.Items.Count-1 do PopupMenu1.Items[i].Enabled:=false;
+  case node^.kind of
+     ceJumper:
+     begin
+       PopupMenu1.Items[3].Enabled:=true;
+     end;
+     ceComponent:
+     begin
+        PopupMenu1.Items[7].Enabled:=true;
+        PopupMenu1.Items[8].Enabled:=true;
+       end;
+     ceTag:
+     begin
+        PopupMenu1.Items[5].Enabled:=true;
+        PopupMenu1.Items[7].Enabled:=true;
+        PopupMenu1.Items[8].Enabled:=true;
+     end;
+   end;
+   PopupMenu1.PopUp(Mouse.CursorPos.x,Mouse.CursorPos.Y);
+end;
+
+begin  // TFormMain.FormMouseUp
+   if showPopup then showPopUpmenu;
+end;
+
+procedure TFormMain.EndOperation;
+begin
+  ceDragging:=ceNone;
+  ceDragIdx:=-1;
+  formMain.Cursor:=crDefault;
+  Modified:=true;
+  UpdateCaption;
+  UpdateStatusBar('');
+  formMain.refresh;
+end;
+
+procedure TFormMain.FormClick(Sender: TObject);
+var
+  mousePos:TPoint;
+  node:PTCircuitElement;
+  CompIdx:integer;
+
+
+begin  // TFormMain.FormClick
+   mousePos:=ScreenToClient(Mouse.CursorPos);
+   mousePos.x:=MousePos.x-board.left;
+   mousePos.y:=MousePos.y-board.top;
+   case cedragging of
+      ceNone:
+      begin
+         Compidx:= MouseOverElement(mousePos);
+         if CompIdx >-1 then
+         begin  // component edition
+           node:=CircuitList.items[compIdx];
+           startPt:=MousePos;
+
+         end;
+      end;
+      ceJumper:  //ending new wire installation
+      begin
+           node:=CircuitList.items[ceDragIdx];
+           node^.wire^.EndPt:=mousePos;
+           EndOperation;
+      end;
+      ceComponent: // ending new component installation
+      begin
+         node:=CircuitList.items[ceDragIdx];
+         node^.component^.left:=MousePos.X;
+         node^.component^.top:=MousePos.Y;
+         EndOperation;
+      end;
+      ceTag: // ending  new tag installation
+      begin
+          node:=CircuitList.items[ceDragIdx];
+          node^.tag^.left:=MousePos.X;
+          node^.tag^.top:=MousePos.Y;
+          EndOperation;
+      end;
+   end;
+end;
+
+
 procedure TFormMain.FormPaint(Sender: TObject);
 var
   node:PTCircuitElement;
-  cTag:PTTag;
-  i,ctagLeft,ctagTop:integer;
+  i:integer;
   startLn,endLn:TPoint;
 begin
   Canvas.Clear;
@@ -943,6 +927,13 @@ begin
   self.board.top:=(self.ClientHeight-Self.BoardImage.height) div 2;
 end;
 
+procedure TFormMain.mCancelClick(Sender: TObject);
+begin
+    ceDragging:=ceNone;
+    ceDragIdx:=-1;
+    cursorOver:=-1;
+end;
+
 procedure TFormMain.mCloneClick(Sender: TObject);
 var
   node:PTCircuitElement;
@@ -950,16 +941,15 @@ var
   newComp:PTComponent;
   newPic:TPicture;
   picrect:Trect;
-  i:integer;
 begin
-  i:=MouseOverElement(StartPt);
-  if (i>-1) then
-  begin
-    node:=PTCircuitElement(CircuitList.Items[i]);
+    node:=PTCircuitElement(CircuitList.Items[cursorOver]);
+    cursorOver:=-1;
     case node^.kind of
         ceComponent:
         begin
           UpdateStatusbar('Cloning component');
+          addComponent(node^.component^.image);
+          {
           newComp:=new(PTComponent);
           newPic:=TPicture.create;
           with node^.Component^ do
@@ -980,10 +970,13 @@ begin
           ceDragging:=ceComponent;
           ceDragIdx:=CircuitList.count-1;
           cursor:=crCross;
+          }
         end;
         ceTag:
         begin
+           addcTag(node^.tag^.text);
            UpdateStatusbar('Cloning tag');
+           {
            newTag:=new(PTTag);
            with node^.tag^ do
            begin
@@ -1000,10 +993,9 @@ begin
            ceDragging:=ceTag;
            CircuitList.add(node);
            ceDragIdx:=CircuitList.count-1;
-           cursor:=crCross;
+           cursor:=crCross;}
         end;
     end;
-  end;
 end;
 
 procedure TFormMain.mColorClick(Sender: TObject);
@@ -1028,7 +1020,6 @@ end;
 
 procedure TFormMain.mDeleteClick(Sender: TObject);
 var
-  node:PTCircuitElement;
   i:integer;
 begin
    i:=0;
@@ -1048,10 +1039,7 @@ begin
    formMain.refresh;
 end;
 
-procedure TFormMain.MenuItemLibraryClick(Sender: TObject);
-begin
 
-end;
 
 procedure TFormMain.MenuItemManualClick(Sender: TObject);
 var
@@ -1066,9 +1054,7 @@ begin
   end;
 end;
 
-procedure TFormMain.MenuItem3Click(Sender: TObject);
-begin
-end;
+
 
 procedure TFormMain.MenuItemHelpPrefClick(Sender: TObject);
 
@@ -1256,7 +1242,7 @@ procedure TFormMain.MenuItemSavebmpClick(Sender: TObject);
 var
   ProjectImg:TBitmap; // use TPortableNetworkGraphic to save as PNG.
   RectFrom,RectTo:TRect;
-  x,y:integer;
+
 begin
   if SaveDialog1.execute then
   begin
@@ -1292,7 +1278,7 @@ begin
   i:=MouseOverElement(StartPt);
   if i>-1 then
   begin
-    UpdateStatusbar('Moving component');
+    UpdateStatusbar('Moving component '+i.ToSTring);
     node:=PTCircuitElement(CircuitList.items[i]);
     if  (node^.kind=ceComponent) or (node^.kind=ceTag) then
     begin
@@ -1305,10 +1291,6 @@ begin
 end;
 
 
-procedure TFormMain.ToolButtonCmpntClick(Sender: TObject);
-begin
-
-end;
 
 
 

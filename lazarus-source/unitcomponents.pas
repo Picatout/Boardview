@@ -39,43 +39,42 @@ type
     BtnRot90: TButton;
     BtnRot180: TButton;
     BtnRotMinus90: TButton;
-    BtnFreeze: TButton;
     ColorDialog1: TColorDialog;
-    Edit1: TEdit;
+    EditTag: TEdit;
     ImgComponent: TImage;
     lblTag: TLabel;
     lbCategory: TListBox;
     lbComponent: TListBox;
     StaticText1: TStaticText;
     StaticText2: TStaticText;
-    stTag: TStaticText;
     procedure BtnCancelClick(Sender: TObject);
-    procedure BtnFreezeClick(Sender: TObject);
     procedure BtnOKClick(Sender: TObject);
     procedure BtnRot180Click(Sender: TObject);
     procedure BtnRot90Click(Sender: TObject);
     procedure BtnRotMinus90Click(Sender: TObject);
     procedure BtnTagFontClick(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
+    procedure EditTagChange(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure FormClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ImgComponentClick(Sender: TObject);
-    procedure ImgComponentDragOver(Sender, Source: TObject; X, Y: Integer;
-      State: TDragState; var Accept: Boolean);
-    procedure ImgComponentEndDrag(Sender, Target: TObject; X, Y: Integer);
+    procedure ImgComponentMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure ImgComponentMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure ImgComponentMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure ImgComponentPaint(Sender: TObject);
     procedure lbCategoryClick(Sender: TObject);
     procedure lbComponentClick(Sender: TObject);
     procedure Rotate(angle:integer);
-    procedure stTagDragOver(Sender, Source: TObject; X, Y: Integer;
-      State: TDragState; var Accept: Boolean);
-    procedure stTagEndDrag(Sender, Target: TObject; X, Y: Integer);
-    procedure stTagMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
-    procedure stTagMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer
-      );
   private
+    picComponent:TPicture;
     selectedBmp:string;
-    cTagleft,cTagTop:integer;
+    rotation:integer; // bitmap rotation
+    ctagLeft,ctagTop:integer;
+    draggingTag:boolean;
+    startX,startY:integer; // tag drag mouse start position
   public
      procedure reloadCategory;
   end;
@@ -97,7 +96,7 @@ uses
 procedure TFormComponents.reloadCategory;
 begin
   CompLibrary.getCatList(lbCategory.items);
-  lbCategory.ItemIndex:=0;
+  if lbCategory.count>0 then lbCategory.ItemIndex:=0;
 end;
 
 procedure TFormComponents.BtnCancelClick(Sender: TObject);
@@ -105,25 +104,11 @@ begin
   FormComponents.close;
 end;
 
-procedure TFormComponents.BtnFreezeClick(Sender: TObject);
-var
-  x,y:integer;
-begin
-  stTag.visible:=false;
-  stTag.Caption:='';
-  x:=stTag.left-imgComponent.left;
-  y:=stTag.top-imgcomponent.top;
-  ImgComponent.canvas.Brush.Style:=bsClear;
-  ImgComponent.Canvas.TextOut(x,y,Edit1.caption);
-  edit1.Caption:='';
-  stTag.left:=imgComponent.left;
-  stTag.top:=ImgComponent.top;
-end;
-
-
 procedure TFormComponents.BtnOKClick(Sender: TObject);
 begin
-   formMain.AddComponent(ImgComponent.Picture);
+   imgComponent.Picture.bitmap.canvas.clear;
+   ImgComponentPaint(self);
+   formMain.AddComponent(imgComponent.picture);
    FormComponents.close;
 end;
 
@@ -147,40 +132,38 @@ begin
     formMain.FontDialog1.execute;
     with formMain.FontDialog1.font do
     begin
-      imgComponent.canvas.font.Size:=size;
-      Edit1.font.size:=size;
-      stTag.font.size:=size;
-      imgComponent.canvas.font.style:=Style;
-      Edit1.Font.Style:=style ;
-      stTag.font.Style:=style;
-      imgComponent.canvas.font.Name:=name;
-      Edit1.font.name:=name;
-      stTag.font.name:=name;
-      imgComponent.canvas.font.color:=color;
-      Edit1.font.color:=color;
-      stTag.font.color:=color;
+      EditTag.font.size:=size;
+      EditTag.Font.Style:=style ;
+      EditTag.font.name:=name;
+      EditTag.font.color:=color;
     end;
+    imgComponent.Refresh;
 end;
 
-procedure TFormComponents.Edit1Change(Sender: TObject);
+procedure TFormComponents.EditTagChange(Sender: TObject);
 begin
-  stTag.Visible:=false;
-  if length(edit1.Caption)>0 then
-  begin
-       stTag.caption:=Edit1.caption;
-       stTag.Visible:=true;
-  end;
+     imgComponent.refresh;
 end;
 
 procedure TFormComponents.FormActivate(Sender: TObject);
 begin
+    rotation:=0;
+    imgComponent.refresh;
+end;
+
+procedure TFormComponents.FormClick(Sender: TObject);
+begin
 
 end;
 
+
 procedure TFormComponents.FormCreate(Sender: TObject);
-var
-  i:integer;
+
 begin
+
+     picComponent:=TPicture.create;
+     imgComponent.canvas.Brush.color:=clWhite;
+     imgComponent.Canvas.clear;
      CompLibrary.getCatList(lbCategory.items);
      lbCategory.ItemIndex:=0;
      LbCategoryClick(self);
@@ -188,31 +171,73 @@ end;
 
 procedure TFormComponents.ImgComponentClick(Sender: TObject);
 var
-  cursorPos:TPoint;
   pixelcolor:TColor;
 begin
-   cursorPos:=ScreenToClient(mouse.CursorPos);
-   CursorPos.X:=CursorPos.X-imgComponent.left;
-   cursorpos.Y:=CursorPos.Y-imgComponent.top;
-   pixelcolor:=ImgComponent.canvas.Pixels[cursorPos.x,cursorPos.Y];
+   pixelcolor:=PicComponent.bitmap.canvas.Pixels[startX,StartY];
    if pixelcolor=clBLACK2 then
    begin
         ColorDialog1.execute;
-        imgComponent.Canvas.Brush.color:=ColorDialog1.Color;
-        ImgComponent.canvas.FloodFill(CursorPos.x,cursorPos.y,clBLACK2,fsSurface);
+        PicComponent.bitmap.Canvas.Brush.color:=ColorDialog1.Color;
+        PicComponent.bitmap.canvas.FloodFill(startX,startY,clBLACK2,fsSurface);
+        imgComponent.refresh;
    end;
 end;
 
-procedure TFormComponents.ImgComponentDragOver(Sender, Source: TObject; X,
-  Y: Integer; State: TDragState; var Accept: Boolean);
+
+procedure TFormComponents.ImgComponentMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  accept:=true;
+  startX:=X;
+  startY:=y;
+  draggingTag:=true;
 end;
 
-procedure TFormComponents.ImgComponentEndDrag(Sender, Target: TObject; X,
-  Y: Integer);
+procedure TFormComponents.ImgComponentMouseMove(Sender: TObject;
+  Shift: TShiftState; X, Y: Integer);
 begin
+   if draggingTag then
+   begin
+     ctagLeft:=cTagLeft+X-startX;
+     ctagTop:=cTagTop+Y-startY;
+     startX:=X;
+     startY:=Y;
+     imgComponent.refresh;
+   end;
+end;
 
+procedure TFormComponents.ImgComponentMouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+   if draggingTag then
+   begin
+        ctagLeft:=cTagLeft+X-StartX;
+        ctagTop:=cTagTop+Y-startY;
+        imgComponent.refresh;
+        draggingTag:=false;
+   end;
+end;
+
+procedure TFormComponents.ImgComponentPaint(Sender: TObject);
+var
+  picrect:Trect;
+begin
+  with ImgComponent.Canvas do
+  begin
+    clear;
+    imgComponent.Picture.Bitmap.SetSize(picComponent.Width,picComponent.Height);
+    picRect:=rect(0,0,picComponent.bitmap.width,picComponent.bitmap.height);
+    copyRect(picRect,picComponent.Bitmap.Canvas,picRect);
+    with EditTag.Font do
+    begin
+      font.color:=color;
+      font.Style:=style;
+      font.Size:=size;
+      font.name:=name;
+      font.Canvas.Brush.style:=bsClear;
+      font.Orientation:=-rotation*10;
+    end;
+    if length(EditTag.text)>0 then TextOut(ctagLeft,ctagTop,editTag.text);
+  end;
 end;
 
 procedure TFormComponents.lbCategoryClick(Sender: TObject);
@@ -228,116 +253,90 @@ begin
   if lbComponent.itemIndex>-1 then
   begin
       selectedBMP:=CompLibrary.getValue(lbCategory.Items[lbCategory.ItemIndex],lbComponent.Items[lbComponent.ItemIndex]);
-      imgComponent.Picture.LoadFromFile('bitmaps\'+SelectedBMP);
-      Edit1.Caption:='';
-      StTag.left:=imgComponent.left;
-      stTag.Top:=imgComponent.top;
+      picComponent.Clear;
+      picComponent.LoadFromFile('bitmaps\'+SelectedBMP);
+      imgComponent.Picture.Bitmap.SetSize(picComponent.Width,picComponent.Height);
+      EditTag.Caption:='';
+      rotation:=0;
+      cTagLeft:=0;
+      cTagTop:=0;
       with formMain.FontDialog1.font do
       begin
         imgComponent.canvas.font.Size:=size;
-        Edit1.font.size:=size;
-        stTag.font.size:=size;
+        EditTag.font.size:=size;
         imgComponent.canvas.font.style:=Style;
-        Edit1.Font.Style:=style ;
-        stTag.font.Style:=style;
+        EditTag.Font.Style:=style ;
         imgComponent.canvas.font.Name:=name;
-        Edit1.font.name:=name;
-        stTag.font.name:=name;
+        EditTag.font.name:=name;
         imgComponent.canvas.font.color:=color;
-        Edit1.font.color:=color;
-        stTag.font.color:=color;
+        EditTag.font.color:=color;
       end;
   end
   else
   begin
       imgComponent.Canvas.clear;
   end;
+  imgComponent.refresh;
 end;
+
 
 
 procedure TFormComponents.Rotate(angle:integer);
 var
   bmp:TBitmap;
-  x,y:integer;
+  x,y,tmp:integer;
   bmprect:TRect;
 begin
   bmp:=TBitmap.create;
   case angle of
     90: // +90 deg
     begin
-      bmp.width:=ImgComponent.canvas.Height;
-      bmp.Height:=ImgComponent.canvas.width;
+      rotation:=rotation+90;
+      bmp.width:=picComponent.bitmap.Height;
+      bmp.Height:=picComponent.bitmap.width;
       bmprect:=rect(0,0,bmp.width,bmp.height);
-      for y:=0 to ImgComponent.Height-1 do
-          for x:= 0 to ImgComponent.Width-1 do
+      for y:=0 to picComponent.Height-1 do
+          for x:= 0 to picComponent.Width-1 do
           begin
-             bmp.Canvas.Pixels[bmp.width-1-y,x]:=ImgComponent.canvas.pixels[x,y];
+             bmp.Canvas.Pixels[bmp.width-1-y,x]:=picComponent.bitmap.canvas.pixels[x,y];
+             cTagLeft:=cTagLeft+EditTag.Font.Height div Screen.PixelsPerInch;
+             //ctagtop:=bmp.width-1-cTagLeft;
           end;
     end;
     180: // 180 deg
     begin
-      bmp.width:=ImgComponent.canvas.width;
-      bmp.height:=ImgComponent.canvas.Height;
+      rotation:=rotation+180;
+      bmp.width:=picComponent.bitmap.width;
+      bmp.height:=picComponent.bitmap.Height;
       bmprect:=rect(0,0,bmp.width,bmp.height);
-      for y:=0 to ImgComponent.Height-1 do
-          for x:= 0 to ImgComponent.Width-1 do
+      for y:=0 to picComponent.Height-1 do
+          for x:= 0 to picComponent.Width-1 do
           begin
-             bmp.Canvas.Pixels[bmp.width-1-x,bmp.height-1-y]:=ImgComponent.canvas.pixels[x,y];
+             bmp.Canvas.Pixels[bmp.width-1-x,bmp.height-1-y]:=picComponent.bitmap.canvas.pixels[x,y];
           end;
 
     end;
     -90: // -90 deg
     begin
-      bmp.width:=ImgComponent.canvas.Height;
-      bmp.Height:=ImgComponent.canvas.width;
+      rotation:=rotation-90;
+      bmp.width:=picComponent.bitmap.Height;
+      bmp.Height:=picComponent.bitmap.width;
       bmprect:=rect(0,0,bmp.width,bmp.height);
-      for y:=0 to ImgComponent.Height-1 do
-          for x:= 0 to ImgComponent.Width-1 do
+      for y:=0 to picComponent.bitmap.Height-1 do
+          for x:= 0 to picComponent.bitmap.Width-1 do
           begin
-             bmp.Canvas.Pixels[y,x]:=ImgComponent.canvas.pixels[ImgComponent.canvas.width-1-x,y];
+             bmp.Canvas.Pixels[y,x]:=picComponent.bitmap.canvas.pixels[picComponent.bitmap.canvas.width-1-x,y];
           end;
     end;
   end;
-  Imgcomponent.Picture.Bitmap.SetSize(bmprect.Width,bmprect.height);
-  ImgComponent.Canvas.CopyRect(bmprect,bmp.canvas,bmprect);
+  rotation:=rotation mod 360;
+  piccomponent.Bitmap.SetSize(bmprect.Width,bmprect.height);
+  picComponent.bitmap.Canvas.CopyRect(bmprect,bmp.canvas,bmprect);
   ImgComponent.refresh;
   bmp.Destroy;
 end;
 
-procedure TFormComponents.stTagDragOver(Sender, Source: TObject; X, Y: Integer;
-  State: TDragState; var Accept: Boolean);
-begin
-  accept:=true;
-end;
 
-procedure TFormComponents.stTagEndDrag(Sender, Target: TObject; X, Y: Integer);
-begin
-  with stTag do
-  begin
-    visible:=false;
-    left:=imgComponent.left+x;
-    top:=imgComponent.Top+y;
-    visible:=true;
-  end;
-end;
-
-procedure TFormComponents.stTagMouseDown(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Integer);
-begin
-end;
-
-procedure TFormComponents.stTagMouseMove(Sender: TObject; Shift: TShiftState;
-  X, Y: Integer);
-begin
-  stTag.visible:=false;
-  x:=imgComponent.left;
-  Y:=ImgComponent.top;
-  if x>(imgComponent.Left+imgComponent.width-1) then x:= (imgComponent.Left+imgComponent.width-1);
-  if Y>(imgComponent.top+imgComponent.Height-1) then y:=(imgComponent.top+imgComponent.Height-1);
-  stTag.Left:=X;
-  stTag.top:=Y;
-  stTag.Visible:=true;;
-end;
 
 
 end.

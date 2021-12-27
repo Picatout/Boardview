@@ -105,6 +105,7 @@ uses  dialogs,
       begin
          libFile.EraseSection(name);
          libFile.UpdateFile;
+         LoadCategories;
       end;
 
       procedure TCompLib.DeleteComponent(category,name:string);

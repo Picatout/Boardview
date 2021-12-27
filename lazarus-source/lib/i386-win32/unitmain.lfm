@@ -4,8 +4,9 @@ object FormMain: TFormMain
   Top = 156
   Width = 1126
   Caption = 'Boardview - '
-  ClientHeight = 615
-  ClientWidth = 1126
+  ClientHeight = 0
+  ClientWidth = 0
+  DragMode = dmAutomatic
   Icon.Data = {
     2606000000000100010016150000010018001006000016000000280000001600
     00002A0000000100180000000000940500006400000064000000000000000000
@@ -64,6 +65,7 @@ object FormMain: TFormMain
   OnCreate = FormCreate
   OnMouseDown = FormMouseDown
   OnMouseMove = FormMouseMove
+  OnMouseUp = FormMouseUp
   OnPaint = FormPaint
   OnResize = FormResize
   LCLVersion = '2.0.12.0'
@@ -212,9 +214,8 @@ object FormMain: TFormMain
         ShortCut = 16469
         OnClick = ToolButtonUndoClick
       end
-      object MenuItemLibrary: TMenuItem
+      object MenuItemSep1: TMenuItem
         Caption = '-'
-        OnClick = MenuItemLibraryClick
       end
       object MenuLibrary: TMenuItem
         Caption = 'Components library'
@@ -671,31 +672,47 @@ object FormMain: TFormMain
     Left = 520
   end
   object PopupMenu1: TPopupMenu
+    Alignment = paCenter
     Left = 760
     object mDelete: TMenuItem
       Caption = 'Delete'
       OnClick = mDeleteClick
     end
+    object mCancel: TMenuItem
+      Caption = 'Cancel operation'
+      GroupIndex = 1
+      OnClick = mCancelClick
+    end
+    object MenuItem2: TMenuItem
+      Caption = '-'
+      Enabled = False
+    end
     object mColor: TMenuItem
       Caption = 'jumper color...'
+      GroupIndex = 3
       OnClick = mColorClick
     end
     object N1: TMenuItem
       Caption = '-'
+      Enabled = False
     end
     object mTagFont: TMenuItem
       Caption = 'Tag Font...'
+      GroupIndex = 5
       OnClick = mTagFontClick
     end
     object N2: TMenuItem
       Caption = '-'
+      Enabled = False
     end
     object mMove: TMenuItem
       Caption = 'move'
+      GroupIndex = 7
       OnClick = mMoveClick
     end
     object mClone: TMenuItem
       Caption = 'clone'
+      GroupIndex = 8
       OnClick = mCloneClick
     end
   end

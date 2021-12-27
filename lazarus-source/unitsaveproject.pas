@@ -58,7 +58,7 @@ var
 implementation
 
 {$R *.lfm}
-uses lazFileUtils,UnitMain;
+uses lazFileUtils;
 
 { TFormSaveProject }
 

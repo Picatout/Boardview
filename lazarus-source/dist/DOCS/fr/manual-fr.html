@@ -16,6 +16,7 @@
   peut-être sauvegarder comme fichier <b>*.bvp</b>. Ce fichier peut-être réouvert pour modification. Il est aussi possible de le sauvegarder 
   comme fichier <b>*.bmp</b> mais ceux-ci ne peuvent pas être réouvert pour modification. Ils sont seulement utile pour communiquer le montage.
 </P>
+<p>Révisé pour la version 1.1</p>
 <p>
   <div><image src="file:../resources/boardview-main-window.png"/></div>
   BoardView est simple d'utilisation donc ce manuel est bref.
@@ -148,9 +149,8 @@ boite de dialogue:
 <center><h2>Installation d'éléments sur la platine</h2></center>
 <p>
 <ul>
-<li>Pour ajouter un fil on clique une première fois sur la position de départ ensuite on déplace le curseur de la souris sur la position
-d'arrivée et on clique une deuxième fois. Il est possible d'annuler cette opération en cours en cliquant avec le bouton droit de la souris
-plutôt que le gauche. Lorsque l'opération est en cours le fil suis le curseur de la souris. La couleur du fil est celui de la dernière sélection
+<li>Pour ajouter un fil sur la platine on enfonce le bouton gauche de la souris au point de départ et en le maintenant enfoncé on déplace la souris au point 
+d'arrivé où on relache le bouton.  Lorsque l'opération est en cours le fil suis le curseur de la souris. La couleur du fil est celui de la dernière sélection
 dans la boîte de dialogue <b>jumper color</b>.
 </li>
 <hr width="10%" align="left"/>
@@ -160,9 +160,8 @@ dans la boîte de dialogue <b>jumper color</b>.
 	à la position du curseur.
 <div><image src="file:../resources/component-dialog.png"</div><br/>
     Le composant sélectionné dans la boite dialogue apparaît en bas à droite. Une étiquette peut y être ajoutée. Cette étiquette est positionnée au dessus du composant
-    et ne doit pas le déborder sinon elle sera tronquée. Une fois l'étiquette positionnée à l'endroit désiré le bouton <b>freeze</b> doit-être utilisé pour la fixer 
-    sur le composant. Les étiquettes de composants font parti de celui-ci et se déplace, sont clonées et suprimées avec celui-ci.<br/>
-    De plus l'image du composant peut-être pivotée de +90&deg;,180&deg; ou -90&deg;.
+    et ne doit pas le déborder sinon elle sera tronquée. Les étiquettes de composants font parti de celui-ci et se déplace, sont clonées ou suprimées avec celui-ci.<br/>
+    De plus l'image du composant peut-être pivotée de +90&deg;,180&deg; ou -90&deg;. Une rotation positive est dans le sens antihoraire.
 </li>
 <hr width="10%" align="left"/>
 <li>Pour ajouter une étiquette on clique son icône sur la barre d'outils pour ouvrir la boite de dialogue <b>add tag</b>. La couleur et la police de caractère sont 
@@ -175,9 +174,11 @@ Notez que pendant une opération le curseur de la souris change de forme pour dev
 <h3>menu contextuel</h3>
 <div><image src="file:../resources/popup-menu.png"/></div>
 <p>
-   Quand avec le bouton gauche de la souris on clique sur un élément du circuit un menu surgissant s'affiche. Les choix du menu qui sont activés 
+   Quand avec le bouton droit de la souris on clique sur un élément du circuit un menu surgissant s'affiche. Les choix du menu qui sont activés 
    dépent du type de composant.<br/>	
   <ul>
+  <hr width="10%" align="left"/>
+  <li><b>Cancel popup</b>  S'applique au 3 types d'éléments. Annule simplement le menu surgissant. Il ne se passe rien.</li>
   <hr width="10%" align="left"/>
   <li><b>Delete</b>  S'applique au 3 types d'éléments. Supprime l'élément sélectionné.</li>
   <hr width="10%" align="left"/>
@@ -186,11 +187,13 @@ Notez que pendant une opération le curseur de la souris change de forme pour dev
   <hr width="10%" align="left"/>
   <li><b>tag font...</b> S'applique seulement aux étiquettes. Ouvre le dialogue <b>Police de caractère</b> pour modifier l'apparence de l'étiquette.</li>
   <hr width="10%" align="left"/>
-  <li><b>Move</b> S'applique aux composants et étiquettes. Permet de les déplacer sur la platine.</li>
-  <hr width="10%" align="left"/>
   <li><b>Clone</b> S'applique aux composants et étiquettes. Clone l'élément sélectionné. Le clone suis le curseur de la souris jusqu'à ce qu'un clique 
   gauche le dépose.</li>
   </ul>
+</p>
+<p>
+  Il est possible de déplacer une étiquette ou un composant en enfonçant le bouton gauche de la souris sur l'élément et tout en le maintenant enfoncé déplacé
+  le curseur de la souris à l'endroit désiré puis relâché le bouton. Pendant cette opération le curseur prend la forme d'une croix.
 </p>
 <p>
   Les éléments du circuit sont dessinés dans l'ordre de leur création. Celà implique que si un composant plus récent est déplacé par dessus un composant

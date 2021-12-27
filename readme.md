@@ -9,8 +9,8 @@ a [new version](lazarus-source)  written using [Lazarus/free pascal IDE](https:/
 
 ### 2021-12-27
 
-Version 1.1 released.  No new functionnalities, only behavior change. See [lazarus-source/wordlog](lazarus-source/wordlog.md) and user manual update.
-Windows installation package [lazarus-source\boardview-laz-1.1](lazarus-source\boardview-laz-1.1.exe).
+Version 1.1 released.  No new functionnalities, only behavior change. See [lazarus-source/wordlog](lazarus-source/worklog.md) and user manual update.
+Windows installation package [lazarus-source/boardview-laz-1.1](lazarus-source/boardview-laz-1.1.exe).
 
 ## 2021-12-22
 

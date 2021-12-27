@@ -4,8 +4,8 @@ object FormMain: TFormMain
   Top = 156
   Width = 1126
   Caption = 'Boardview - '
-  ClientHeight = 0
-  ClientWidth = 0
+  ClientHeight = 615
+  ClientWidth = 1126
   DragMode = dmAutomatic
   Icon.Data = {
     2606000000000100010016150000010018001006000016000000280000001600
@@ -674,14 +674,14 @@ object FormMain: TFormMain
   object PopupMenu1: TPopupMenu
     Alignment = paCenter
     Left = 760
+    object mCancel: TMenuItem
+      Caption = 'Cancel popup'
+      GroupIndex = 1
+      OnClick = mCancelClick
+    end
     object mDelete: TMenuItem
       Caption = 'Delete'
       OnClick = mDeleteClick
-    end
-    object mCancel: TMenuItem
-      Caption = 'Cancel operation'
-      GroupIndex = 1
-      OnClick = mCancelClick
     end
     object MenuItem2: TMenuItem
       Caption = '-'
@@ -704,11 +704,6 @@ object FormMain: TFormMain
     object N2: TMenuItem
       Caption = '-'
       Enabled = False
-    end
-    object mMove: TMenuItem
-      Caption = 'move'
-      GroupIndex = 7
-      OnClick = mMoveClick
     end
     object mClone: TMenuItem
       Caption = 'clone'

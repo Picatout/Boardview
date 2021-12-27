@@ -101,7 +101,6 @@ type
     MenuItemHelpPref: TMenuItem;
     mTagFont: TMenuItem;
     N1: TMenuItem;
-    mMove: TMenuItem;
     mClone: TMenuItem;
     N2: TMenuItem;
     MenuItemFile: TMenuItem;
@@ -739,6 +738,7 @@ begin
           node:=CircuitList.items[cursorOver];
           ceDragIdx:=cursorOver;
           ceDragging:=node^.kind;
+          cursor:=crCross;
        end;
      end;
   end;

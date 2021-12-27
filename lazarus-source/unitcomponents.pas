@@ -285,22 +285,26 @@ procedure TFormComponents.Rotate(angle:integer);
 var
   bmp:TBitmap;
   x,y,tmp:integer;
+  txtWidth,txtHeight:integer;
   bmprect:TRect;
 begin
   bmp:=TBitmap.create;
+  tmp:=cTagLeft;
+  txtWidth:=EditTag.Font.GetTextWidth(EditTag.text)*length(EditTag.Text);
+  txtHeight:=EditTag.Font.GetTextHeight(EditTag.text);
   case angle of
-    90: // +90 deg
+    -90: // -90 clockwise rotation
     begin
       rotation:=rotation+90;
       bmp.width:=picComponent.bitmap.Height;
       bmp.Height:=picComponent.bitmap.width;
       bmprect:=rect(0,0,bmp.width,bmp.height);
+      cTagLeft:=bmp.width-1-cTagTop;
+      cTagTop:=tmp;
       for y:=0 to picComponent.Height-1 do
           for x:= 0 to picComponent.Width-1 do
           begin
              bmp.Canvas.Pixels[bmp.width-1-y,x]:=picComponent.bitmap.canvas.pixels[x,y];
-             cTagLeft:=cTagLeft+EditTag.Font.Height div Screen.PixelsPerInch;
-             //ctagtop:=bmp.width-1-cTagLeft;
           end;
     end;
     180: // 180 deg
@@ -309,19 +313,23 @@ begin
       bmp.width:=picComponent.bitmap.width;
       bmp.height:=picComponent.bitmap.Height;
       bmprect:=rect(0,0,bmp.width,bmp.height);
-      for y:=0 to picComponent.Height-1 do
-          for x:= 0 to picComponent.Width-1 do
+      cTagLeft:=bmp.width-1-cTagLeft;
+      cTagTop:=bmp.height-1-cTagTop;
+      for y:=0 to bmp.height-1 do
+          for x:= 0 to bmp.width-1 do
           begin
              bmp.Canvas.Pixels[bmp.width-1-x,bmp.height-1-y]:=picComponent.bitmap.canvas.pixels[x,y];
           end;
 
     end;
-    -90: // -90 deg
+    +90: // +90 conterclockwise rotation
     begin
       rotation:=rotation-90;
       bmp.width:=picComponent.bitmap.Height;
       bmp.Height:=picComponent.bitmap.width;
       bmprect:=rect(0,0,bmp.width,bmp.height);
+      cTagLeft:=cTagTop;
+      cTagTop:=bmp.height-1-tmp;
       for y:=0 to picComponent.bitmap.Height-1 do
           for x:= 0 to picComponent.bitmap.Width-1 do
           begin

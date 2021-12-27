@@ -1,3 +1,15 @@
+### 2021-12-27
+
+* working on components dialog. Inverted rotation angle behavior. +90 is conterclockwise and -90 is clockwise.
+
+* Modified code UnitComponents to rotate tag with component.
+
+* Removed freeze  button un Components dialog. Now it is automatic when **OK** button is clicked. 
+
+* Updated version 1.1 and documentation accordingly. 
+
+* Created an installation package for version 1.1
+
 ### 2021-12-26 
 
 * Now elements are dragged keeping the left button down instead of click to start and click again to stop. 

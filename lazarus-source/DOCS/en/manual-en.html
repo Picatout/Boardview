@@ -7,7 +7,7 @@
 <meta name="author" content="Jacques Dechênes"/>
 <meta name="Copyright" content="2021, Jacques Dechênes" />
 <meta name="keywords" content="prototyping,solderless,electronic circuit design" />
-<meta name="last revision" content="2021-12-21" />
+<meta name="last revision" content="2021-12-27" />
 </head>
 <body>
 <center><h1>Introduction</h1></center>
@@ -15,6 +15,7 @@
   BoardView is a software to draw solderless prototyping board layout. These layouts can be saved as editable <b>*.bvp</b> files or as bitmap files.
   The bitmap file can be used to communicate the design to others.
 </P>
+<p>Version 1.1 revision</p>
 <p>
   <div><image src="file:../resources/boardview-main-window.png"/></div>
   BoardView is so simple and obvious to use this manual is very brief.
@@ -136,19 +137,17 @@ dialog box:
   mouse position relative to left-top corner of prototyping board. Hence the coordinates can be negatives.
 </p>
 <center><h2>Placing elements on the board</h2></center>
-
+<p>
 <ul>
-<li>To Add a jumper first click on the starting point of wire. The cursor change for a cross. Click a second time when the mouse cursor is over the 
-position of the other end of wire. While moving the mouse a line follow the mouse cursor. Clicking with the right mouse button cancel the operation.</li>
+<li>To Add a wire push down left mouse button at starting point and hold it. The cursor change for a cross. Drag the mouse cursor to end position and release left button.</li>
 <hr width="10%" align="left"/>
 <li>To add a component click the component icon on the toolbar to open the component dialog to select the component. When the dialog is closed the 
 component follow the mouse until the mouse left button is clicked. The compononent is then set at this position.
 <div><image src="file:../resources/component-dialog.png"</div><br/>
 A tag can be overlaid on the bitmap of the selected component. Fill the <b>tag</b> field with the desired text, select the font then with the mouse 
-drag the tag over the component. The <b>freeze</b> button must be clicked before the <b>OK</b> button to fix this tag to the component. Once frozen it is 
-no more modifyable. The tag added this way follow the component. It part of its bitmap representation. hence if this component is cloned the clone carry 
-the same tag. The tag must fit inside the surface of component bitmap otherwise it will be truncated when frozen.<br/>
-The component bitmap may also be rotated by <b>+90&deg;,180&deg; or -90&deg;</b>.
+drag the tag over the component.  The tag added this way follow the component. It part of its bitmap representation. hence if this component is cloned the clone carry 
+the same tag. The tag must fit inside the surface of component bitmap otherwise it will be truncated.<br/>
+The component bitmap may also be rotated by <b>+90&deg;,180&deg; or -90&deg;</b>. Positive angle is conterclockwise.
 </li>
 <hr width="10%" align="left"/>
 <li>To add a tag click the tag icon on the toolbar to open the tag dialog. When the dialog is closed the tag follow the mouse cursor until the left mouse button 
@@ -156,13 +155,15 @@ is clicked. The tag is then set to that position.
 <div><image src="file:../resources/tag-dialog.png"</div><br/>
 </li>
 </ul>
-
+</p>
 <h3>Popup menu</h3>
 <div><image src="file:../resources/popup-menu.png"/></div>
 <p>
-   When clicking on a jumper, component or tag a popup menu appear. Only the items concerning the chosen element are activated in the menu.
+   When right clicking on a jumper, component or tag a popup menu appear. Only the items concerning the chosen element are activated in the menu.
    
   <ul>
+  <hr width="10%" align="left"/>
+  <li><b>Cancel</b>  Apply to all 3 types of elements. Cancel popup menu, do nothing.</li>
   <hr width="10%" align="left"/>
   <li><b>Delete</b>  Apply to all 3 types of elements. Delete the selected element from the board.</li>
   <hr width="10%" align="left"/>
@@ -171,11 +172,13 @@ is clicked. The tag is then set to that position.
   <hr width="10%" align="left"/>
   <li><b>tag font...</b> Apply to tag only. This item let you modify a tag font properties.</li>
   <hr width="10%" align="left"/>
-  <li><b>Move</b> Apply only to components and tags. Let you move the selected element around. The element follow mouse cursor until
-   Left click fix it at that position.</li>
-  <hr width="10%" align="left"/>
-  <li><b>Clone</b> Apply only to components and tags. Clone the selected element then move the clone at chosen position. Left click at the desired position.</li>
+  <li><b>Clone</b> Apply only to components and tags. Clone the selected element and the cursor take a cross shape, then move the clone at chosen position.  
+  Left click at the desired position.</li>
   </ul>
+</p>
+<h3>Moving component and tag</h3>
+<p>
+  Components and tags can be moved around by holding down left mouse button over one element and dragging it to final position the releasing the button.
 </p>
 <p>
   Elements are drawn on the board in the order they are created. If you move a more recently added element over another one it mask the older one.

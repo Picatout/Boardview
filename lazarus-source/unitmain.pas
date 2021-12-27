@@ -101,7 +101,6 @@ type
     MenuItemHelpPref: TMenuItem;
     mTagFont: TMenuItem;
     N1: TMenuItem;
-    mMove: TMenuItem;
     mClone: TMenuItem;
     N2: TMenuItem;
     MenuItemFile: TMenuItem;
@@ -799,13 +798,11 @@ begin
      ceComponent:
      begin
         PopupMenu1.Items[7].Enabled:=true;
-        PopupMenu1.Items[8].Enabled:=true;
        end;
      ceTag:
      begin
         PopupMenu1.Items[5].Enabled:=true;
         PopupMenu1.Items[7].Enabled:=true;
-        PopupMenu1.Items[8].Enabled:=true;
      end;
    end;
    PopupMenu1.PopUp(Mouse.CursorPos.x,Mouse.CursorPos.Y);

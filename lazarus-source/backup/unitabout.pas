@@ -43,7 +43,7 @@ end;
 
 procedure TFormAbout.FormActivate(Sender: TObject);
 begin
-   Memo1.lines[3]:='version '+MAJOR.ToString+'.'+MINOR.ToString;
+   Memo1.lines[5]:='version '+MAJOR.ToString+'.'+MINOR.ToString;
 end;
 
 

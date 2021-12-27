@@ -9,7 +9,8 @@ uses
 
 Const
   MAJOR=1;
-  MINOR=0;
+  MINOR=1;
+
 type
 
   { TFormAbout }

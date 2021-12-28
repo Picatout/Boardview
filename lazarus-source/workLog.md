@@ -1,3 +1,7 @@
+### 2021-12-28
+
+*  **UnitComponents.TformComponents.rotate**  cleanup unsused code.
+
 ### 2021-12-27
 
 * working on components dialog. Inverted rotation angle behavior. +90 is conterclockwise and -90 is clockwise.

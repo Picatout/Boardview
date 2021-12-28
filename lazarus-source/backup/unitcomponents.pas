@@ -314,7 +314,7 @@ begin
       bmp.height:=picComponent.bitmap.Height;
       bmprect:=rect(0,0,bmp.width,bmp.height);
       cTagLeft:=bmp.width-1-cTagLeft;
-      cTagTop:=bmp.height-1-cTagTop-txtHeight;
+      cTagTop:=bmp.height-1-cTagTop;
       for y:=0 to bmp.height-1 do
           for x:= 0 to bmp.width-1 do
           begin

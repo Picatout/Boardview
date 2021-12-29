@@ -11,6 +11,8 @@
 	
 	*  The **jumper color...** item in popup menu is now actived both for **jumper** and **tag**.
 	
+	* Updated manuals for revision 1.1.2
+	
 ### 2021-12-28
 
 *  Found How to change the application taskbar icon.  I create an [app-icon.rc](app-icon.rc) and [boardview.lpr](boardview.lpr)

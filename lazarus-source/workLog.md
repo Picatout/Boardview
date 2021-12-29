@@ -2,6 +2,15 @@
 
 * Adapted code for Linux. 
 
+	*  Linux file system is case sensitive contrary to Windows. components.ini was edited to change uppercase **BMP** to lowercase.
+	
+	*  winres doesn't work in linux. Added Conditional compiling in boardview.lpr remove **{$R app-icon.rc}** when compiling in Linux.
+	
+	*  Unbutu Font dialog as no color selection for the font.  Added a **color...** button in Components and tag dialogs. This button 
+	is visible only in Linux compiled version.  
+	
+	*  The **jumper color...** item in popup menu is now actived both for **jumper** and **tag**.
+	
 ### 2021-12-28
 
 *  Found How to change the application taskbar icon.  I create an [app-icon.rc](app-icon.rc) and [boardview.lpr](boardview.lpr)

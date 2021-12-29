@@ -1024,6 +1024,7 @@ begin
      begin
         FormTag.ColorDialog1.execute;
         node^.tag^.color:=FormTag.ColorDialog1.color;
+        self.refresh;
      end;
    end;
 end;

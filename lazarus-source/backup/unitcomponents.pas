@@ -285,13 +285,10 @@ procedure TFormComponents.Rotate(angle:integer);
 var
   bmp:TBitmap;
   x,y,tmp:integer;
-  txtWidth,txtHeight:integer;
   bmprect:TRect;
 begin
   bmp:=TBitmap.create;
   tmp:=cTagLeft;
-  txtWidth:=EditTag.Font.GetTextWidth(EditTag.text)*length(EditTag.Text);
-  txtHeight:=EditTag.Font.GetTextHeight(EditTag.text);
   case angle of
     -90: // -90 clockwise rotation
     begin

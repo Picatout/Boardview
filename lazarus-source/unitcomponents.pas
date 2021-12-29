@@ -254,7 +254,7 @@ begin
   begin
       selectedBMP:=CompLibrary.getValue(lbCategory.Items[lbCategory.ItemIndex],lbComponent.Items[lbComponent.ItemIndex]);
       picComponent.Clear;
-      picComponent.LoadFromFile('bitmaps\'+SelectedBMP);
+      picComponent.LoadFromFile(BMP_PATH+SelectedBMP);
       imgComponent.Picture.Bitmap.SetSize(picComponent.Width,picComponent.Height);
       EditTag.Caption:='';
       rotation:=0;

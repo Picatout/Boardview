@@ -1,5 +1,12 @@
 ### 2021-12-28
 
+*  Found How to change the application taskbar icon.  I create an [app-icon.rc](app-icon.rc) and [boardview.lpr](boardview.lpr)
+added **{$R app-icon.rc}** and commented out **{$R *.res}**.  It doesn't work if the **.rc** has not the same name as project name.
+
+*  Modified to ask save change before selecting a new board.
+
+*  Modified project to compile on Linux as well as Windows.
+
 *  **UnitComponents.TformComponents.rotate**  cleanup unsused code.
 
 ### 2021-12-27

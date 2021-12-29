@@ -29,6 +29,13 @@ uses
   osPrinters,FPImage
   ;
 
+const
+  {$IFDEF WINDOWS}
+     BMP_PATH='bitmaps\';
+  {$ELSE}
+     BMP_PATH='bitmaps/';
+  {$ENDIF}
+
 type
    // prototyping board
    TBoard = record
@@ -239,9 +246,9 @@ const
   bsLARGE=2;
   // prototyping boards list.
   Boards:array[0..2] of TBoard=(
-  (name:'small';fileName: 'bitmaps\protoboard-small.bmp';left:0;top:0),
-  (name:'medium';filename:'bitmaps\protoboard-medium.bmp';left:0;top:0),
-  (name:'large';filename: 'bitmaps\protoboard-large.bmp';left:0;top:0)
+  (name:'small';fileName: BMP_PATH+'protoboard-small.bmp';left:0;top:0),
+  (name:'medium';filename:BMP_PATH+'protoboard-medium.bmp';left:0;top:0),
+  (name:'large';filename: BMP_PATH+'protoboard-large.bmp';left:0;top:0)
   );
 
 implementation
@@ -1132,8 +1139,11 @@ end;
 
 procedure TFormMain.MenuItemBoardSelectClick(Sender: TObject);
 begin
-  frmBoards.Show;
-  InstallProtoboard(frmBoards.RGboards.ItemIndex);
+   if (not Modified) or QuerySaveModified then
+   begin
+        frmBoards.Show;
+        InstallProtoboard(frmBoards.RGboards.ItemIndex);
+   end;
 end;
 
 procedure TFormMain.MenuItemComponentClick(Sender: TObject);

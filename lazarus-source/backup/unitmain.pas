@@ -29,6 +29,13 @@ uses
   osPrinters,FPImage
   ;
 
+const
+  {$IFDEF WINDOWS}
+     BMP_PATH='bitmaps\';
+  {$ELSE}
+     BMP_PATH='bitmaps/';
+  {$ENDIF}
+
 type
    // prototyping board
    TBoard = record
@@ -239,9 +246,9 @@ const
   bsLARGE=2;
   // prototyping boards list.
   Boards:array[0..2] of TBoard=(
-  (name:'small';fileName: 'bitmaps\protoboard-small.bmp';left:0;top:0),
-  (name:'medium';filename:'bitmaps\protoboard-medium.bmp';left:0;top:0),
-  (name:'large';filename: 'bitmaps\protoboard-large.bmp';left:0;top:0)
+  (name:'small';fileName: BMP_PATH+'protoboard-small.bmp';left:0;top:0),
+  (name:'medium';filename:BMP_PATH+'protoboard-medium.bmp';left:0;top:0),
+  (name:'large';filename: BMP_PATH+'protoboard-large.bmp';left:0;top:0)
   );
 
 implementation
@@ -697,6 +704,7 @@ end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
+//  Application.icon.LoadFromFile('proto-256x256.ico');
   CircuitList:=TFPList.Create;
   StartPt.X:=0;
   StartPt.Y:=0;
@@ -798,13 +806,11 @@ begin
      ceComponent:
      begin
         PopupMenu1.Items[7].Enabled:=true;
-        PopupMenu1.Items[8].Enabled:=true;
        end;
      ceTag:
      begin
         PopupMenu1.Items[5].Enabled:=true;
         PopupMenu1.Items[7].Enabled:=true;
-        PopupMenu1.Items[8].Enabled:=true;
      end;
    end;
    PopupMenu1.PopUp(Mouse.CursorPos.x,Mouse.CursorPos.Y);
@@ -1134,8 +1140,11 @@ end;
 
 procedure TFormMain.MenuItemBoardSelectClick(Sender: TObject);
 begin
-  frmBoards.Show;
-  InstallProtoboard(frmBoards.RGboards.ItemIndex);
+   if (not Modified) or QuerySaveModified then
+   begin
+        frmBoards.Show;
+        InstallProtoboard(frmBoards.RGboards.ItemIndex);
+   end;
 end;
 
 procedure TFormMain.MenuItemComponentClick(Sender: TObject);

@@ -8,8 +8,10 @@ uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
 Const
-  MAJOR=1;
-  MINOR=0;
+  MAJOR=1;    // major version
+  MINOR=1;    // minor version
+  REVISION=3; // code revision
+
 type
 
   { TFormAbout }
@@ -43,7 +45,7 @@ end;
 
 procedure TFormAbout.FormActivate(Sender: TObject);
 begin
-   Memo1.lines[5]:='version '+MAJOR.ToString+'.'+MINOR.ToString;
+   Memo1.lines[5]:='version '+MAJOR.ToString+'.'+MINOR.ToString+'.'+REVISION.ToString;
 end;
 
 

@@ -20,7 +20,7 @@
 program boardview;
 
 {$mode objfpc}{$H+}
-// {$R boardview.rc -vd}
+
 
 uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
@@ -32,7 +32,8 @@ uses
   unitLibrary, unitHelpPref
   { you can add units after this };
 
-{$R *.res}
+{$R app-icon.rc}
+//{$R *.res}
 
 
 begin
@@ -50,6 +51,7 @@ begin
   Application.CreateForm(TFormQuerySave, FormQuerySave);
   Application.CreateForm(TFormLibrary, FormLibrary);
   Application.CreateForm(TFormHelpPref, FormHelpPref);
+  application.icon.assign(FormMain.Icon);
   Application.Run;
 end.
 

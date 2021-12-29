@@ -71,7 +71,9 @@ begin
   FormMain.FontDialog1.execute;
   with formMain.FontDialog1.Font do
   begin
+     {$IFDEF WINDOWS}
      Edit1.Font.Color:=color;
+     {$ENDIF}
      Edit1.Font.Name:=name;
      Edit1.Font.Style:=style;
      Edit1.Font.size:=size;

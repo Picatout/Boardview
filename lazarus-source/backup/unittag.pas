@@ -93,7 +93,7 @@ end;
 procedure TFormTag.FormCreate(Sender: TObject);
 begin
   {$IFDEF WINDOWS}
-//   BtnTagColor.visible := false;
+   BtnTagColor.visible := false;
   {$ENDIF}
 end;
 

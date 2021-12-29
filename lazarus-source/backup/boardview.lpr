@@ -32,7 +32,7 @@ uses
   unitLibrary, unitHelpPref
   { you can add units after this };
 
-{$R test.rc}
+{$R app-icon.rc}
 //{$R *.res}
 
 

@@ -39,6 +39,7 @@ type
     BtnRot90: TButton;
     BtnRot180: TButton;
     BtnRotMinus90: TButton;
+    BtnTagColor: TButton;
     ColorDialog1: TColorDialog;
     EditTag: TEdit;
     ImgComponent: TImage;
@@ -52,6 +53,7 @@ type
     procedure BtnRot180Click(Sender: TObject);
     procedure BtnRot90Click(Sender: TObject);
     procedure BtnRotMinus90Click(Sender: TObject);
+    procedure BtnTagColorClick(Sender: TObject);
     procedure BtnTagFontClick(Sender: TObject);
     procedure EditTagChange(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -125,6 +127,12 @@ end;
 procedure TFormComponents.BtnRotMinus90Click(Sender: TObject);
 begin
   rotate(-90);
+end;
+
+procedure TFormComponents.BtnTagColorClick(Sender: TObject);
+begin
+   ColorDialog1.execute;
+   EditTag.font.Color:=ColorDialog1.color;
 end;
 
 procedure TFormComponents.BtnTagFontClick(Sender: TObject);
@@ -254,7 +262,7 @@ begin
   begin
       selectedBMP:=CompLibrary.getValue(lbCategory.Items[lbCategory.ItemIndex],lbComponent.Items[lbComponent.ItemIndex]);
       picComponent.Clear;
-      picComponent.LoadFromFile('bitmaps\'+SelectedBMP);
+      picComponent.LoadFromFile(BMP_PATH+SelectedBMP);
       imgComponent.Picture.Bitmap.SetSize(picComponent.Width,picComponent.Height);
       EditTag.Caption:='';
       rotation:=0;

@@ -32,7 +32,9 @@ uses
   unitLibrary, unitHelpPref
   { you can add units after this };
 
+{$IFDEF WINDOWS}
 {$R app-icon.rc}
+{$ENDIF}
 //{$R *.res}
 
 

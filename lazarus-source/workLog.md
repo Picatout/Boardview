@@ -1,3 +1,7 @@
+### 2021-12-29
+
+* Adapted code for Linux. 
+
 ### 2021-12-28
 
 *  Found How to change the application taskbar icon.  I create an [app-icon.rc](app-icon.rc) and [boardview.lpr](boardview.lpr)

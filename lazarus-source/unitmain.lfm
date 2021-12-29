@@ -728,7 +728,7 @@ object FormMain: TFormMain
       Enabled = False
     end
     object mColor: TMenuItem
-      Caption = 'jumper color...'
+      Caption = 'color...'
       GroupIndex = 3
       OnClick = mColorClick
     end

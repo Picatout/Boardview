@@ -241,6 +241,15 @@ object FormComponents: TFormComponents
     OnClick = BtnRotMinus90Click
     TabOrder = 10
   end
+  object BtnTagColor: TButton
+    Left = 311
+    Height = 25
+    Top = 299
+    Width = 75
+    Caption = 'tag color...'
+    OnClick = BtnTagColorClick
+    TabOrder = 11
+  end
   object ColorDialog1: TColorDialog
     Color = clBlack
     CustomColors.Strings = (

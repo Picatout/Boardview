@@ -39,6 +39,7 @@ type
     BtnRot90: TButton;
     BtnRot180: TButton;
     BtnRotMinus90: TButton;
+    BtnTagColor: TButton;
     ColorDialog1: TColorDialog;
     EditTag: TEdit;
     ImgComponent: TImage;
@@ -52,6 +53,7 @@ type
     procedure BtnRot180Click(Sender: TObject);
     procedure BtnRot90Click(Sender: TObject);
     procedure BtnRotMinus90Click(Sender: TObject);
+    procedure BtnTagColorClick(Sender: TObject);
     procedure BtnTagFontClick(Sender: TObject);
     procedure EditTagChange(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -127,6 +129,12 @@ begin
   rotate(-90);
 end;
 
+procedure TFormComponents.BtnTagColorClick(Sender: TObject);
+begin
+   ColorDialog1.execute;
+   EditTag.font.Color:=ColorDialog1.color;
+end;
+
 procedure TFormComponents.BtnTagFontClick(Sender: TObject);
 begin
     formMain.FontDialog1.execute;
@@ -167,6 +175,9 @@ begin
      CompLibrary.getCatList(lbCategory.items);
      lbCategory.ItemIndex:=0;
      LbCategoryClick(self);
+{$IFDEF WINDOWS}
+      btnTagColor.Visible:=false;
+{$ENDIF}
 end;
 
 procedure TFormComponents.ImgComponentClick(Sender: TObject);

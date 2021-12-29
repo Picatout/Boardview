@@ -704,7 +704,6 @@ end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
-//  Application.icon.LoadFromFile('proto-256x256.ico');
   CircuitList:=TFPList.Create;
   StartPt.X:=0;
   StartPt.Y:=0;
@@ -809,6 +808,7 @@ begin
        end;
      ceTag:
      begin
+        PopupMenu1.Items[3].Enabled:=true;
         PopupMenu1.Items[5].Enabled:=true;
         PopupMenu1.Items[7].Enabled:=true;
      end;
@@ -1019,6 +1019,11 @@ begin
         node^.wire^.color:=self.JumperColor;
         UpdateStatusBar('');
         formMain.refresh;
+     end
+     else
+     begin
+        FormTag.ColorDialog1.execute;
+        node^.tag^.color:=FormTag.ColorDialog1.color;
      end;
    end;
 end;

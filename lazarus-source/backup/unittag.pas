@@ -34,11 +34,15 @@ type
     btnOK: TButton;
     BtnCancel: TButton;
     BtnFont: TButton;
+    BtnTagColor: TButton;
+    ColorDialog1: TColorDialog;
     Edit1: TEdit;
     StaticText1: TStaticText;
     procedure BtnCancelClick(Sender: TObject);
     procedure BtnFontClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
+    procedure BtnTagColorClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
 
   public
@@ -78,6 +82,19 @@ end;
 procedure TFormTag.btnOKClick(Sender: TObject);
 begin
   formTag.close;
+end;
+
+procedure TFormTag.BtnTagColorClick(Sender: TObject);
+begin
+  ColorDialog1.execute;
+  Edit1.font.color:=ColorDialog1.Color;
+end;
+
+procedure TFormTag.FormCreate(Sender: TObject);
+begin
+  {$IFDEF WINDOWS}
+//   BtnTagColor.visible := false;
+  {$ENDIF}
 end;
 
 end.

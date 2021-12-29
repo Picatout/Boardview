@@ -3,6 +3,7 @@ object FormLibrary: TFormLibrary
   Height = 577
   Top = 184
   Width = 449
+  BorderStyle = bsDialog
   Caption = 'Library editor'
   ClientHeight = 577
   ClientWidth = 449

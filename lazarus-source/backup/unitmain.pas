@@ -509,10 +509,10 @@ begin
   ctag^.text:=ctext;
   ctag^.left:=0;
   ctag^.top:=0;
-  ctag^.Color:=FontDialog1.Font.color;
-  ctag^.FontName:=FontDialog1.font.name;
-  ctag^.FontStyle:=FontDialog1.font.Style;
-  ctag^.FontSize:=FontDialog1.font.Size;
+  ctag^.Color:=FormTag.Edit1.Font.color;
+  ctag^.FontName:=FormTag.Edit1.font.name;
+  ctag^.FontStyle:=FormTag.Edit1.font.Style;
+  ctag^.FontSize:=FormTag.Edit1.font.Size;
   new(ce);
   ce^.kind:=ceTag;
   ce^.tag:=ctag;

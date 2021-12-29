@@ -1128,7 +1128,9 @@ begin
      ctag:=PTCircuitElement(CircuitList.items[i])^.tag;
      if FontDialog1.execute then
      begin
+          {$IFDEF WINDOWS}
           ctag^.color:=FontDialog1.font.color;
+          {$ENDIF}
           ctag^.FontName:=FontDialog1.font.Name;
           ctag^.FontSize:=FontDialog1.font.Size;
           ctag^.FontStyle:=FontDialog1.font.Style;

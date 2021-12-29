@@ -133,7 +133,7 @@ procedure TFormLibrary.BtnAddCompClick(Sender: TObject);
 begin
    CompLibrary.SetValue(lbCategory.Items[lbCategory.ItemIndex],EditNewComp.Text,EditBmpFile.text);
    lbComponent.ItemIndex:=lbComponent.Items.Add(EditNewComp.text);
-   ImgComponent.Picture.LoadFromFile('Bitmaps\'+EditBmpFile.text);
+   ImgComponent.Picture.LoadFromFile(BMP_PATH+EditBmpFile.text);
 end;
 
 procedure TFormLibrary.FormActivate(Sender: TObject);
@@ -157,7 +157,7 @@ begin
   begin
       EditNewcomp.text:= lbComponent.Items[lbComponent.ItemIndex];
       selectedBMP:=CompLibrary.getValue(lbCategory.Items[lbCategory.ItemIndex],lbComponent.Items[lbComponent.ItemIndex]);
-      imgComponent.Picture.LoadFromFile('bitmaps\'+SelectedBMP);
+      imgComponent.Picture.LoadFromFile(BMP_PATH+SelectedBMP);
       EditBmpFile.text:=SelectedBMP;
   end
   else

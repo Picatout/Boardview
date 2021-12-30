@@ -4,6 +4,12 @@
 
 * Adapted code for Linux. 
 	
+	* Changed Library dialog controls positions and sizes. It was not fitting well in Ubuntu 20.04.
+	
+	* Changed name of [DOCS/resources/Boardview-main-window.png](DOCS/resources/Boardview-main-window.png). Once again a problem with
+	Linux file system beeing case sensitive. In html doc the file was referenced with a lower case **b**.
+	
+	
 	* Added conditional compiling directive for documentation path in [unithelppref.pas](unithelppref.pas). 
 	```
 	const

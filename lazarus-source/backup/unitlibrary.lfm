@@ -116,7 +116,7 @@ object FormLibrary: TFormLibrary
   LCLVersion = '2.0.12.0'
   object lbCategory: TListBox
     Left = 24
-    Height = 206
+    Height = 210
     Top = 30
     Width = 188
     ItemHeight = 0
@@ -125,7 +125,7 @@ object FormLibrary: TFormLibrary
   end
   object lbComponent: TListBox
     Left = 240
-    Height = 205
+    Height = 209
     Top = 31
     Width = 186
     ItemHeight = 0
@@ -187,10 +187,10 @@ object FormLibrary: TFormLibrary
     TabOrder = 3
   end
   object imgComponent: TImage
-    Left = 250
+    Left = 232
     Height = 168
     Top = 392
-    Width = 184
+    Width = 202
   end
   object Label5: TLabel
     Left = 232

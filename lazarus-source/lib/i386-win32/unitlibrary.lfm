@@ -255,10 +255,10 @@ object FormLibrary: TFormLibrary
     TabOrder = 9
   end
   object BtnClose: TButton
-    Left = 80
-    Height = 25
-    Top = 440
-    Width = 75
+    Left = 72
+    Height = 41
+    Top = 424
+    Width = 83
     Caption = 'Close'
     OnClick = BtnCloseClick
     TabOrder = 10

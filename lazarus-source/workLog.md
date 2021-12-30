@@ -1,3 +1,9 @@
+### 2021-12-30
+
+*  Linux: Path separator incorrect while saving project.
+
+*  Linux: In Component Dialog tag color not preserved when changing font.
+
 ### 2021-12-29
 
 * In popup menu changed item **Tag Font...** by **Tag edit...** text can also be changed.

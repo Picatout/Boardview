@@ -205,11 +205,11 @@ begin
    begin
         ColorDialog1.execute;
         PicComponent.bitmap.Canvas.Brush.color:=ColorDialog1.Color;
-        //{$IFDEF WINDOWS}
-        //PicComponent.bitmap.canvas.FloodFill(startX,startY,clBLACK2,fsSurface);
-        //{$ELSE}
+        {$IFDEF WINDOWS}
+        PicComponent.bitmap.canvas.FloodFill(startX,startY,clBLACK2,fsSurface);
+        {$ELSE}
          SolidColorFloodFill(PicComponent.bitmap.canvas,StartX,startY,clBLACK2);
-        //{$ENDIF}
+        {$ENDIF}
         imgComponent.refresh;
    end;
 end;

@@ -143,7 +143,9 @@ begin
       EditTag.font.size:=size;
       EditTag.Font.Style:=style ;
       EditTag.font.name:=name;
+      {$IFDEF WINDOWS}
       EditTag.font.color:=color;
+      {$ENDIF}
     end;
     imgComponent.Refresh;
 end;

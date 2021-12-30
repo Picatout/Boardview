@@ -10,7 +10,7 @@ uses
 Const
   MAJOR=1;    // major version
   MINOR=1;    // minor version
-  REVISION=2; // code revision
+  REVISION=3; // code revision
 
 type
 

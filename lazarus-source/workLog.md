@@ -3,11 +3,25 @@
 * In popup menu changed item **Tag Font...** by **Tag edit...** text can also be changed.
 
 * Adapted code for Linux. 
+	
+	* Added conditional compiling directive for documentation path in [unitHelpPref.pas](unitHelpPref.pas). 
+	```
+	const
+    {$IFDEF WINDOWS}
+    DOCS_PATH_EN='DOCS\en\';
+    DOCS_PATH_FR='DOCS\fr\';
+    {$ELSE}
+    DOCS_PATH_EN='DOCS/en/';
+    DOCS_PATH_FR='DOCS/fr/';
+    {$ENDIF}
+  
+	```
    
     *  canvas.FloodFill doesn't work in Linux so I added my own **FloodFill** in conditional compile for Linxux.
-    '''
+    ```
     // canvas.FloodFill doesn't work in Linux.
 	// fill surface with canvas.brush.color remplacing color
+	// The beauty of recursivity
 	procedure SolidColorFloodFill(canvas:TCanvas;X,Y,color:TColor);
 	begin
       with canvas do
@@ -21,7 +35,7 @@
       end;
 	end;
     
-    '''
+    ```
 
 	*  Linux file system is case sensitive contrary to Windows. components.ini was edited to change uppercase **BMP** to lowercase.
 	

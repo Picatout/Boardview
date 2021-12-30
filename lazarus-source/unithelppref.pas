@@ -26,13 +26,22 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
+const
+    {$IFDEF WINDOWS}
+    DOCS_PATH_EN='DOCS\en\';
+    DOCS_PATH_FR='DOCS\fr\';
+    {$ELSE}
+    DOCS_PATH_EN='DOCS/en/';
+    DOCS_PATH_FR='DOCS/fr/';
+    {$ENDIF}
+
 type
     enumLang=(English,French);
     enumFileType=(HTML,PDF);
 const
     UserMan: array[enumLang,enumFileType] of string=(
-    ('DOCS\en\manual-en.html','DOCS\en\manual-en.pdf'),
-    ('DOCS\fr\manual-fr.html','DOCS\fr\manual-fr.pdf'));
+    (DOCS_PATH_EN+'manual-en.html',DOCS_PATH_EN+'manual-en.pdf'),
+    (DOCS_PATH_FR+'manual-fr.html',DOCS_PATH_FR+'manual-fr.pdf'));
 
 type
 

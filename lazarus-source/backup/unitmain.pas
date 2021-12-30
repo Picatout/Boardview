@@ -1128,8 +1128,9 @@ begin
      ctag:=PTCircuitElement(CircuitList.items[i])^.tag;
      if (formTag.showModal=1) then
      begin
-       if   (length(formTag.Edit1.caption)>0) then
+       if   (length(formTag.Edit1.text)>0) then
          begin
+              ctag^.text:=FormTag.Edit1.text;
               ctag^.color:=FormTag.Edit1.font.color;
               ctag^.FontName:=FormTag.Edit1.font.Name;
               ctag^.FontSize:=FormTag.Edit1.font.Size;

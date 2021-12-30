@@ -26,13 +26,22 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
+const
+    {$IFDEF WINDOWS}
+    DOC_PATH_EN='DOCS\en\';
+    DOC_PATH_FR='DOCS\fr\';
+    {$ELSE}
+    DOC_PATH_EN='DOCS/en/';
+    DOC_PATH_FR='DOCS/fr/';
+    {$ENDIF}
+
 type
     enumLang=(English,French);
     enumFileType=(HTML,PDF);
 const
     UserMan: array[enumLang,enumFileType] of string=(
-    ('DOCS\en\manual-en.html','DOCS\en\manual-en.pdf'),
-    ('DOCS\fr\manual-fr.html','DOCS\fr\manual-fr.pdf'));
+    (DOC_PATH_EN+'manual-en.html',DOCS_PATH_EN+'manual-en.pdf'),
+    (DOCS_PATH_FR+'manual-fr.html',DOCS_PATH_FR+'manual-fr.pdf'));
 
 type
 
@@ -86,8 +95,8 @@ var
   AppIni:TIniFile;
 begin
     AppIni:=TIniFile.Create('Boardview.ini');
-    rgLanguage.ItemIndex:=AppIni.ReadInteger('help preferences','language',English);
-    rgFileType.ItemIndex:=AppIni.ReadInteger('help preferences','format',HTML);
+    rgLanguage.ItemIndex:=AppIni.ReadInteger('help preferences','language',integer(English));
+    rgFileType.ItemIndex:=AppIni.ReadInteger('help preferences','format',integer(HTML));
     AppIni.Destroy;
 end;
 

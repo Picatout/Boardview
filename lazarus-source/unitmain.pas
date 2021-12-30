@@ -954,51 +954,11 @@ begin
         begin
           UpdateStatusbar('Cloning component');
           addComponent(node^.component^.image);
-          {
-          newComp:=new(PTComponent);
-          newPic:=TPicture.create;
-          with node^.Component^ do
-          begin
-             newPic.Bitmap.SetSize(image.bitmap.width,image.Bitmap.height);
-             picRect:=rect(0,0,image.bitmap.width,image.Bitmap.height);
-             newPic.bitmap.canvas.CopyRect(picRect,image.bitmap.canvas,picRect);
-             newComp^.image:=newPic;
-             newComp^.name:=name;
-             newComp^.category:=category;
-             newComp^.Left:=StartPt.x;
-             newComp^.Top:=StartPt.y;
-          end;
-          node:=new(PTCircuitElement);
-          node^.kind:=ceComponent;
-          node^.component:=newComp;
-          CircuitList.add(node);
-          ceDragging:=ceComponent;
-          ceDragIdx:=CircuitList.count-1;
-          cursor:=crCross;
-          }
         end;
         ceTag:
         begin
            addcTag(node^.tag^.text);
            UpdateStatusbar('Cloning tag');
-           {
-           newTag:=new(PTTag);
-           with node^.tag^ do
-           begin
-              newTag^.text:=text;
-              newTag^.FontSize:=FontSize;
-              newTag^.Color:=Color;
-              newTag^.FontStyle:=FontStyle;
-              newTag^.left:=StartPt.x;
-              newTag^.top:=StartPt.y;
-           end;
-           node:=new(PTCircuitElement);
-           node^.kind:=ceTag;
-           node^.tag:=newTag;
-           ceDragging:=ceTag;
-           CircuitList.add(node);
-           ceDragIdx:=CircuitList.count-1;
-           cursor:=crCross;}
         end;
     end;
 end;

@@ -106,7 +106,7 @@ type
     mCancel: TMenuItem;
     MenuItem2: TMenuItem;
     MenuItemHelpPref: TMenuItem;
-    mTagFont: TMenuItem;
+    mTagEdit: TMenuItem;
     N1: TMenuItem;
     mClone: TMenuItem;
     N2: TMenuItem;
@@ -165,7 +165,7 @@ type
     procedure MenuItemHelpPrefClick(Sender: TObject);
     procedure MenuLibraryClick(Sender: TObject);
     procedure MenuItemPrintClick(Sender: TObject);
-    procedure mTagFontClick(Sender: TObject);
+    procedure mTagEditClick(Sender: TObject);
     procedure MenuItemAboutClick(Sender: TObject);
     procedure MenuItemBoardSelectClick(Sender: TObject);
     procedure MenuItemComponentClick(Sender: TObject);
@@ -681,8 +681,8 @@ end;
 
 procedure TFormMain.ToolButtonTagClick(Sender: TObject);
 begin
-  formTag.showModal;
-  if length(formTag.Edit1.caption)>0 then AddcTag(String(formTag.Edit1.caption));
+  if (formTag.showModal=1) and (length(formTag.Edit1.text)>0) then
+      AddcTag(String(formTag.Edit1.text));
 end;
 
 
@@ -1116,7 +1116,7 @@ begin
   end;
 end;
 
-procedure TFormMain.mTagFontClick(Sender: TObject);
+procedure TFormMain.mTagEditClick(Sender: TObject);
 var
   i:integer;
   cTag:PTTag;
@@ -1126,13 +1126,20 @@ begin
   begin
      UpdateStatusbar('Editing tag');
      ctag:=PTCircuitElement(CircuitList.items[i])^.tag;
-     if FontDialog1.execute then
+     if (formTag.showModal=1) then
      begin
-          ctag^.color:=FontDialog1.font.color;
-          ctag^.FontName:=FontDialog1.font.Name;
-          ctag^.FontSize:=FontDialog1.font.Size;
-          ctag^.FontStyle:=FontDialog1.font.Style;
-          self.refresh;
+       if   (length(formTag.Edit1.caption)>0) then
+         begin
+              ctag^.color:=FormTag.Edit1.font.color;
+              ctag^.FontName:=FormTag.Edit1.font.Name;
+              ctag^.FontSize:=FormTag.Edit1.font.Size;
+              ctag^.FontStyle:=FormTag.Edit1.font.Style;
+         end
+         else
+         begin
+            freeCircuitItem(i);
+         end;
+         self.refresh;
      end;
      UpdateStatusbar('');
   end;

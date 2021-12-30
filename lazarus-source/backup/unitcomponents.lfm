@@ -244,7 +244,7 @@ object FormComponents: TFormComponents
   object BtnTagColor: TButton
     Left = 311
     Height = 25
-    Top = 299
+    Top = 301
     Width = 75
     Caption = 'tag color...'
     OnClick = BtnTagColorClick

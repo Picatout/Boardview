@@ -736,10 +736,10 @@ object FormMain: TFormMain
       Caption = '-'
       Enabled = False
     end
-    object mTagFont: TMenuItem
-      Caption = 'Tag Font...'
+    object mTagEdit: TMenuItem
+      Caption = 'Edit tag...'
       GroupIndex = 5
-      OnClick = mTagFontClick
+      OnClick = mTagEditClick
     end
     object N2: TMenuItem
       Caption = '-'

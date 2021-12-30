@@ -1,6 +1,27 @@
 ### 2021-12-29
 
+* In popup menu changed item **Tag Font...** by **Tag edit...** text can also be changed.
+
 * Adapted code for Linux. 
+   
+    *  canvas.FloodFill doesn't work in Linux so I added my own **FloodFill** in conditional compile for Linxux.
+    '''
+    // canvas.FloodFill doesn't work in Linux.
+	// fill surface with canvas.brush.color remplacing color
+	procedure SolidColorFloodFill(canvas:TCanvas;X,Y,color:TColor);
+	begin
+      with canvas do
+      begin
+          if (x<0)or(x>=width)or(y<0)or(y>=height)or(pixels[x,y]<>color) then exit;
+          pixels[x,y]:=brush.color;
+          SolidColorFloodFill(canvas,x-1,y,color);
+          SolidColorFloodFill(canvas,x+1,y,color);
+          SolidColorFloodFill(canvas,x,y-1,color);
+          SolidColorFloodFill(canvas,x,y+1,color);
+      end;
+	end;
+    
+    '''
 
 	*  Linux file system is case sensitive contrary to Windows. components.ini was edited to change uppercase **BMP** to lowercase.
 	

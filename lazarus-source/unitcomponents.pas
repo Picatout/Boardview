@@ -183,13 +183,33 @@ end;
 procedure TFormComponents.ImgComponentClick(Sender: TObject);
 var
   pixelcolor:TColor;
+
+// canvas.FloodFill doesn't work in Linux.
+// fill surface with canvas.brush.color remplacing color
+procedure SolidColorFloodFill(canvas:TCanvas;X,Y,color:TColor);
+begin
+     with canvas do
+     begin
+          if (x<0)or(x>=width)or(y<0)or(y>=height)or(pixels[x,y]<>color) then exit;
+          pixels[x,y]:=brush.color;
+          SolidColorFloodFill(canvas,x-1,y,color);
+          SolidColorFloodFill(canvas,x+1,y,color);
+          SolidColorFloodFill(canvas,x,y-1,color);
+          SolidColorFloodFill(canvas,x,y+1,color);
+     end;
+end;
+
 begin
    pixelcolor:=PicComponent.bitmap.canvas.Pixels[startX,StartY];
    if pixelcolor=clBLACK2 then
    begin
         ColorDialog1.execute;
         PicComponent.bitmap.Canvas.Brush.color:=ColorDialog1.Color;
-        PicComponent.bitmap.canvas.FloodFill(startX,startY,clBLACK2,fsSurface);
+        //{$IFDEF WINDOWS}
+        //PicComponent.bitmap.canvas.FloodFill(startX,startY,clBLACK2,fsSurface);
+        //{$ELSE}
+         SolidColorFloodFill(PicComponent.bitmap.canvas,StartX,startY,clBLACK2);
+        //{$ENDIF}
         imgComponent.refresh;
    end;
 end;

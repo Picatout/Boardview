@@ -61,7 +61,7 @@ implementation
 
 procedure TFormTag.BtnCancelClick(Sender: TObject);
 begin
-  Edit1.Caption:='';
+  ModalResult:=0;
   formTag.close;
 end;
 
@@ -83,7 +83,8 @@ end;
 
 procedure TFormTag.btnOKClick(Sender: TObject);
 begin
-  formTag.close;
+  ModalResult:=1;
+//  formTag.close;
 end;
 
 procedure TFormTag.BtnTagColorClick(Sender: TObject);

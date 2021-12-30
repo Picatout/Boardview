@@ -61,8 +61,8 @@ implementation
 
 procedure TFormTag.BtnCancelClick(Sender: TObject);
 begin
-  Edit1.Caption:='';
-  formTag.close;
+  ModalResult:=0;
+//  formTag.close;
 end;
 
 procedure TFormTag.BtnFontClick(Sender: TObject);
@@ -71,7 +71,9 @@ begin
   FormMain.FontDialog1.execute;
   with formMain.FontDialog1.Font do
   begin
+     {$IFDEF WINDOWS}
      Edit1.Font.Color:=color;
+     {$ENDIF}
      Edit1.Font.Name:=name;
      Edit1.Font.Style:=style;
      Edit1.Font.size:=size;
@@ -81,7 +83,8 @@ end;
 
 procedure TFormTag.btnOKClick(Sender: TObject);
 begin
-  formTag.close;
+  ModalResult:=1;
+//  formTag.close;
 end;
 
 procedure TFormTag.BtnTagColorClick(Sender: TObject);

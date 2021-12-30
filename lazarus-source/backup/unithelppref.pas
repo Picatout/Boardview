@@ -28,11 +28,11 @@ uses
 
 const
     {$IFDEF WINDOWS}
-    DOC_PATH_EN='DOCS\en\';
-    DOC_PATH_FR='DOCS\fr\';
+    DOCS_PATH_EN='DOCS\en\';
+    DOCS_PATH_FR='DOCS\fr\';
     {$ELSE}
-    DOC_PATH_EN='DOCS/en/';
-    DOC_PATH_FR='DOCS/fr/';
+    DOCS_PATH_EN='DOCS/en/';
+    DOCS_PATH_FR='DOCS/fr/';
     {$ENDIF}
 
 type
@@ -40,7 +40,7 @@ type
     enumFileType=(HTML,PDF);
 const
     UserMan: array[enumLang,enumFileType] of string=(
-    (DOC_PATH_EN+'manual-en.html',DOCS_PATH_EN+'manual-en.pdf'),
+    (DOCS_PATH_EN+'manual-en.html',DOCS_PATH_EN+'manual-en.pdf'),
     (DOCS_PATH_FR+'manual-fr.html',DOCS_PATH_FR+'manual-fr.pdf'));
 
 type

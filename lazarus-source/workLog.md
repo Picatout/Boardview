@@ -4,7 +4,7 @@
 
 * Adapted code for Linux. 
 	
-	* Added conditional compiling directive for documentation path in [unitHelpPref.pas](unitHelpPref.pas). 
+	* Added conditional compiling directive for documentation path in [unithelppref.pas](unithelppref.pas). 
 	```
 	const
     {$IFDEF WINDOWS}

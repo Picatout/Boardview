@@ -116,7 +116,7 @@ object FormLibrary: TFormLibrary
   LCLVersion = '2.0.12.0'
   object lbCategory: TListBox
     Left = 24
-    Height = 200
+    Height = 206
     Top = 30
     Width = 188
     ItemHeight = 0
@@ -125,7 +125,7 @@ object FormLibrary: TFormLibrary
   end
   object lbComponent: TListBox
     Left = 240
-    Height = 199
+    Height = 205
     Top = 31
     Width = 186
     ItemHeight = 0
@@ -155,7 +155,7 @@ object FormLibrary: TFormLibrary
   object Label3: TLabel
     Left = 24
     Height = 21
-    Top = 232
+    Top = 248
     Width = 93
     Caption = 'new category'
     Font.Height = -16
@@ -165,14 +165,14 @@ object FormLibrary: TFormLibrary
   object EditNewCat: TEdit
     Left = 24
     Height = 23
-    Top = 256
+    Top = 268
     Width = 184
     TabOrder = 2
   end
   object Label4: TLabel
-    Left = 248
+    Left = 238
     Height = 21
-    Top = 236
+    Top = 248
     Width = 112
     Caption = 'new component'
     Font.Height = -16
@@ -180,22 +180,22 @@ object FormLibrary: TFormLibrary
     ParentFont = False
   end
   object EditNewComp: TEdit
-    Left = 248
+    Left = 238
     Height = 23
-    Top = 256
-    Width = 176
+    Top = 268
+    Width = 186
     TabOrder = 3
   end
   object imgComponent: TImage
-    Left = 248
-    Height = 184
-    Top = 376
+    Left = 250
+    Height = 168
+    Top = 392
     Width = 184
   end
   object Label5: TLabel
-    Left = 250
+    Left = 232
     Height = 21
-    Top = 288
+    Top = 304
     Width = 74
     Caption = 'bitmap file'
     Font.Height = -16
@@ -203,17 +203,17 @@ object FormLibrary: TFormLibrary
     ParentFont = False
   end
   object EditBmpFile: TEdit
-    Left = 248
+    Left = 232
     Height = 23
-    Top = 307
-    Width = 140
+    Top = 324
+    Width = 156
     TabOrder = 4
   end
   object bntFileSelect: TButton
-    Left = 396
+    Left = 395
     Height = 25
-    Top = 305
-    Width = 24
+    Top = 322
+    Width = 39
     Caption = '...'
     OnClick = bntFileSelectClick
     TabOrder = 5
@@ -221,26 +221,26 @@ object FormLibrary: TFormLibrary
   object BtnAddCat: TButton
     Left = 24
     Height = 25
-    Top = 288
-    Width = 72
+    Top = 300
+    Width = 93
     Caption = 'Add cat'
     OnClick = BtnAddCatClick
     TabOrder = 6
   end
   object BtnRemoveCat: TButton
-    Left = 133
+    Left = 125
     Height = 25
-    Top = 288
-    Width = 75
+    Top = 300
+    Width = 83
     Caption = 'Remove cat'
     OnClick = BtnRemoveCatClick
     TabOrder = 7
   end
   object BtnAddComp: TButton
-    Left = 248
+    Left = 232
     Height = 25
-    Top = 336
-    Width = 67
+    Top = 356
+    Width = 96
     Caption = 'Add comp'
     OnClick = BtnAddCompClick
     TabOrder = 8
@@ -248,8 +248,8 @@ object FormLibrary: TFormLibrary
   object BtnRemoveComp: TButton
     Left = 336
     Height = 25
-    Top = 336
-    Width = 83
+    Top = 356
+    Width = 98
     Caption = 'Remove comp'
     OnClick = BtnRemoveCompClick
     TabOrder = 9

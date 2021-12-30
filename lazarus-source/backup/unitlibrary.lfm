@@ -195,7 +195,7 @@ object FormLibrary: TFormLibrary
   object Label5: TLabel
     Left = 250
     Height = 21
-    Top = 280
+    Top = 288
     Width = 74
     Caption = 'bitmap file'
     Font.Height = -16

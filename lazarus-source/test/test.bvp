@@ -4,66 +4,8 @@ board file=bitmaps\protoboard-medium.bmp
 
 [node0]
 kind=component
-color=0
-startPt.X=204
-startPt.Y=162
-endPt.X=205
-endPt.Y=192
-category=integrated circuit
-name=DIL 8
-left=241
-top=94
+category=electro mechanical
+name=motor DC
+left=181
+top=-112
 image=component-0.bmp
-
-[node1]
-kind=tag
-color=255
-startPt.X=144
-startPt.Y=28
-endPt.X=145
-endPt.Y=56
-text=Hello world!
-left=-198
-top=-160
-Font name=Segoe UI
-Font color=0
-Font size=12
-Font Style=0
-
-[node2]
-kind=tag
-category=integrated circuit
-name=DIL 14
-left=-197
-top=387
-image=component-2.bmp
-color=255
-startPt.X=144
-startPt.Y=28
-endPt.X=145
-endPt.Y=56
-text=Hello world!
-Font name=Segoe UI
-Font color=32768
-Font size=12
-Font Style=0
-
-[node3]
-kind=tag
-text=Hello world!
-left=842
-top=385
-Font name=Segoe UI
-Font color=16711680
-Font size=12
-Font Style=0
-
-[node4]
-kind=tag
-text=Hello world!
-left=843
-top=-163
-Font name=Segoe UI
-Font color=255
-Font size=12
-Font Style=0

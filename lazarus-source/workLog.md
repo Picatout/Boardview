@@ -1,8 +1,10 @@
 ### 2021-12-30
 
-*  Linux: Path separator incorrect while saving project.
+*  Corrected problem with file path for open project.
 
-*  Linux: In Component Dialog tag color not preserved when changing font.
+*  Linux: Path separator incorrect while saving project. Modified **unitSaveProject**.
+
+*  Linux: In Component Dialog tag color not preserved when changing font. 
 
 ### 2021-12-29
 

@@ -29,8 +29,10 @@ uses
 const
   {$IFDEF WINDOWS}
   PATH_SEP='\';
+  CUR_DIR='.\';
   {$ELSE}
   PATH_SEP='/';
+  CUR_DIR='./';
   {$ENDIF}
 type
 
@@ -105,9 +107,10 @@ end;
 
 procedure TFormSaveProject.FormCreate(Sender: TObject);
 begin
-  directory:='.'+PATH_SEP;
+  directory:=CUR_DIR;
   ProjectName:='';
-  SelectDirectoryDialog1.filename:='.';
+  SelectDirectoryDialog1.filename:='';
+  SelectDirectoryDialog1.InitialDir:=CUR_DIR;
 end;
 
 procedure TFormSaveProject.btnCancelClick(Sender: TObject);

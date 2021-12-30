@@ -147,6 +147,7 @@ type
     ToolButtonUndo: TToolButton;
     ToolButtonSep1: TToolButton;
     ToolButtonOpen: TToolButton;
+    procedure FormActivate(Sender: TObject);
     procedure FormClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -675,7 +676,9 @@ procedure TFormMain.ToolButtonOpenClick(Sender: TObject);
 begin
   if QuerySaveModified then
   begin
-      if OpenDialog1.execute then LoadProject(OpenDialog1.fileName);
+    OpenDialog1.InitialDir:= ExtractFilePath(Application.ExeName);
+    OpenDialog1.Filter:='boarview project|*.bvp|all fles|*.*';
+    if OpenDialog1.execute then LoadProject(OpenDialog1.fileName);
   end;
 end;
 
@@ -712,6 +715,7 @@ begin
   Canvas.Pen.Width:=2;
   Canvas.Brush.Style := bsClear;
   InstallProtoBoard(bsMEDIUM);
+
 end;
 
 
@@ -874,6 +878,12 @@ begin  // TFormMain.FormClick
           EndOperation;
       end;
    end;
+end;
+
+procedure TFormMain.FormActivate(Sender: TObject);
+begin
+  OpenDialog1.InitialDir:= ExtractFilePath(Application.ExeName);
+  OpenDialog1.Filter:='boarview project|*.bvp|all files|*.*';
 end;
 
 
@@ -1164,7 +1174,7 @@ var
 begin
   nameOnly:=ExtractFileNameOnly(ProjectName);
   if not DirectoryExists(dirName) then MkDir(dirName);
-  dirName:=DirName+'\';
+  dirName:=DirName+unitSaveProject.PATH_SEP;
   ProjectName:=nameOnly+'.bvp';
   projectFile:=TiniFile.Create(DirName+ProjectName);
   projectFile.WriteString('Proto board','board',FormMain.board.name);

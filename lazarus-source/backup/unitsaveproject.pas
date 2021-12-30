@@ -26,6 +26,12 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
 
+const
+  {$IFDEF WINDOWS}
+  PATH_SEP='\';
+  {$ELSE}
+  PATH_SEP='/';
+  {$ENDIF}
 type
 
   { TFormSaveProject }
@@ -66,11 +72,11 @@ procedure TFormSaveProject.btnExploreDirClick(Sender: TObject);
 begin
   if selectDirectoryDialog1.execute and (length(SelectDirectoryDialog1.FileName)>0) then
   begin
-    EditDirectory.text:=SelectDirectoryDialog1.FileName+'\'+EditProjectName.text;
+    EditDirectory.text:=SelectDirectoryDialog1.FileName+PATH_SEP+EditProjectName.text;
   end
   else
   begin
-    EditDirectory.text:='.\'+EditProjectName.text;
+    EditDirectory.text:='.'+PATH_SEP+EditProjectName.text;
   end;
 end;
 
@@ -92,14 +98,14 @@ begin
   end
   else
   begin
-       EditDirectory.text:='.\'+nameOnly;
+       EditDirectory.text:='.'+PATH_SEP+nameOnly;
   end;
 
 end;
 
 procedure TFormSaveProject.FormCreate(Sender: TObject);
 begin
-  directory:='.\';
+  directory:='.'+PATH_SEP;
   ProjectName:='';
   SelectDirectoryDialog1.filename:='.';
 end;

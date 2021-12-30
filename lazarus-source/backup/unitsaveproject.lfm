@@ -3,6 +3,7 @@ object FormSaveProject: TFormSaveProject
   Height = 184
   Top = 267
   Width = 461
+  BorderStyle = bsDialog
   Caption = 'Save project'
   ClientHeight = 184
   ClientWidth = 461

@@ -100,6 +100,7 @@ object FormMain: TFormMain
     AE426082
   }
   Menu = MainMenu1
+  OnActivate = FormActivate
   OnClick = FormClick
   OnClose = FormClose
   OnCreate = FormCreate

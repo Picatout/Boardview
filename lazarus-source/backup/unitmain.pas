@@ -147,6 +147,7 @@ type
     ToolButtonUndo: TToolButton;
     ToolButtonSep1: TToolButton;
     ToolButtonOpen: TToolButton;
+    procedure FormActivate(Sender: TObject);
     procedure FormClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -675,7 +676,9 @@ procedure TFormMain.ToolButtonOpenClick(Sender: TObject);
 begin
   if QuerySaveModified then
   begin
-      if OpenDialog1.execute then LoadProject(OpenDialog1.fileName);
+    OpenDialog1.InitialDir:= ExtractFilePath(Application.ExeName);
+    OpenDialog1.Filter:='boarview project|*.bvp|all fles|*.*';
+    if OpenDialog1.execute then LoadProject(OpenDialog1.fileName);
   end;
 end;
 
@@ -712,6 +715,7 @@ begin
   Canvas.Pen.Width:=2;
   Canvas.Brush.Style := bsClear;
   InstallProtoBoard(bsMEDIUM);
+
 end;
 
 
@@ -876,6 +880,12 @@ begin  // TFormMain.FormClick
    end;
 end;
 
+procedure TFormMain.FormActivate(Sender: TObject);
+begin
+  OpenDialog1.InitialDir:='.';
+  OpenDialog1.Filter:='boarview project;*.bvp';
+end;
+
 
 procedure TFormMain.FormPaint(Sender: TObject);
 var
@@ -954,51 +964,11 @@ begin
         begin
           UpdateStatusbar('Cloning component');
           addComponent(node^.component^.image);
-          {
-          newComp:=new(PTComponent);
-          newPic:=TPicture.create;
-          with node^.Component^ do
-          begin
-             newPic.Bitmap.SetSize(image.bitmap.width,image.Bitmap.height);
-             picRect:=rect(0,0,image.bitmap.width,image.Bitmap.height);
-             newPic.bitmap.canvas.CopyRect(picRect,image.bitmap.canvas,picRect);
-             newComp^.image:=newPic;
-             newComp^.name:=name;
-             newComp^.category:=category;
-             newComp^.Left:=StartPt.x;
-             newComp^.Top:=StartPt.y;
-          end;
-          node:=new(PTCircuitElement);
-          node^.kind:=ceComponent;
-          node^.component:=newComp;
-          CircuitList.add(node);
-          ceDragging:=ceComponent;
-          ceDragIdx:=CircuitList.count-1;
-          cursor:=crCross;
-          }
         end;
         ceTag:
         begin
            addcTag(node^.tag^.text);
            UpdateStatusbar('Cloning tag');
-           {
-           newTag:=new(PTTag);
-           with node^.tag^ do
-           begin
-              newTag^.text:=text;
-              newTag^.FontSize:=FontSize;
-              newTag^.Color:=Color;
-              newTag^.FontStyle:=FontStyle;
-              newTag^.left:=StartPt.x;
-              newTag^.top:=StartPt.y;
-           end;
-           node:=new(PTCircuitElement);
-           node^.kind:=ceTag;
-           node^.tag:=newTag;
-           ceDragging:=ceTag;
-           CircuitList.add(node);
-           ceDragIdx:=CircuitList.count-1;
-           cursor:=crCross;}
         end;
     end;
 end;
@@ -1204,7 +1174,7 @@ var
 begin
   nameOnly:=ExtractFileNameOnly(ProjectName);
   if not DirectoryExists(dirName) then MkDir(dirName);
-  dirName:=DirName+'\';
+  dirName:=DirName+unitSaveProject.PATH_SEP;
   ProjectName:=nameOnly+'.bvp';
   projectFile:=TiniFile.Create(DirName+ProjectName);
   projectFile.WriteString('Proto board','board',FormMain.board.name);

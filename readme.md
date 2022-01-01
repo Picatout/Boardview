@@ -7,6 +7,16 @@ a [new version](lazarus-source)  written using [Lazarus/free pascal IDE](https:/
 
 ![Boardview main window](lazarus-source/DOCS/resources/app-main-window.png)
 
+### 2022-01-01
+
+Version 1.1.4  Released. Popup menu work by right clicking anywhere on the application client area and 2 items added to menu. 
+
+* **Add tag...**  to open **Add tag** dialog.
+
+* **Add Component...** to open **Components** dialog. 
+
+These 2 items mouse displacement. No need to go to the toolbar anymore. 
+
 ### 2021-12-27
 
 Version 1.1 released.  No new functionnalities, only behavior change. See [lazarus-source/worklog.md](lazarus-source/workLog.md) and user manual update.

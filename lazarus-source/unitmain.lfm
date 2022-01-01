@@ -101,7 +101,6 @@ object FormMain: TFormMain
   }
   Menu = MainMenu1
   OnActivate = FormActivate
-  OnClick = FormClick
   OnClose = FormClose
   OnCreate = FormCreate
   OnMouseDown = FormMouseDown
@@ -724,7 +723,15 @@ object FormMain: TFormMain
       Caption = 'Delete'
       OnClick = mDeleteClick
     end
-    object MenuItem2: TMenuItem
+    object mAddTag: TMenuItem
+      Caption = 'Add tag...'
+      OnClick = ToolButtonTagClick
+    end
+    object mAddComponent: TMenuItem
+      Caption = 'Add Component...'
+      OnClick = MenuItemComponentClick
+    end
+    object mSep4: TMenuItem
       Caption = '-'
       Enabled = False
     end
@@ -733,7 +740,7 @@ object FormMain: TFormMain
       GroupIndex = 3
       OnClick = mColorClick
     end
-    object N1: TMenuItem
+    object mSep6: TMenuItem
       Caption = '-'
       Enabled = False
     end
@@ -742,7 +749,7 @@ object FormMain: TFormMain
       GroupIndex = 5
       OnClick = mTagEditClick
     end
-    object N2: TMenuItem
+    object mSep8: TMenuItem
       Caption = '-'
       Enabled = False
     end

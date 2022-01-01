@@ -1,3 +1,11 @@
+### 2021-12-31
+
+*  Now a jumper can be pull by one end or the other to change its position. 
+
+*  Recoded components and tags installation use only mouseDown and MouseUp event.
+
+*  Added 2 items to popup menu   **Add Tag...** and **Add Component...**.
+
 ### 2021-12-30
 
 *  Corrected problem with file path for open project.

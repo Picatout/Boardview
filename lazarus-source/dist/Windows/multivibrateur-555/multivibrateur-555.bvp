@@ -1,0 +1,287 @@
+[Proto board]
+board=medium
+board file=bitmaps\protoboard-medium.bmp
+
+[node0]
+kind=component
+category=integrated circuit
+name=DIL 8
+left=350
+top=281
+image=component-0.bmp
+
+[node1]
+kind=component
+category=passive
+name=ceramic cap side view
+left=384
+top=221
+image=component-1.bmp
+
+[node2]
+kind=component
+category=passive
+name=electrolytic 3D
+left=411
+top=343
+image=component-2.bmp
+
+[node3]
+kind=component
+category=passive
+name=resistor 5%
+left=440
+top=212
+image=component-3.bmp
+
+[node4]
+kind=component
+category=passive
+name=resistor 5%
+left=440
+top=281
+image=component-4.bmp
+
+[node5]
+kind=component
+category=passive
+name=resistor 5%
+left=344
+top=317
+image=component-5.bmp
+
+[node6]
+kind=component
+category=opto
+name=blue LED side view
+left=295
+top=347
+image=component-6.bmp
+
+[node7]
+kind=jumper
+color=0
+startPt.X=867
+startPt.Y=264
+endPt.X=836
+endPt.Y=264
+
+[node8]
+kind=jumper
+color=0
+startPt.X=834
+startPt.Y=202
+endPt.X=804
+endPt.Y=204
+
+[node9]
+kind=jumper
+color=0
+startPt.X=837
+startPt.Y=380
+endPt.X=803
+endPt.Y=379
+
+[node10]
+kind=jumper
+color=255
+startPt.X=868
+startPt.Y=331
+endPt.X=846
+endPt.Y=334
+
+[node11]
+kind=jumper
+color=255
+startPt.X=845
+startPt.Y=392
+endPt.X=801
+endPt.Y=390
+
+[node12]
+kind=jumper
+color=255
+startPt.X=845
+startPt.Y=213
+endPt.X=803
+endPt.Y=215
+
+[node13]
+kind=jumper
+color=255
+startPt.X=353
+startPt.Y=211
+endPt.X=353
+endPt.Y=242
+
+[node14]
+kind=jumper
+color=255
+startPt.X=383
+startPt.Y=350
+endPt.X=382
+endPt.Y=391
+
+[node15]
+kind=jumper
+color=0
+startPt.X=354
+startPt.Y=350
+endPt.X=354
+endPt.Y=382
+
+[node16]
+kind=jumper
+color=0
+startPt.X=343
+startPt.Y=380
+endPt.X=347
+endPt.Y=360
+
+[node17]
+kind=jumper
+color=0
+startPt.X=384
+startPt.Y=215
+endPt.X=384
+endPt.Y=230
+
+[node18]
+kind=jumper
+color=0
+startPt.X=444
+startPt.Y=381
+endPt.X=444
+endPt.Y=361
+
+[node19]
+kind=jumper
+color=33023
+startPt.X=364
+startPt.Y=329
+endPt.X=446
+endPt.Y=328
+
+[node20]
+kind=jumper
+color=33023
+startPt.X=444
+startPt.Y=320
+endPt.X=393
+endPt.Y=280
+
+[node21]
+kind=jumper
+color=33023
+startPt.X=393
+startPt.Y=270
+endPt.X=372
+endPt.Y=269
+
+[node22]
+kind=jumper
+color=33023
+startPt.X=363
+startPt.Y=261
+endPt.X=443
+endPt.Y=261
+
+[node23]
+kind=tag
+text=C1
+left=416
+top=220
+Font name=Segoe UI
+Font color=0
+Font size=10
+Font Style=0
+
+[node24]
+kind=tag
+text=C2
+left=446
+top=347
+Font name=Segoe UI
+Font color=0
+Font size=10
+Font Style=0
+
+[node25]
+kind=tag
+text=R1
+left=450
+top=224
+Font name=Segoe UI
+Font color=0
+Font size=10
+Font Style=0
+
+[node26]
+kind=tag
+text=R2
+left=453
+top=289
+Font name=Segoe UI
+Font color=0
+Font size=10
+Font Style=0
+
+[node27]
+kind=tag
+text=R3
+left=324
+top=308
+Font name=Segoe UI
+Font color=0
+Font size=10
+Font Style=0
+
+[node28]
+kind=tag
+text=U1
+left=333
+top=285
+Font name=Segoe UI
+Font color=0
+Font size=10
+Font Style=0
+
+[node29]
+kind=tag
+text=LED1
+left=296
+top=330
+Font name=Segoe UI
+Font color=0
+Font size=10
+Font Style=0
+
+[node30]
+kind=tag
+text=multivibrateur 555
+left=411
+top=177
+Font name=Segoe UI
+Font color=8388608
+Font size=12
+Font Style=0
+
+[node31]
+kind=tag
+text=9 VDC
+left=867
+top=286
+Font name=Segoe UI
+Font color=8388608
+Font size=12
+Font Style=0
+
+[node32]
+kind=tag
+text=F=1.44/(R1+2*R2)*C2 = 1.07 Hertz
+left=363
+top=146
+Font name=Segoe UI
+Font color=8388608
+Font size=12
+Font Style=0

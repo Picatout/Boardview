@@ -15,7 +15,7 @@ Version 1.1.4  Released. Popup menu work by right clicking anywhere on the appli
 
 * **Add Component...** to open **Components** dialog. 
 
-These 2 items mouse displacement. No need to go to the toolbar anymore. 
+These 2 items reduce mouse displacement. No need to go to the toolbar anymore. 
 
 ### 2021-12-27
 

@@ -1,0 +1,437 @@
+[Proto board]
+board=medium
+board file=bitmaps\protoboard-medium.bmp
+
+[node0]
+kind=component
+category=transistor
+name=TO-92
+left=462
+top=271
+image=component-0.bmp
+
+[node1]
+kind=component
+category=transistor
+name=TO-92
+left=582
+top=272
+image=component-1.bmp
+
+[node2]
+kind=tag
+text=e b c
+left=465
+top=296
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node3]
+kind=tag
+text=e b c
+left=586
+top=297
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node4]
+kind=jumper
+color=0
+startPt.X=463
+startPt.Y=350
+endPt.X=464
+endPt.Y=382
+
+[node5]
+kind=jumper
+color=0
+startPt.X=583
+startPt.Y=348
+endPt.X=584
+endPt.Y=381
+
+[node6]
+kind=component
+category=passive
+name=resistor 5%
+left=600
+top=360
+image=component-6.bmp
+
+[node7]
+kind=component
+category=passive
+name=resistor 5%
+left=480
+top=360
+image=component-7.bmp
+
+[node8]
+kind=jumper
+color=8421504
+startPt.X=483
+startPt.Y=351
+endPt.X=484
+endPt.Y=361
+
+[node9]
+kind=jumper
+color=8421504
+startPt.X=593
+startPt.Y=349
+endPt.X=592
+endPt.Y=360
+
+[node10]
+kind=component
+category=semi-conductors
+name=glass diode
+left=485
+top=335
+image=component-10.bmp
+
+[node11]
+kind=component
+category=semi-conductors
+name=glass diode
+left=604
+top=335
+image=component-11.bmp
+
+[node12]
+kind=component
+category=passive
+name=resistor 5%
+left=470
+top=360
+image=component-12.bmp
+
+[node13]
+kind=jumper
+color=8421504
+startPt.X=473
+startPt.Y=349
+endPt.X=474
+endPt.Y=359
+
+[node14]
+kind=component
+category=passive
+name=resistor 5%
+left=589
+top=360
+image=component-14.bmp
+
+[node15]
+kind=jumper
+color=8421504
+startPt.X=603
+startPt.Y=349
+endPt.X=604
+endPt.Y=361
+
+[node16]
+kind=component
+category=passive
+name=resistor 5%
+left=500
+top=358
+image=component-16.bmp
+
+[node17]
+kind=jumper
+color=8421504
+startPt.X=503
+startPt.Y=348
+endPt.X=504
+endPt.Y=358
+
+[node18]
+kind=component
+category=passive
+name=resistor 5%
+left=621
+top=360
+image=component-18.bmp
+
+[node19]
+kind=jumper
+color=8421504
+startPt.X=625
+startPt.Y=360
+endPt.X=623
+endPt.Y=349
+
+[node20]
+kind=jumper
+color=255
+startPt.X=866
+startPt.Y=333
+endPt.X=846
+endPt.Y=332
+
+[node21]
+kind=jumper
+color=255
+startPt.X=845
+startPt.Y=391
+endPt.X=800
+endPt.Y=389
+
+[node22]
+kind=jumper
+color=255
+startPt.X=846
+startPt.Y=213
+endPt.X=804
+endPt.Y=214
+
+[node23]
+kind=jumper
+color=0
+startPt.X=866
+startPt.Y=263
+endPt.X=835
+endPt.Y=263
+
+[node24]
+kind=jumper
+color=0
+startPt.X=835
+startPt.Y=201
+endPt.X=804
+endPt.Y=202
+
+[node25]
+kind=jumper
+color=0
+startPt.X=834
+startPt.Y=381
+endPt.X=806
+endPt.Y=380
+
+[node26]
+kind=tag
+text=2N3904
+left=453
+top=257
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node27]
+kind=tag
+text=2N3904
+left=575
+top=259
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node28]
+kind=tag
+text=R1
+left=466
+top=394
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node29]
+kind=tag
+text=R2
+left=482
+top=394
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node30]
+kind=tag
+text=R3
+left=500
+top=395
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node31]
+kind=tag
+text=R4
+left=586
+top=396
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node32]
+kind=tag
+text=R5
+left=602
+top=396
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node33]
+kind=tag
+text=R6
+left=621
+top=396
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node34]
+kind=tag
+text=Q1
+left=445
+top=282
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node35]
+kind=tag
+text=Q2
+left=566
+top=285
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node36]
+kind=tag
+text=D1
+left=466
+top=332
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node37]
+kind=tag
+text=D2
+left=587
+top=333
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node38]
+kind=tag
+text=1N4148
+left=504
+top=333
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node39]
+kind=tag
+text=1N4148
+left=625
+top=331
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node40]
+kind=tag
+text=multivibrator
+left=508
+top=179
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node41]
+kind=component
+category=passive
+name=electrolytic 3D
+left=497
+top=278
+image=component-41.bmp
+
+[node42]
+kind=component
+category=passive
+name=electrolytic 3D
+left=617
+top=278
+image=component-42.bmp
+
+[node43]
+kind=jumper
+color=33023
+startPt.X=512
+startPt.Y=319
+endPt.X=594
+endPt.Y=318
+
+[node44]
+kind=jumper
+color=33023
+startPt.X=473
+startPt.Y=329
+endPt.X=634
+endPt.Y=329
+
+[node45]
+kind=tag
+text=C1
+left=519
+top=295
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node46]
+kind=tag
+text=C2
+left=640
+top=294
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node47]
+kind=tag
+text=10µF
+left=496
+top=284
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node48]
+kind=tag
+text=10µF
+left=616
+top=282
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0

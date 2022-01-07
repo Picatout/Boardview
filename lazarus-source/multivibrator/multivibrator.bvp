@@ -191,7 +191,7 @@ Font Style=0
 kind=tag
 category=passive
 name=resistor 5%
-left=466
+left=476
 top=394
 image=component-18.bmp
 color=0
@@ -213,8 +213,8 @@ startPt.Y=381
 endPt.X=806
 endPt.Y=380
 text=R2
-left=482
-top=394
+left=493
+top=395
 Font name=default
 Font color=536870912
 Font size=0
@@ -228,8 +228,8 @@ startPt.Y=333
 endPt.X=846
 endPt.Y=332
 text=R3
-left=500
-top=395
+left=586
+top=396
 Font name=default
 Font color=536870912
 Font size=0
@@ -243,7 +243,7 @@ startPt.Y=391
 endPt.X=800
 endPt.Y=389
 text=R4
-left=586
+left=602
 top=396
 Font name=default
 Font color=536870912
@@ -257,9 +257,9 @@ startPt.X=846
 startPt.Y=213
 endPt.X=804
 endPt.Y=214
-text=R5
-left=602
-top=396
+text=Q1
+left=445
+top=282
 Font name=default
 Font color=536870912
 Font size=0
@@ -272,9 +272,9 @@ startPt.X=866
 startPt.Y=263
 endPt.X=835
 endPt.Y=263
-text=R6
-left=621
-top=396
+text=Q2
+left=566
+top=285
 Font name=default
 Font color=536870912
 Font size=0
@@ -287,31 +287,6 @@ startPt.X=835
 startPt.Y=201
 endPt.X=804
 endPt.Y=202
-text=Q1
-left=445
-top=282
-Font name=default
-Font color=536870912
-Font size=0
-Font Style=0
-
-[node25]
-kind=tag
-color=0
-startPt.X=834
-startPt.Y=381
-endPt.X=806
-endPt.Y=380
-text=Q2
-left=566
-top=285
-Font name=default
-Font color=536870912
-Font size=0
-Font Style=0
-
-[node26]
-kind=tag
 text=multivibrator
 left=508
 top=179
@@ -320,8 +295,39 @@ Font color=536870912
 Font size=0
 Font Style=0
 
-[node27]
+[node25]
 kind=component
+color=0
+startPt.X=834
+startPt.Y=381
+endPt.X=806
+endPt.Y=380
+text=Q2
+left=497
+top=278
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+category=passive
+name=electrolytic 3D
+image=component-25.bmp
+
+[node26]
+kind=component
+text=multivibrator
+left=617
+top=278
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+category=passive
+name=electrolytic 3D
+image=component-26.bmp
+
+[node27]
+kind=jumper
 text=R6
 left=497
 top=278
@@ -332,9 +338,14 @@ Font Style=0
 category=passive
 name=electrolytic 3D
 image=component-27.bmp
+color=33023
+startPt.X=512
+startPt.Y=319
+endPt.X=594
+endPt.Y=318
 
 [node28]
-kind=component
+kind=jumper
 text=Q1
 left=617
 top=278
@@ -345,12 +356,17 @@ Font Style=0
 category=passive
 name=electrolytic 3D
 image=component-28.bmp
+color=33023
+startPt.X=473
+startPt.Y=329
+endPt.X=634
+endPt.Y=329
 
 [node29]
-kind=jumper
-text=Q2
-left=566
-top=285
+kind=tag
+text=C1
+left=519
+top=295
 Font name=default
 Font color=536870912
 Font size=0
@@ -362,10 +378,10 @@ endPt.X=594
 endPt.Y=318
 
 [node30]
-kind=jumper
-text=multivibrator
-left=508
-top=179
+kind=tag
+text=C2
+left=640
+top=294
 Font name=default
 Font color=536870912
 Font size=0
@@ -378,9 +394,9 @@ endPt.Y=329
 
 [node31]
 kind=tag
-text=C1
-left=519
-top=295
+text=10µF
+left=496
+top=284
 Font name=default
 Font color=536870912
 Font size=0
@@ -391,9 +407,9 @@ image=component-31.bmp
 
 [node32]
 kind=tag
-text=C2
-left=640
-top=294
+text=10µF
+left=616
+top=282
 Font name=default
 Font color=536870912
 Font size=0
@@ -403,40 +419,10 @@ name=electrolytic 3D
 image=component-32.bmp
 
 [node33]
-kind=tag
+kind=jumper
 text=10µF
 left=496
 top=284
-Font name=default
-Font color=536870912
-Font size=0
-Font Style=0
-color=33023
-startPt.X=512
-startPt.Y=319
-endPt.X=594
-endPt.Y=318
-
-[node34]
-kind=tag
-text=10µF
-left=616
-top=282
-Font name=default
-Font color=536870912
-Font size=0
-Font Style=0
-color=33023
-startPt.X=473
-startPt.Y=329
-endPt.X=634
-endPt.Y=329
-
-[node35]
-kind=jumper
-text=C1
-left=519
-top=295
 Font name=default
 Font color=536870912
 Font size=0
@@ -447,11 +433,11 @@ startPt.Y=319
 endPt.X=505
 endPt.Y=320
 
-[node36]
+[node34]
 kind=jumper
-text=C2
-left=640
-top=294
+text=10µF
+left=616
+top=282
 Font name=default
 Font color=536870912
 Font size=0
@@ -462,8 +448,44 @@ startPt.Y=320
 endPt.X=624
 endPt.Y=320
 
-[node37]
+[node35]
 kind=component
+text=C1
+left=497
+top=278
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+color=33023
+startPt.X=483
+startPt.Y=319
+endPt.X=505
+endPt.Y=320
+category=passive
+name=electrolytic 3D
+image=component-35.bmp
+
+[node36]
+kind=component
+text=C2
+left=617
+top=278
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+color=33023
+startPt.X=603
+startPt.Y=320
+endPt.X=624
+endPt.Y=320
+category=passive
+name=electrolytic 3D
+image=component-36.bmp
+
+[node37]
+kind=jumper
 text=10µF
 left=497
 top=278
@@ -474,9 +496,14 @@ Font Style=0
 category=passive
 name=electrolytic 3D
 image=component-37.bmp
+color=33023
+startPt.X=512
+startPt.Y=319
+endPt.X=594
+endPt.Y=318
 
 [node38]
-kind=component
+kind=jumper
 text=10µF
 left=617
 top=278
@@ -487,12 +514,17 @@ Font Style=0
 category=passive
 name=electrolytic 3D
 image=component-38.bmp
+color=33023
+startPt.X=473
+startPt.Y=329
+endPt.X=634
+endPt.Y=329
 
 [node39]
-kind=jumper
-text=1N4148
-left=625
-top=331
+kind=tag
+text=C1
+left=519
+top=295
 Font name=default
 Font color=536870912
 Font size=0
@@ -504,10 +536,10 @@ endPt.X=594
 endPt.Y=318
 
 [node40]
-kind=jumper
-text=multivibrator
-left=508
-top=179
+kind=tag
+text=C2
+left=640
+top=294
 Font name=default
 Font color=536870912
 Font size=0
@@ -522,10 +554,10 @@ endPt.Y=329
 kind=tag
 category=passive
 name=electrolytic 3D
-left=519
-top=295
+left=496
+top=284
 image=component-41.bmp
-text=C1
+text=10µF
 Font name=default
 Font color=536870912
 Font size=0
@@ -535,47 +567,53 @@ Font Style=0
 kind=tag
 category=passive
 name=electrolytic 3D
-left=640
-top=294
+left=616
+top=282
 image=component-42.bmp
-text=C2
+text=10µF
 Font name=default
 Font color=536870912
 Font size=0
 Font Style=0
 
 [node43]
-kind=tag
+kind=component
 color=33023
 startPt.X=512
 startPt.Y=319
 endPt.X=594
 endPt.Y=318
 text=10µF
-left=496
-top=284
+left=490
+top=360
 Font name=default
 Font color=536870912
 Font size=0
 Font Style=0
+category=passive
+name=resistor 5%
+image=component-43.bmp
 
 [node44]
-kind=tag
+kind=component
 color=33023
 startPt.X=473
 startPt.Y=329
 endPt.X=634
 endPt.Y=329
 text=10µF
-left=616
-top=282
+left=589
+top=359
 Font name=default
 Font color=536870912
 Font size=0
 Font Style=0
+category=passive
+name=resistor 5%
+image=component-44.bmp
 
 [node45]
-kind=component
+kind=jumper
 text=C1
 left=490
 top=360
@@ -586,12 +624,17 @@ Font Style=0
 category=passive
 name=resistor 5%
 image=component-45.bmp
+color=8421504
+startPt.X=593
+startPt.Y=348
+endPt.X=593
+endPt.Y=361
 
 [node46]
-kind=component
-text=C2
-left=589
-top=359
+kind=tag
+text=10µF
+left=616
+top=282
 Font name=default
 Font color=536870912
 Font size=0

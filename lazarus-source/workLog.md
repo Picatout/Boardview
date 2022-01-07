@@ -1,3 +1,7 @@
+### 2021-12-07
+
+* revision **1.1.5**  Added 2 buttons to components dialog,  **mirror V** and **mirror H**. 
+   
 ### 2021-12-31
 
 *  Now a jumper can be pull by one end or the other to change its position. 

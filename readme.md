@@ -7,6 +7,10 @@ a [new version](lazarus-source)  written using [Lazarus/free pascal IDE](https:/
 
 ![Boardview main window](lazarus-source/DOCS/resources/app-main-window.png)
 
+### 2022-01-07
+
+Version 1.1.5 Released. Added 2 buttons to components dialog for mirrorring component bitmap.  **mirror V** and **mirror V**.
+
 ### 2022-01-01
 
 Version 1.1.4  Released. Popup menu work by right clicking anywhere on the application client area and 2 items added to menu. 

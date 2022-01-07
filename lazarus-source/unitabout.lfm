@@ -132,7 +132,8 @@ object FormAbout: TFormAbout
       Align = alTop
       Enabled = False
       Lines.Strings = (
-        'Boardwiew is a solderless  board circuit layout drawing application'
+        'Boardwiew is a solderless  board circuit layout '
+        'drawing application'
         ''
         'Copyright Jacques Deschênes 2021'
         ''

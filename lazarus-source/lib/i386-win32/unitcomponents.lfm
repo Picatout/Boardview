@@ -214,27 +214,27 @@ object FormComponents: TFormComponents
     TabOrder = 7
   end
   object BtnRot90: TButton
-    Left = 136
+    Left = 144
     Height = 25
-    Top = 368
+    Top = 336
     Width = 75
     Caption = 'rot +90'
     OnClick = BtnRot90Click
     TabOrder = 8
   end
   object BtnRot180: TButton
-    Left = 136
+    Left = 144
     Height = 25
-    Top = 408
+    Top = 376
     Width = 75
     Caption = 'rot 180'
     OnClick = BtnRot180Click
     TabOrder = 9
   end
   object BtnRotMinus90: TButton
-    Left = 136
+    Left = 144
     Height = 25
-    Top = 448
+    Top = 416
     Width = 75
     Anchors = []
     Caption = 'rot -90'
@@ -249,6 +249,26 @@ object FormComponents: TFormComponents
     Caption = 'tag color...'
     OnClick = BtnTagColorClick
     TabOrder = 11
+  end
+  object bntMirrorV: TButton
+    Left = 144
+    Height = 25
+    Top = 456
+    Width = 75
+    Anchors = []
+    Caption = 'mirror V'
+    OnClick = bntMirrorVClick
+    TabOrder = 12
+  end
+  object BtnMirrorH: TButton
+    Left = 144
+    Height = 25
+    Top = 496
+    Width = 75
+    Anchors = []
+    Caption = 'mirror H'
+    OnClick = BtnMirrorHClick
+    TabOrder = 13
   end
   object ColorDialog1: TColorDialog
     Color = clBlack

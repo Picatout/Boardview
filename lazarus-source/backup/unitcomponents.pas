@@ -29,12 +29,15 @@ uses
   ;
 
 type
+   TenumMirror=(mVertical,mHorizontal);
 
   { TFormComponents }
 
   TFormComponents = class(TForm)
     BtnOK: TButton;
     BtnCancel: TButton;
+    bntMirrorV: TButton;
+    BtnMirrorH: TButton;
     BtnTagFont: TButton;
     BtnRot90: TButton;
     BtnRot180: TButton;
@@ -48,7 +51,9 @@ type
     lbComponent: TListBox;
     StaticText1: TStaticText;
     StaticText2: TStaticText;
+    procedure bntMirrorVClick(Sender: TObject);
     procedure BtnCancelClick(Sender: TObject);
+    procedure BtnMirrorHClick(Sender: TObject);
     procedure BtnOKClick(Sender: TObject);
     procedure BtnRot180Click(Sender: TObject);
     procedure BtnRot90Click(Sender: TObject);
@@ -70,6 +75,7 @@ type
     procedure lbCategoryClick(Sender: TObject);
     procedure lbComponentClick(Sender: TObject);
     procedure Rotate(angle:integer);
+    procedure Mirror(axis:TenumMirror);
   private
     picComponent:TPicture;
     selectedBmp:string;
@@ -104,6 +110,16 @@ end;
 procedure TFormComponents.BtnCancelClick(Sender: TObject);
 begin
   FormComponents.close;
+end;
+
+procedure TFormComponents.bntMirrorVClick(Sender: TObject);
+begin
+  Mirror(mVertical);
+end;
+
+procedure TFormComponents.BtnMirrorHClick(Sender: TObject);
+begin
+  Mirror(mHorizontal);
 end;
 
 procedure TFormComponents.BtnOKClick(Sender: TObject);
@@ -143,7 +159,9 @@ begin
       EditTag.font.size:=size;
       EditTag.Font.Style:=style ;
       EditTag.font.name:=name;
+      {$IFDEF WINDOWS}
       EditTag.font.color:=color;
+      {$ENDIF}
     end;
     imgComponent.Refresh;
 end;
@@ -310,7 +328,34 @@ begin
   imgComponent.refresh;
 end;
 
-
+procedure TFormComponents.Mirror(axis:TenumMirror);
+var
+  bmp:TBitmap;
+  x,y:integer;
+  bmprect:TRect;
+begin
+    bmp:=TBitmap.Create;
+    bmp.width:=picComponent.bitmap.width;
+    bmp.Height:=piccomponent.bitmap.height;
+    bmprect:=rect(0,0,bmp.width,bmp.height);
+    case axis of
+    mVertical:
+      begin
+          for x:= 0 to bmp.width-1 do
+              for y:= 0 to bmp.height-1 do
+                  bmp.Canvas.Pixels[x,bmp.height-y-1]:=picComponent.bitmap.canvas.pixels[x,y];
+      end;
+    mHorizontal:
+      begin
+          for x:= 0 to bmp.width-1 do
+              for y:= 0 to bmp.height-1 do
+                  bmp.Canvas.Pixels[bmp.width-x-1,y]:=picComponent.bitmap.canvas.pixels[x,y];
+      end;
+    end;
+    picComponent.bitmap.Canvas.CopyRect(bmprect,bmp.canvas,bmprect);
+    ImgComponent.refresh;
+    bmp.Destroy;
+end;
 
 procedure TFormComponents.Rotate(angle:integer);
 var

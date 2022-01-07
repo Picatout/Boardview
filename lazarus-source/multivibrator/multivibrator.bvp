@@ -81,116 +81,51 @@ endPt.Y=361
 [node9]
 kind=jumper
 color=8421504
-startPt.X=593
-startPt.Y=349
-endPt.X=592
-endPt.Y=360
-
-[node10]
-kind=component
-category=semi-conductors
-name=glass diode
-left=485
-top=335
-image=component-10.bmp
-
-[node11]
-kind=component
-category=semi-conductors
-name=glass diode
-left=604
-top=335
-image=component-11.bmp
-
-[node12]
-kind=component
-category=passive
-name=resistor 5%
-left=470
-top=360
-image=component-12.bmp
-
-[node13]
-kind=jumper
-color=8421504
-startPt.X=473
-startPt.Y=349
-endPt.X=474
-endPt.Y=359
-
-[node14]
-kind=component
-category=passive
-name=resistor 5%
-left=589
-top=360
-image=component-14.bmp
-
-[node15]
-kind=jumper
-color=8421504
 startPt.X=603
 startPt.Y=349
 endPt.X=604
 endPt.Y=361
 
-[node16]
-kind=component
-category=passive
-name=resistor 5%
-left=500
-top=358
-image=component-16.bmp
-
-[node17]
+[node10]
 kind=jumper
-color=8421504
-startPt.X=503
-startPt.Y=348
-endPt.X=504
-endPt.Y=358
-
-[node18]
-kind=component
 category=passive
 name=resistor 5%
-left=621
+left=470
 top=360
-image=component-18.bmp
-
-[node19]
-kind=jumper
-color=8421504
-startPt.X=625
-startPt.Y=360
-endPt.X=623
-endPt.Y=349
-
-[node20]
-kind=jumper
+image=component-10.bmp
 color=255
 startPt.X=866
 startPt.Y=333
 endPt.X=846
 endPt.Y=332
 
-[node21]
+[node11]
 kind=jumper
+category=semi-conductors
+name=glass diode
+left=604
+top=335
+image=component-11.bmp
 color=255
 startPt.X=845
 startPt.Y=391
 endPt.X=800
 endPt.Y=389
 
-[node22]
+[node12]
 kind=jumper
+category=passive
+name=resistor 5%
+left=589
+top=360
+image=component-12.bmp
 color=255
 startPt.X=846
 startPt.Y=213
 endPt.X=804
 endPt.Y=214
 
-[node23]
+[node13]
 kind=jumper
 color=0
 startPt.X=866
@@ -198,15 +133,20 @@ startPt.Y=263
 endPt.X=835
 endPt.Y=263
 
-[node24]
+[node14]
 kind=jumper
+category=passive
+name=resistor 5%
+left=589
+top=360
+image=component-14.bmp
 color=0
 startPt.X=835
 startPt.Y=201
 endPt.X=804
 endPt.Y=202
 
-[node25]
+[node15]
 kind=jumper
 color=0
 startPt.X=834
@@ -214,18 +154,31 @@ startPt.Y=381
 endPt.X=806
 endPt.Y=380
 
-[node26]
+[node16]
 kind=tag
-text=2N3904
+category=passive
+name=resistor 5%
 left=453
 top=257
+image=component-16.bmp
+color=255
+startPt.X=846
+startPt.Y=213
+endPt.X=804
+endPt.Y=214
+text=2N3904
 Font name=default
 Font color=536870912
 Font size=0
 Font Style=0
 
-[node27]
+[node17]
 kind=tag
+color=0
+startPt.X=866
+startPt.Y=263
+endPt.X=835
+endPt.Y=263
 text=2N3904
 left=575
 top=259
@@ -234,18 +187,31 @@ Font color=536870912
 Font size=0
 Font Style=0
 
-[node28]
+[node18]
 kind=tag
-text=R1
+category=passive
+name=resistor 5%
 left=466
 top=394
+image=component-18.bmp
+color=0
+startPt.X=835
+startPt.Y=201
+endPt.X=804
+endPt.Y=202
+text=R1
 Font name=default
 Font color=536870912
 Font size=0
 Font Style=0
 
-[node29]
+[node19]
 kind=tag
+color=0
+startPt.X=834
+startPt.Y=381
+endPt.X=806
+endPt.Y=380
 text=R2
 left=482
 top=394
@@ -254,8 +220,13 @@ Font color=536870912
 Font size=0
 Font Style=0
 
-[node30]
+[node20]
 kind=tag
+color=255
+startPt.X=866
+startPt.Y=333
+endPt.X=846
+endPt.Y=332
 text=R3
 left=500
 top=395
@@ -264,8 +235,13 @@ Font color=536870912
 Font size=0
 Font Style=0
 
-[node31]
+[node21]
 kind=tag
+color=255
+startPt.X=845
+startPt.Y=391
+endPt.X=800
+endPt.Y=389
 text=R4
 left=586
 top=396
@@ -274,8 +250,13 @@ Font color=536870912
 Font size=0
 Font Style=0
 
-[node32]
+[node22]
 kind=tag
+color=255
+startPt.X=846
+startPt.Y=213
+endPt.X=804
+endPt.Y=214
 text=R5
 left=602
 top=396
@@ -284,8 +265,13 @@ Font color=536870912
 Font size=0
 Font Style=0
 
-[node33]
+[node23]
 kind=tag
+color=0
+startPt.X=866
+startPt.Y=263
+endPt.X=835
+endPt.Y=263
 text=R6
 left=621
 top=396
@@ -294,8 +280,13 @@ Font color=536870912
 Font size=0
 Font Style=0
 
-[node34]
+[node24]
 kind=tag
+color=0
+startPt.X=835
+startPt.Y=201
+endPt.X=804
+endPt.Y=202
 text=Q1
 left=445
 top=282
@@ -304,8 +295,13 @@ Font color=536870912
 Font size=0
 Font Style=0
 
-[node35]
+[node25]
 kind=tag
+color=0
+startPt.X=834
+startPt.Y=381
+endPt.X=806
+endPt.Y=380
 text=Q2
 left=566
 top=285
@@ -314,47 +310,7 @@ Font color=536870912
 Font size=0
 Font Style=0
 
-[node36]
-kind=tag
-text=D1
-left=466
-top=332
-Font name=default
-Font color=536870912
-Font size=0
-Font Style=0
-
-[node37]
-kind=tag
-text=D2
-left=587
-top=333
-Font name=default
-Font color=536870912
-Font size=0
-Font Style=0
-
-[node38]
-kind=tag
-text=1N4148
-left=504
-top=333
-Font name=default
-Font color=536870912
-Font size=0
-Font Style=0
-
-[node39]
-kind=tag
-text=1N4148
-left=625
-top=331
-Font name=default
-Font color=536870912
-Font size=0
-Font Style=0
-
-[node40]
+[node26]
 kind=tag
 text=multivibrator
 left=508
@@ -364,39 +320,63 @@ Font color=536870912
 Font size=0
 Font Style=0
 
-[node41]
+[node27]
 kind=component
-category=passive
-name=electrolytic 3D
+text=R6
 left=497
 top=278
-image=component-41.bmp
-
-[node42]
-kind=component
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
 category=passive
 name=electrolytic 3D
+image=component-27.bmp
+
+[node28]
+kind=component
+text=Q1
 left=617
 top=278
-image=component-42.bmp
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+category=passive
+name=electrolytic 3D
+image=component-28.bmp
 
-[node43]
+[node29]
 kind=jumper
+text=Q2
+left=566
+top=285
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
 color=33023
 startPt.X=512
 startPt.Y=319
 endPt.X=594
 endPt.Y=318
 
-[node44]
+[node30]
 kind=jumper
+text=multivibrator
+left=508
+top=179
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
 color=33023
 startPt.X=473
 startPt.Y=329
 endPt.X=634
 endPt.Y=329
 
-[node45]
+[node31]
 kind=tag
 text=C1
 left=519
@@ -405,8 +385,11 @@ Font name=default
 Font color=536870912
 Font size=0
 Font Style=0
+category=passive
+name=electrolytic 3D
+image=component-31.bmp
 
-[node46]
+[node32]
 kind=tag
 text=C2
 left=640
@@ -415,8 +398,11 @@ Font name=default
 Font color=536870912
 Font size=0
 Font Style=0
+category=passive
+name=electrolytic 3D
+image=component-32.bmp
 
-[node47]
+[node33]
 kind=tag
 text=10µF
 left=496
@@ -425,6 +411,209 @@ Font name=default
 Font color=536870912
 Font size=0
 Font Style=0
+color=33023
+startPt.X=512
+startPt.Y=319
+endPt.X=594
+endPt.Y=318
+
+[node34]
+kind=tag
+text=10µF
+left=616
+top=282
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+color=33023
+startPt.X=473
+startPt.Y=329
+endPt.X=634
+endPt.Y=329
+
+[node35]
+kind=jumper
+text=C1
+left=519
+top=295
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+color=33023
+startPt.X=483
+startPt.Y=319
+endPt.X=505
+endPt.Y=320
+
+[node36]
+kind=jumper
+text=C2
+left=640
+top=294
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+color=33023
+startPt.X=603
+startPt.Y=320
+endPt.X=624
+endPt.Y=320
+
+[node37]
+kind=component
+text=10µF
+left=497
+top=278
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+category=passive
+name=electrolytic 3D
+image=component-37.bmp
+
+[node38]
+kind=component
+text=10µF
+left=617
+top=278
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+category=passive
+name=electrolytic 3D
+image=component-38.bmp
+
+[node39]
+kind=jumper
+text=1N4148
+left=625
+top=331
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+color=33023
+startPt.X=512
+startPt.Y=319
+endPt.X=594
+endPt.Y=318
+
+[node40]
+kind=jumper
+text=multivibrator
+left=508
+top=179
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+color=33023
+startPt.X=473
+startPt.Y=329
+endPt.X=634
+endPt.Y=329
+
+[node41]
+kind=tag
+category=passive
+name=electrolytic 3D
+left=519
+top=295
+image=component-41.bmp
+text=C1
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node42]
+kind=tag
+category=passive
+name=electrolytic 3D
+left=640
+top=294
+image=component-42.bmp
+text=C2
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node43]
+kind=tag
+color=33023
+startPt.X=512
+startPt.Y=319
+endPt.X=594
+endPt.Y=318
+text=10µF
+left=496
+top=284
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node44]
+kind=tag
+color=33023
+startPt.X=473
+startPt.Y=329
+endPt.X=634
+endPt.Y=329
+text=10µF
+left=616
+top=282
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+
+[node45]
+kind=component
+text=C1
+left=490
+top=360
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+category=passive
+name=resistor 5%
+image=component-45.bmp
+
+[node46]
+kind=component
+text=C2
+left=589
+top=359
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+category=passive
+name=resistor 5%
+image=component-46.bmp
+
+[node47]
+kind=jumper
+text=10µF
+left=496
+top=284
+Font name=default
+Font color=536870912
+Font size=0
+Font Style=0
+color=8421504
+startPt.X=593
+startPt.Y=348
+endPt.X=593
+endPt.Y=361
 
 [node48]
 kind=tag
